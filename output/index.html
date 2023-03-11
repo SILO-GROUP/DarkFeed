@@ -1,0 +1,705 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    .date-column {
+      white-space: nowrap;
+      padding: 50px;
+      width: fit-content;
+      width: 10%;
+      border-spacing: 10px;
+    }
+    .col-sm-3 {
+      border: 1px solid black;
+      width: 25%;
+      //white-space: nowrap;
+      border-radius: 50px 0px 0px 50px;
+      padding-top: 25px;
+    }
+    .list-unstyled {
+      padding-left: 20px;
+    }
+    .header-row {
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-bottom: 2px;
+    }
+    .entry-column {
+      border: 1px solid black;
+      padding: 10px;
+      max-width: 80ch;
+      padding-right: 20px;
+      border-spacing: 2px;
+      border-top: 1px solid black;
+    }
+
+    .wp-block-verse {
+      max-width: 80ch;
+    }
+    [class^="wp-block-cover"], [class^="wp-image-"], .wp-block-cover, .wp-block-cover__image-background {
+        height: auto !important;
+        width: 75% !important;
+        display: inline !important;
+        align-content: center;
+        text-align: center;
+    }
+    .has-text-align-center {
+        align-content: center;
+    }
+
+    .col-sm-9 {
+        border: 1px solid black;
+        border-right: none;
+    }
+    .table {
+        width: auto;
+    }
+
+    .table td, .table th {
+        border-top: 1px solid black;
+    }
+
+    .row {
+        z-index: 2;
+    }
+
+    .date-column {
+        z-index: 1;
+    }
+
+    .aligncenter { align-content: center; }
+    .col-sm-6 {
+        //border: 1px solid black;
+    }
+
+    .date-container {
+      white-space: nowrap;
+      border: 1px solid black;
+      width: fit-content;
+      padding: 5px;
+      border-spacing: 10px;
+    }
+    .left-header, h3 {
+      align-content: center;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .table td, .table th {
+        border-top: none;
+    }
+    body {
+        background-image: url('background.jpg');
+        background-repeat: repeat;
+    }
+  </style>
+  <title></title>
+</head>
+<body>
+  <div class="container-fluid mt-5 mb-5">
+
+  </div>
+  <div class="container mt-5 mb-5">
+        <div class="row header-row">
+      <div class="col-sm-6 text-center">
+        <h3>Dark Horse Linux News</h3>
+      </div>
+      <div class="col-sm-6 text-center">
+	      <h6>*Property of <a href="https://www.silogroup.org">SILO GROUP</a> 2023</h6>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 aligncenter">
+        <h3 class="left-header">Links</h3>
+        <ul class="list-unstyled">
+          <li><a href="https://github.com/SILO-GROUP/rex">Rex</a></li>
+          <li><a href="https://source.silogroup.org/SILO-GROUP/pyrois.git">Pyrois</a></li>
+        </ul>
+        <h3 class="left-header">Feeds</h3>
+        <ul class="list-unstyled">
+            
+            <li><a href="https://phanes.silogroup.org/feed/">Phanes' Canon</a></li>
+            
+            <li><a href="https://www.silogroup.org/feed/">SILO GROUP LLC</a></li>
+            
+        </ul>
+
+      </div>
+      <div class="col-sm-9">
+        <h3>Status Updates</h3>
+        <table class="table table-hover" style="border-top: 1px solid black;">
+          <tbody>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/dark-horse-linux-stage-4/">Phanes' Canon: Dark Horse Linux: Stage 4</a></h5>
+                <p><p>At this point, DHLP is compiling up to LFS CH. 8.</p>
+
+
+
+<p>This is the point where it finally starts to get &#8220;real&#8221;, as we&#8217;ve finished the compilation of all the temporary tools and are starting to build the &#8220;real&#8221; permanent system.</p>
+
+
+
+<p>This is also an exciting part because I got to introduce the first of those classic ncurses dialog prompts.</p>
+
+
+
+<p>Stay tuned.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-02-25</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/plans-for-dark-horse-linux/">Phanes' Canon: Plans for Dark Horse Linux</a></h5>
+                <p><p>So, as it&#8217;s nearing a bootable ISO, some stages of development seem to be forming in terms of expectations.</p>
+
+
+
+<h2>A Whole Image</h2>
+
+
+
+<p>First, I&#8217;ll end up with something very close to an LFS build that needs alot of work to get installed onto a different system.</p>
+
+
+
+<h2>Gentooesque Genesis, Slackwaresque Form</h2>
+
+
+
+<p>Then, I&#8217;ll end up with some kind of installer that seems like it will work very similarly to slackware&#8217;s and FreeBSD&#8217;s installer, but compiled in a very gentoo kind of way beforehand.  I see this piece taking quite a bit of time to get through if I pursue that as far would be expected.  The important pieces will be drive formatting/partitioning dialogs and tools, bootloader installation.  Copying to the mounts appropriately etc.</p>
+
+
+
+<h2>A Familiar Set of Tools</h2>
+
+
+
+<p>Some ways after that, unless it doesn&#8217;t work the way I expect, I&#8217;ll probably pivot to an rpm-based system that, a certain point after librpm is compiled, binary packages are downloaded that replace the packages already compiled and installed.  Systemd.  Firewalld.  Then the decision needs made about whether I&#8217;ll use DNF or an inhouse built package manager.   One drawback I see about this is, some users will probably use rpms from SUSE and RH and Rocky and Fedora and run into build compatibility problems.  On the other hand, some of the time it&#8217;ll actually work with a little tweaking of binaries.  On the other hand, using a familiar ecosystem for the core pieces of the system will bring with them the stability those pieces are known for, they are tried and true, and will be already familiar by many, many users.  So there&#8217;s a tradeoff to consider.  It also prevents me from having to reinvent package management.  Life&#8217;s just too short and I&#8217;m one person.</p>
+
+
+
+<h2>On Package Management</h2>
+
+
+
+<div class="wp-block-cover aligncenter"><span class="wp-block-cover__background has-background-dim"></span><img alt="" class="wp-block-cover__image-background wp-image-1881" height="1024" src="https://phanes.silogroup.org/wp-content/uploads/2023/02/DALL·E-2023-02-22-02.39.45-red-horseman-of-revelations-charcoal-armor-1024x1024.png" width="1024" /><div class="wp-block-cover__inner-container">
+<p class="has-text-align-center has-large-font-size">It&#8217;s dangerous to go alone.  </p>
+
+
+
+<p class="has-text-align-center has-large-font-size">Take this.</p>
+</div></div>
+
+
+
+<p>Leaving it without package management is just not an option in the currrent security theatre.  Modern systems need not just build systems for distributable packages but patching systems built in with pipelines established for those patches to reduce overhead.  Patches that are free, open source, and available in other package-based distributions.  In some cases, with associated CVEs.  This will require lots of infrastructure to do sustainably even if I weren&#8217;t just one person.</p>
+
+
+
+<p>I think what I ought to do is find some way to faciliate that infrastructure, designed in such a way where it waits for contributors to do the things.  So, if someone thinks its too slow, a pull request from a stranger (or a familiar maintainer, even) gets submitted so that I don&#8217;t have to do the work.  It gets reviewed and merged.  The more people involved the better, but, it /could/ work with one person, just very slowly.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-02-22</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/surro-reborn-dark-horse-linux/">Phanes' Canon: SURRO Reborn: Dark Horse Linux</a></h5>
+                <p><p>I&#8217;ve done something I think is interesting.</p>
+
+
+
+<p>After I finally found time to do a rewrite of <a href="https://github.com/SILO-GROUP/rex" rel="noreferrer noopener" target="_blank">Rex</a> to add pty support and fix some bugs, I did a new build of SURRO Linux that, frankly, is much better than it could have ever been in the old setup.  </p>
+
+
+
+<p>This has been an especially long and hard progress since I initially set out to do it, both technically and politically, so, I wanted a way to give the project a clean slate and start fresh since it looks like it&#8217;s actually developing some momentum finally.</p>
+
+
+
+<p>SURRO Linux is being rebranded as <a href="https://www.darkhorselinux.org/" rel="noreferrer noopener" target="_blank">The Dark Horse Linux Project</a>.  The Foster project has been rebranded as <a href="https://source.silogroup.org/SILO-GROUP/pyrois.git" rel="noreferrer noopener" target="_blank">Pyrois</a>. I will be slowly dismantling SURRO-branded themes and sites over the next little bit as I transition things over.</p>
+
+
+
+<p>I&#8217;ve registered the website <a href="https://www.darkhorselinux.org/" rel="noreferrer noopener" target="_blank">www.darkhorselinux.org</a> to serve as the project landing page.</p>
+
+
+
+<p>While I&#8217;d like to lay some framework for project governance, it&#8217;s really just me working on it, so, there&#8217;s really no point in that, so, I think I&#8217;ll adopt an approach similar to my impression of Patrick Volkerding&#8217;s approach with Slackware:  If people want to contribute, please do, and suggestions are always welcome.</p>
+
+
+
+<p>In fact, I envision much of the starting point of this once it releases to resemble elements of Slackware quite a bit.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-02-22</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/musings-on-a-code-of-conduct/">Phanes' Canon: Musings on a Code of Conduct</a></h5>
+                <p><p>I don&#8217;t even like the concept of a Code of Conduct in any technical project.</p>
+
+
+
+<p>But, people are jerks.  I acknowledge that you need one these days to provide a groundwork of acceptable behaviour because not everyone can just be a decent adult on their own, but may have good technical contributions to provide.</p>
+
+
+
+<p>That said, every implementation of a Code of Conduct that I have ever seen has been so permeated with overreach that it should be set on fire and abandoned before routing out everyone who created that overreach and removing any control they have over that community.</p>
+
+
+
+<p>I personally view most major F/OSS projects&#8217; CoC to be created for the sole purpose of preparing a community and its culture for hijacking by corporate sponsors.  </p>
+
+
+
+<p>It ends up being a device they can use to bump out the people that won&#8217;t meet their sponsor&#8217;s goals while creating gaps to fill by the people they have selected to steer the project towards those corporate interests.</p>
+
+
+
+<p>This practice is, in my opinion, so pervasive that in aggregate, I see it could eventually create an insincere and purely aesthetic dystopia where people will eventually have to resort to whispering in soundproof rooms to express themselves to avoid being targeted unless they abandon their entire personalities&#8211; their careers, their families, project positions at jeopardy&#8211; all depending on the scale of money behind the project and who the sponsors are.  People will comply with the narrative or they will &#8220;become bad people&#8221;.</p>
+
+
+
+<p>I would rather have nothing in its place than contribute to that.  It is unethical, toxic and harmful to anyone who participates in it.</p>
+
+
+
+<p>I&#8217;ve also seen a strange reoccurence of identity politics being worked into the CoC.  I&#8217;m actually a little confused why the LGBTQ+ community is not largely comprised of people offended by the blatant attempt of these corporate-backed projects to introduce identity politics and dog whistles to open source communties as blatant disruption devices to serve those corporate interests, and the CoC is a great place for that to happen.  It is a blatant exploitation of a vulnerable community taking place out of financial interests. </p>
+
+
+
+<p>Perhaps my thinking on this may change in the future, but if I were to ever build a community of contributors for, say, SURRO Linux (or what it will actually be called on release), that I might have a CoC that mostly just aimed to prevent political hijacking and offtopic yammer, or interpersonal shit getting mixed with project discussion.</p>
+
+
+
+<p>I mean, be gay, trans, bi, straight, whatever you want, but push code and create development roadmaps instead of using this as a platform to validate yourself.  That&#8217;s not what it&#8217;s there for and it&#8217;s oppressive to other demographics.  </p>
+
+
+
+<p>In lieu of identity politics and facilitating project hijacking, a CoC that I would want to use would be designed in such a way as to develop, encourage, and reward emotional resilience in members of its community while providing a framework that inclines discussions to be related the project.</p>
+
+
+
+<p>That can&#8217;t happen in a safe space or an ideological echo chamber.  Decay can, and does in all cases.</p>
+
+
+
+<p>Safe spaces are toxic and harmful.  They are well intended but ultimately detrimental to host and participant as, for the sake of comfort, they stifle the expression of conflicting ideas that drive conceptual evolution in cultural development, which, unless you have a community that has reached an ideological apex&#8211; an Atlantean society of the most perfect expression of viewpoints humanity can ever have with no more room for improvement, then conflicts of ideas have to be permissable for growth of that community (and the broader society it exists in) to take place.</p>
+
+
+
+<p> Competing concepts drive cultural evolution, and you can&#8217;t have competing concepts if you forbid or suppress conflict.  This is the nature of people.  This is the nature of ideas.  This is the nature of growth.  Communities that suppress conflict and consequently free expression cannot grow.  Communities that value emotional resilience and a productive manner of conflict can and do&#8211; exclusively.</p>
+
+
+
+<p>And then there&#8217;s the out-of-band behaviour.  Too many times I&#8217;ve seen people engaged in conflict who are so emotionally fragile or toxic that they feel they need to go to other platforms to crowdsource a lynching to target people  who have a different perception of reality than they do &#8212; they make up lies about them, and try to use crowds of collaborators to &#8220;shame&#8221; their ideological counterpart which inevitably devolves into extraordinarily toxic harassment by many people, even stalking and offline violence directed at those people who disagree with them (or are triggered by a lie about their target that they believe), or they go after their families, or their careers and reputations.  Anyone who particpates in something like that shouldn&#8217;t be on any project and are a threat to anyone they work with.  The world needs protected from people who do things like that.  I don&#8217;t just mean the people who rally the crowd either, I mean the people who choose to be in the crowd doing the harassment as well.  They are timeless filth.</p>
+
+
+
+<p>So, I propose the &#8220;Nobody Cares&#8221; golden principle:  Nobody cares about your poltiical beliefs beyond that you should be allowed to have them.  Nobody cares about your spiritual beliefs beyond that you should be allowed to have them.  Nobody cares about your sexuality or gender identity beyond that you should be allowed to have them.  The same for race, country of origin.  </p>
+
+
+
+<p>People would make mistakes occasionally and accidentally care.  They&#8217;re human.  They all have beliefs of their own.  If someone gets a pronoun wrong, or has a belief system that affects which pronouns they use for either themselves or others, then we need to rely on the emotional resilience of everyone participating.  Nobody is forced to alter their speech or beliefs for anyone else.  That also means pejoratives and slurs should not be used.  People who do should be sanctioned.  Personal attacks violate the rule.  And trying to force people to comply with your belief system should count as a personal attack that isn&#8217;t centered on the &#8220;nobody cares&#8221; philosophy:  &#8220;Is the statement about the project or is the statement about someone on the project?&#8221;.  </p>
+
+
+
+<p>The caring should be about the project being discussed, not the discussers.  If someone goes on a rampage to try to force everyone&#8217;s beliefs  they can go away and practice their emotional fragility in any of the already existing echo chambers  more than willing to cater to them at the expense of meaningful progress.  I&#8217;ve seen enough.  Nobody cares about the discussers.  They should care about the project and contributions to the project, not whether someone who submitted a pull request donated to the Trump campaign or something stupid they did or said (though I certainly would not be excited to hear about that).  </p>
+
+
+
+<p>The only exception to not caring is when someone with a bunch of followers on twitter gets mad because they weren&#8217;t given enough political kowtowing to their identity politics, or are mad about something unrelated that they proceed to shame and lynch, defame, harass, or otherwise harm other contributors on the project.  This also goes for those that take to other platforms for the purpose of stirring up others to do those things.  People that engage in this should be decisively and rapidly ejected.</p>
+
+
+
+<p>I also think relying purely on the CoC is a bad call.  It&#8217;s not a framework to push people out, it&#8217;s a framework to help people focus on what they gathered to do.  So, instead of treating it like a legal doctrine, I think right now I would treat it more like a guideline and use my own discretion when handling interpersonal issues or conduct reports to hopefully prevent it from being misused in the way I see other CoC&#8217;s be misused, or sabotaged by trolls.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-01-12</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/artificial-food/">Phanes' Canon: Artificial Food</a></h5>
+                <p><h2>Our Food Sucks, and it&#8217;s caused by Liars </h2>
+
+
+
+<p>So as it turns out, when you buy food at the grocery store, what you are purchasing is not your grandfather&#8217;s food.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p>A Kushi Institute analysis of nutrient data from 1975 to 1997 found that average calcium levels in 12 fresh vegetables dropped 27 percent; iron levels 37 percent; vitamin A levels 21 percent, and vitamin C levels 30 percent. A similar study of British nutrient data from 1930 to 1980, published in the <em>British Food Journal</em>,found that in 20 vegetables the average calcium content had declined 19 percent; iron 22 percent; and potassium 14 percent. Yet another study concluded that one would have to eat eight oranges today to derive the same amount of Vitamin A as our grandparents would have gotten from one.</p>
+<cite>https://www.scientificamerican.com/article/soil-depletion-and-nutrition-loss/</cite></blockquote>
+
+
+
+<p>Causes contributing to this generally center around:</p>
+
+
+
+<ul>
+<li>soil depletion</li>
+
+
+
+<li>global-scale overproduction</li>
+
+
+
+<li>corporate control over the genes of the plants used for crops</li>
+</ul>
+
+
+
+<p>Yeah, so, as it turns out, when we introduced *GMOs to the world, we did it primarily through a company previously known as <a href="https://www.bayer.com/media/en-us/bayer-closes-monsanto-acquisition/" rel="noreferrer noopener" target="_blank">Mansanto</a>, until it was bought by a larger company called <a href="https://en.wikipedia.org/wiki/Bayer#World_War_II_and_the_Holocaust" rel="noreferrer noopener" target="_blank">Beyer</a>.  Mansanto&#8217;s profit strategy included:</p>
+
+
+
+<ul>
+<li>Genetic engineering and genome editing &#8212; using modified viruses designed to splice a gene from what is often not a related plant or animal into an organism.  (*This is what people are really talking about when they complain about &#8220;GMOs&#8221; &#8212; what many bootlickers and unethical propagandists do is claim that this is on the same level of safety and precedent as cross-breeding two plant crops, or selecting seeds for the next year&#8217;s crop by using selection criteria that provides larger yields as we&#8217;ve been doing for thousands of years longer than the advent of the field of genetics.  It is not the same as these farming practices, they know it is not, and they say this anyway because they are shitty people who want to sound smart more than they want to be accurate, and this serves as a constant detractor from very legitimate concerns people have over this practice by drowning them out with knowing lies in the public dialog &#8211; they somehow do this while virtue signaling).</li>
+
+
+
+<li>Patenting the resulting modified organism and becoming the only providers of the seeds.</li>
+
+
+
+<li>Suing farmers when their modified organism is found in their crops.</li>
+
+
+
+<li>Dropping seeds around farming properties who don&#8217;t buy from them to facilitate that litigation.</li>
+</ul>
+
+
+
+<p>It was remarkably successful.  This introduction became the dominant source of most products you buy in the supermarket today.  This allows a couple of companies to control the genetic profile of almost all food in the global food supply chain to the point that, as of the time of this writing, it&#8217;s almost impossible to avoid eating organisms modified in this manner.  Even if you make your own bread, the flour you buy at the store to make it contains these products.  You&#8217;d have to find wild wheat or corn, genetically analyze it to ensure it isn&#8217;t a windblown GMO, grow a crop of it, and then mill it to get one loaf.</p>
+
+
+
+<p><strong>There have, to date, been no cross-generational impact studies performed for regular consumption of GMOs prior to them becoming the dominant presence in the global food supply chain</strong>, propagandized as safe by the same people that told you and your parents that consuming fat is a leading contributor to obesity, that margarine was good for you, that aspartame was a safe alternative to sugar, that eggs and potatoes are bad for you&#8211; <a href="https://www.imdb.com/title/tt5212792/" rel="noreferrer noopener" target="_blank">the same people that brought the fictitious &#8220;food pyramid&#8221; to your schools</a>.</p>
+
+
+
+<p>In some cases, the GMOs that made Mansanto famous create crops that produce their own pesticide internally.  Some variants are also very resistant to pesticides that many farmers already spray on their crops (It&#8217;s a pesticide called &#8220;RoundUp&#8221;, also sold by Mansanto) to prevent yield loss from bugs eating into the crops.  Because these crops are more resistant to insects and pesiticides they tend to take over an area and choke out the farm-managed versions of those crops that they were designed to replace (they are what some people call &#8220;an invasive species&#8221;).  They also are modified to not produce seeds, and where unable or when that genetic mechanism fails, litigation ensues if the farmer collects seeds to replant the next year from their own crop &#8212; they need to purchase those seeds from the company that designed, owns, and sells those organisms&#8217; patented genes.</p>
+
+
+
+<p>Their strategy was one of necessity: The farmers often didn&#8217;t want genetically engineered crops, and most intelligent people didn&#8217;t either.  Not at that scale.  But, between the widespread litigation of farmers, and the paid marketing, it&#8217;s become mainstream, and then people who do research on youtube filled in the gaps with mainstream audiences.  It&#8217;s amazing what money can do to low information leftists&#8217; realities.</p>
+
+
+
+<p>As to soil depletion, since we&#8217;ve overcommercialised farming to keep up with growing populations, we&#8217;ve stopped rotating crops as well which replenishes vital nutrients in the soil, so, the growing plants are bigger from being fake, and drawing less nutrients out of the ground because of last year&#8217;s crop.</p>
+
+
+
+<p>The problem, at the end of the day, is that there are just too many people on the Earth.  There&#8217;s no good solution to that, but among those that rank among the best, none of them involve paying those squirrels who are just chasing nuts with no regard for the impact of their work on the world to keep degrading the food that&#8217;s already there &#8212; for everyone that is currently alive and will live after us.</p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p></p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2022-12-24</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/idm-a-rewrite-job-stuff/">Phanes' Canon: IDM/A Rewrite & Job Stuff</a></h5>
+                <p><p>I&#8217;ve got a keyboard on the frits, so I&#8217;ll give this post about one more try before I put my fist through this keyboard and go on vacation until a new one arrives.</p>
+
+
+
+<p>I&#8217;m about a quarter of the way through a rewrite of the IDM/A prototype.</p>
+
+
+
+<p>The reasons I elected to rewrite most of the codebase instead of adapt it and release it are many, but the main issues were:</p>
+
+
+
+<ol>
+<li>The access control was being handled in the API layer, instead of the controller library that controls all the actions being performed, mostly to accomodate flask&#8217;s ridiculously embedded and inflexible marshmallow and sqlalchemy extensions.  While not an issue for a whole product, it does make the API an unnecessary risk surface.   To be clear, this is not an issue with SQLAlchemy and Marshmallow libraries, but Flask&#8217;s extensions of them.</li>
+
+
+
+<li>Having access control being handled in the API layer also means access control needs reimplemented in any interface being created to interoperate with the system, which not only sucks for responsibility isolation from a general design perspective, but as security problems would emerge, their impact scope would vary depending on which interface was in use, which breaks continuity and degrades the security posture of the entire system.  Being an identity, access, and session management system I would consider that tendency to be purpose-defeating.</li>
+
+
+
+<li>This allows third party interfaces to be developed with security controls that are gauranteed to be in continuity with the provided ones and disincentivizes the development of frontends designed to exploit the underlying system.</li>
+
+
+
+<li>I wanted the API to merely be relaying input parameters and output responses to/from a secure underlying controller layer so that the modular design could be leveraged later for C-rewrites of various layers (including potentially the API).  This creates the path for that.</li>
+
+
+
+<li>I wanted to completely remove any dependency of any underlying component on the API layer for that same reason.</li>
+
+
+
+<li>I want to write a CLI toolchain that accompanies it that performs all tasks.  This is also useful for writing functional tests, and should make system administration a little easier.  I did not want those tools to contain any of the security layer, and I do want it to be oriented to CLI toolchains first.</li>
+
+
+
+<li> I wanted to create a path for PAM integration and didn&#8217;t see a web API centric approach being suitable for that as it was.  Ideally administrators should be able to configure PAM to point at this system and then use it for administrating users on a great many machines.</li>
+
+
+
+<li>I wanted to create a path for an LDAP emulation interface for web systems.  This would require that component responsibility rework.  </li>
+</ol>
+
+
+
+<p>Unfortunately, as always, this sets my time tables back.</p>
+
+
+
+<h2>Job Stuff</h2>
+
+
+
+<p>Got another raise.  Unfortunately, this one involves an expansion of my responsibilities this round, so, I&#8217;ll be busier and will have to do alot of skill refresh.</p>
+
+
+
+<p>On both fronts, this is a time for building.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+                <td class="date-column"><div class="date-container">2022-11-07</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/back-to-the-basics-again/">Phanes' Canon: Back to the Basics.  Again.</a></h5>
+                <p><p>As winter approaches, I see a chance to sharpen up on some core skills.</p>
+
+
+
+<p>This is something I do regularly, I am a firm believer in keeping the basics down as that is still where so much of the work to be done is.  We tend to drop the basics after we learn or work on the more advanced things thinking we have &#8220;graduated&#8221; to higher planes of thought.</p>
+
+
+
+<p>That&#8217;s a delusion of the ego.  Foundational concepts and skills in information systems make or break you, whether you&#8217;re an intern starting out or a 20 year career veteran in the field.  Doesn&#8217;t matter.  You have to either continuously refresh, join a socially empowered demographic, or take a &#8220;<a href="https://twitter.com/ehashdn" rel="noreferrer noopener" target="_blank">contributor influencer persona</a>&#8221; that rests more on twitter likes and marketing masked as culture rather than actual contributions.  Over time, people who don&#8217;t go back to the foundation concepts of the work they are doing, no matter how senior they get in their careers, become out of touch and fail, and usually in great arrogance.</p>
+
+
+
+<p>For me, for now, I&#8217;m re-reading Kernighan &amp; Ritchie&#8217;s &#8220;The C Programming Language&#8221;, second edition for ANSI C.  Fellow nerds just call it &#8220;K&amp;R&#8221;.  It&#8217;s one of those core learning books that should sit on every Linux nerd&#8217;s bookshelf right next to &#8220;The Unix Programming Environment&#8221; by Kernighan &amp; Pike, or &#8220;Unix Network Programming&#8221; by W. Richard Stevens.  I have a copy of &#8220;The Practice of Programming&#8221; on my basics bookshelf, but I have to admit I haven&#8217;t found time to read it, yet.</p>
+
+
+
+<p>For people who don&#8217;t write code, and like to design at a higher level, shame on you, but, &#8220;The Design of Design&#8221; by Brooke, or for your splash into good design (you&#8217;ll have to learn some code) &#8220;Design Patterns: Elements of Reusable Object-Oriented Software&#8221; by Gamma, Helm, Johnson, Vlissides&#8211; both of which I found incredibly boring but useful.  </p>
+
+
+
+<p>In any case, K&amp;R is driven by necessity.  I&#8217;m exploring the idea of porting Rex to C to increase its compatibility footprint and reduce the size of the codebase.  There are alot of problems to solve to do that, so, I&#8217;m just getting the juices flowing.  It&#8217;s not going to hurt me to go back to C.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2022-09-22</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/sal-m/">SILO GROUP LLC: SAL/M</a></h5>
+                <p><h2>A System that Designs Systems</h2>
+
+
+
+<p>SAL/M is a solution that manages the Software and Systems Architecture Lifecycle.</p>
+
+
+
+<p>It will facilitate high level aspects of solution design using only artifacts created/represented inside of its portfolio.</p>
+
+
+
+<h2>Project Objectives</h2>
+
+
+
+<ul><li>Facilitate an intact distributed systems design process.</li><li>Generate artifacts of that process.</li><li>Represent all available components in a software ecosystem to those ends.</li><li>Represent relationships between those components.</li><li>Generate a compiled artifact on demand of the current state of a solution design.</li></ul>
+
+
+
+<h2>Dependencies</h2>
+
+
+
+<p>SAL/M will use SME/D for stakeholder engagement and IDM/A for its security layer.  </p>
+
+
+
+<h2>Further Reading</h2>
+
+
+
+<p>Not yet available for prototype showcasing.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2021-01-13</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/smq-s/">SILO GROUP LLC: SMQ/S</a></h5>
+                <p><p>SMQ/S is a very simple message queue service designed to be quite fast and barebones. </p>
+
+
+
+<p>As this project is part of the Logthulu project, and is a component, see the Logthulu project for updates:</p>
+
+
+
+<p><a href="https://logthulu.silogroup.org" rel="noreferrer noopener" target="_blank">https://logthulu.silogroup.org</a></p>
+
+
+
+<p></p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2021-01-13</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/sme-d/">SILO GROUP LLC: SME/D</a></h5>
+                <p><p>SME/D is a Delphi-based think tank system and analytical engine designed to allow highly functional subject matter experts to explore and debate diverse angles of many issues. Not yet available for prototype showcasing.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2021-01-13</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/scallywag/">SILO GROUP LLC: Desktop: Scallywag</a></h5>
+                <p><p>Scallywag is a linux desktop client for The Pirate Bay reverse proxies. It automatically retrieves a list of known reverse proxies for the famous PirateBay website and allows the user to search for, and select magnet links, and begins the download using the system&#8217;s XDG-configured default magnet link downloader. Written in Python and uses the GTK UI.</p>
+
+
+
+<p>Source code is public, GPL licensed, and hosted <a href="https://github.com/SILO-GROUP/Scallywag" rel="noreferrer noopener" target="_blank">here</a>.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2021-01-13</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/surro-linux/">SILO GROUP LLC: SURRO Linux</a></h5>
+                <p><p>SURRO Linux is a community-driven effort to re-establish open standards, provide a provably clean OS build, and targets both the container markets as well as research environments.</p>
+
+
+
+<p>SURRO is generated by <a href="https://www.silogroup.org/index.php/2018/11/12/foster/">Foster</a> and is owned by SILO GROUP.</p>
+
+
+
+<p>The official site for SURRO Linux is at <a href="https://linux.silogroup.org">https://linux.silogroup.org</a></p>
+
+
+
+<p>This project is actively seeking contributors.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2018-11-12</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/foster/">SILO GROUP LLC: Foster</a></h5>
+                <p><p>Foster is a &#8220;distro in a box&#8221; in the making.</p>
+
+
+
+<h2>9000 Foot View: How Foster Works&nbsp;</h2>
+
+
+
+<p>Makefile-driven, Foster spawns a docker instance, downloads and compiles our tool, <a href="https://codeberg.org/SILO-GROUP/Rex" rel="noreferrer noopener" target="_blank">Rex</a>, onto it, and then uses Rex to compile a chroot using a cross-compiler.  From within that chroot, Rex then compiles all items in the chroot with everything you need to boot a system.</p>
+
+
+
+<p>As Rex is json-driven, this allows &#8220;checkbox&#8221; style user interfaces to the build steps, allowing almost limitless customization of the Linux distribution that is created by Foster.</p>
+
+
+
+<p>Foster is largely curses dialog-driven and is eager to onboard contributors.</p>
+
+
+
+<p>Foster is the component that will create SURRO Linux.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2018-11-12</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/idm-a/">SILO GROUP LLC: IDM/A</a></h5>
+                <p><p>IDM/A is an identity management, session management, and rights management system in development by SILO GROUP.</p>
+
+
+
+<p>This system is currently closed source and not available to the public prior to stable release.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2018-08-18</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/machapi/">SILO GROUP LLC: Library: Machapi</a></h5>
+                <p><p>Machapi is a somewhat comical API&nbsp; engine to interface with various social networking sites, written in Python.</p>
+
+
+
+<p>You can read&nbsp;the documentation <a href="https://github.com/cmpunches/Machapi/blob/master/README.md">here</a>.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2018-01-30</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/antikythera/">SILO GROUP LLC: Theme: Antikythera</a></h5>
+                <p><p>Antikythera is a WordPress theme designed with simplicity and stability in mind.&nbsp; It is based heavily on both <a href="https://artifact.me/">Artifact</a>&nbsp;for <a href="https://hexo.io/">Hexo</a> as well as <a href="http://www.andersnoren.se/teman/hitchcock-wordpress-theme/">Hitchcock</a> for WordPress.</p>
+
+
+
+<p>You can download it from its dedicated github repository <a href="https://github.com/cmpunches/Antikythera">here</a>.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2018-01-30</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/logthulu/">SILO GROUP LLC: Logthulu</a></h5>
+                <p><p>Logthulu is a large-scale log aggregation system.</p>
+
+
+
+<p>The project site is at <a href="https://logthulu.silogroup.org" rel="noreferrer noopener" target="_blank">https://logthulu.silogroup.org</a></p>
+
+
+
+<p></p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2017-12-25</div></td>
+            </tr>
+          
+         </tbody>
+       </table>
+     </div>
+   </div>
+ </div>
+</body>
+</html>
