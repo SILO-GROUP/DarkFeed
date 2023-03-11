@@ -125,7 +125,7 @@
         <h3 class="left-header">Feeds</h3>
         <ul class="list-unstyled">
             {% for feed in site_feeds %}
-            <li><a href="{{ feed.feed_url }}">{{ feed.title }}</a></li>
+            <li><a target="_blank" href="{{ feed.site_url }}">{{ feed.title }}</a></li>
             {% endfor %}
         </ul>
 
