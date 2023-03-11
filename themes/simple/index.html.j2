@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    .date-column {
+      white-space: nowrap;
+      padding: 50px;
+      width: fit-content;
+      width: 10%;
+      border-spacing: 10px;
+    }
+    .col-sm-3 {
+      border: 1px solid black;
+      width: 25%;
+      //white-space: nowrap;
+      border-radius: 50px 0px 0px 50px;
+      padding-top: 25px;
+    }
+    .list-unstyled {
+      padding-left: 20px;
+    }
+    .header-row {
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-bottom: 2px;
+    }
+    .entry-column {
+      border: 1px solid black;
+      padding: 10px;
+      max-width: 80ch;
+      padding-right: 20px;
+      border-spacing: 2px;
+      border-top: 1px solid black;
+    }
+
+    .wp-block-verse {
+      max-width: 80ch;
+    }
+    [class^="wp-block-cover"], [class^="wp-image-"], .wp-block-cover, .wp-block-cover__image-background {
+        height: auto !important;
+        width: 75% !important;
+        display: inline !important;
+        align-content: center;
+        text-align: center;
+    }
+    .has-text-align-center {
+        align-content: center;
+    }
+
+    .col-sm-9 {
+        border: 1px solid black;
+        border-right: none;
+    }
+    .table {
+        width: auto;
+    }
+
+    .table td, .table th {
+        border-top: 1px solid black;
+    }
+
+    .row {
+        z-index: 2;
+    }
+
+    .date-column {
+        z-index: 1;
+    }
+
+    .aligncenter { align-content: center; }
+    .col-sm-6 {
+        //border: 1px solid black;
+    }
+
+    .date-container {
+      white-space: nowrap;
+      border: 1px solid black;
+      width: fit-content;
+      padding: 5px;
+      border-spacing: 10px;
+    }
+    .left-header, h3 {
+      align-content: center;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .table td, .table th {
+        border-top: none;
+    }
+  </style>
+  <title>{{ site_title }}</title>
+</head>
+<body>
+  <div class="container-fluid mt-5 mb-5">
+
+  </div>
+  <div class="container mt-5 mb-5">
+        <div class="row header-row">
+      <div class="col-sm-6 text-center">
+        <h3>{{ config.site_name }}</h3>
+      </div>
+      <div class="col-sm-6 text-center">
+	      <h6>{{ config.subtitle }}</h6>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 aligncenter">
+        <h3 class="left-header">Links</h3>
+        <ul class="list-unstyled">
+          <li><a href="https://github.com/SILO-GROUP/rex">Rex</a></li>
+          <li><a href="https://source.silogroup.org/SILO-GROUP/pyrois.git">Pyrois</a></li>
+        </ul>
+        <h3 class="left-header">Feeds</h3>
+        <ul class="list-unstyled">
+            {% for feed in site_feeds %}
+            <li><a href="{{ feed.feed_url }}">{{ feed.title }}</a></li>
+            {% endfor %}
+        </ul>
+
+      </div>
+      <div class="col-sm-9">
+        <h3>Status Updates</h3>
+        <table class="table table-hover" style="border-top: 1px solid black;">
+          <tbody>
+          {% for entry in entries %}
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="{{ entry.url }}">{{ entry.parent_blog }}: {{ entry.title }}</a></h5>
+                <p>{{ entry.content }}</p>
+              </td>
+                <td class="date-column"><div class="date-container">{{ entry.date }}</div></td>
+            </tr>
+          {% endfor %}
+         </tbody>
+       </table>
+     </div>
+   </div>
+ </div>
+</body>
+</html>
