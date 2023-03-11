@@ -61,7 +61,10 @@ class WPSiteFeed:
         self.config = config
         feed_result = feedparser.parse( url )
         self.title = blog_title
-        self.subtitle = feed_result['feed']['subtitle']
+        try:
+            self.subtitle = feed_result['feed']['subtitle']
+        except KeyError:
+            self.subtitle = None
         self.site_url = feed_result['feed']['link']
         self.feed_url = feed_result['feed']['links'][0]['href']
         self.listen_tags = listen_tags
