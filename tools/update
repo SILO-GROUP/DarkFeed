@@ -4,6 +4,6 @@ cp config.ini ../
 rm -Rf /var/www/darkhorselinux.org/www/*
 wget https://github.com/SILO-GROUP/DarkFeed/archive/refs/heads/master.zip
 unzip master.zip
-mv DarkFeed/* .
+mv DarkFeed-master/* .
 mv ../config.ini .
 tools/generate
