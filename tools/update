@@ -1,0 +1,9 @@
+#!/bin/bash
+cd /var/www/darkhorselinux.org/www
+cp config.ini ../
+rm -Rf /var/www/darkhorselinux.org/www/*
+wget https://github.com/SILO-GROUP/DarkFeed/archive/refs/heads/master.zip
+unzip master.zip
+mv DarkFeed/* .
+mv ../config.ini .
+tools/generate

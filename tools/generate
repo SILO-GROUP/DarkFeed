@@ -1,0 +1,5 @@
+#!/bin/bash
+# point cronjob here
+cd /var/www/darkhorselinux.org/www
+python3 grab_feeds.py
+
