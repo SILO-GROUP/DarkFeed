@@ -13,11 +13,23 @@
     }
     .col-sm-3 {
       border: 1px solid black;
-      width: 25%;
-      //white-space: nowrap;
+      width: 15%;
+      white-space: nowrap;
       border-radius: 50px 0px 0px 50px;
       padding-top: 25px;
+      max-width: 180px;
+      min-width: 180px;
     }
+
+    @media only screen and (max-width: 768px) {
+        .col-sm-3 {
+            border-radius: 0px 0px 0px 0px;
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+        }
+    }
+
     .list-unstyled {
       padding-left: 20px;
     }
@@ -138,6 +150,30 @@
         <h3>Status Updates</h3>
         <table class="table table-hover" style="border-top: 1px solid black;">
           <tbody>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/12/progress-report-2/">DHLP: Project Direction Changes</a></h5>
+                <p><p>After some review of the dual licensing of LFS, it&#8217;s occured to me I need more segmentation in my planning for how to get to a new distro that I can offer commercial support for and distribute for commercial use.</p>
+<p>That&#8217;s not the core reason for doing this, but, I&#8217;d like to be compensated eventually for all the hard work, and perhaps hire people and build a company around it.</p>
+<p>I think in order to get there, I&#8217;ll need to make some pivots on approach on this.</p>
+<p>To get around the non-commercial shit in LFS&#8217; licensing, I&#8217;ll probably, once I get to a releasable state, release this build as a project called &#8220;ALFS- NG&#8221; that inherits the crap they snuck in there and have DHLP be a non-derivative rewrite.</p>
+<p>I&#8217;m still thinking about it, but, if that&#8217;s the direction, once ALFS-NG is good to a certain point, I&#8217;ll be able to apply what I&#8217;ve learned to Dark Horse Linux.  I feel as I&#8217;m going through this process that LFS has many, many unnecessary steps to do something like this.</p>
+<p>I may even do a second build with one of the RPM variants of LFS/BLFS to get an idea of what I&#8217;m in for in terms of introducing binary package management cleanly.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-03-12</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/11/progress-report/">DHLP: Progress Report</a></h5>
+                <p><p>I&#8217;m at about Chapter 8, section 26 of the LFS build.</p>
+<p>At this point there&#8217;s a sysroot, you can enter the chroot with `make enter_chroot`, and browse around after getting through a `make all`.</p>
+<p>You&#8217;ll probably see in the git commit logs for Pyrois that I&#8217;m adding units to &#8220;master.plan&#8221; and testing there, before moving them to &#8220;stage4.plan&#8221; after they&#8217;re worked out.  </p>
+<p>That&#8217;s by design.  I use &#8220;make backup&#8221; and &#8220;make restore&#8221; all through the process as this allows me to work out kinks in the scripts before vetting them and moving them over to their &#8220;forever homes&#8221;.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-03-11</div></td>
+            </tr>
           
             <tr>
               <td class="entry-column">
