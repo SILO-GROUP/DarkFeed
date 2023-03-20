@@ -17,11 +17,11 @@
       white-space: nowrap;
       border-radius: 50px 0px 0px 50px;
       padding-top: 25px;
-      max-width: 180px;
-      min-width: 180px;
+      max-width: 200px;
+      min-width: 200px;
     }
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1000px) {
         .col-sm-3 {
             border-radius: 0px 0px 0px 0px;
             width: 100%;
@@ -66,6 +66,7 @@
     .col-sm-9 {
         border: 1px solid black;
         border-right: none;
+        padding-top: 5px;
     }
     .table {
         width: auto;
@@ -143,7 +144,7 @@
             
             <li><a target="_blank" href="https://public.darkhorselinux.org">DHLP</a></li>
             
-            <li><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commits/master">Pyrois Commit Log</a></li>
+            <li><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commits/master">Pyrois Commits</a></li>
             
         </ul>
 
@@ -152,6 +153,136 @@
         <h3>Status Updates</h3>
         <table class="table table-hover" style="border-top: 1px solid black;">
           <tbody>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/0b5d868da17b17dd60be19910a50b122642a68db">Pyrois Commits: 0b5d868da17b17dd60be19910a50b122642a68db</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">through kernel compilation -- possibly ready to image with initrd for iso prep</pre></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-03-20</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/19/progress-update/">DHLP: Progress Update</a></h5>
+                <p><p>I am excited to announce a milestone in the Dark Horse Linux project.</p>
+<p>The code in the repo has finished creating the initial target system, including the kernel compilation using the default Fedora Linux kernel config.  </p>
+<p>There is an exception, the fstab file, which has a chicken-egg problem to resolve but I consider this to be minor and can be resolved during the ISO file generation, which is the next piece.</p>
+<p>I should be able to use grub-mkrescue or genisoimage/xorriso or some combination of these with a thought out init ram disk to complete that part.  </p>
+<p>Once complete, I&#8217;ll start polishing the codebase for Pyrois up, branding a fork of it for ALFS-NG, and tag and release that for now.</p>
+<p>For the long term, the `ALFS-NG` spinoff is just a side project that got spawned by this effort.  I haven&#8217;t decided if this is something I want to give to the LFS folks to revive/modernize their seemingly abandoned ALFS project, or if it should remain wholly separate due to the Darcy infection.  I have a desire to &#8220;play well with others&#8221;, but, that can&#8217;t occur in a vacuum, and I need to be certain it stays shielded from Canonical based on previous behaviours.  </p>
+<p>On the other hand, it&#8217;s likely to go very stale if I keep it under my thumb as it&#8217;s not a priority for me to keep it up to date more than to facilitate it as an instructional device.  I suppose that begs the consideration that they&#8217;ve already abandoned that project once, so, it may not be a priority for them either.  They likely wouldn&#8217;t want it.</p>
+<p>I will then want to decide whether I want to introduce librpm for the next phase, or whether I want to create an installer disk, presumably with something like `anaconda`, though, I am hesitant about introducing an upstream dependency on the RH ecosystem based on the goals of the DHLP project.  </p>
+<p>I will want this system to be very familiar to RH-based distro users for many reasons, but, all cooperation with external projects must be a voluntary effort that can be easily severed for this mission to work.  This is, after all, a contagion firewall.  I&#8217;m already going the librpm route, which is maintained by RH, but, many distros use librpm.  Not many use anaconda, so, their maneuvreability is different with that piece.  Not that I think anything would happen there, but, it&#8217;s a risk surface that needs gaurded.</p>
+<p>I suppose I&#8217;ve answered my own question thinking it out &#8212; anaconda is a package-based distro installer, so, if I&#8217;m going the librpm route I need to do that first before anaconda.</p>
+<p>I suppose one approach might be to build my own basic installer that is a modification of the sysroot I&#8217;ve created that just copies the unmodified sysroot to a target system after the user selects and mounts all their target mounts.  That&#8217;s a thought.  Copy it off, when it&#8217;s done in the build, then engage in a 6th stage that turns one of the copies into an installer that puts the intact copy onto the target system.</p>
+<p>I may do that first to move forward on a known working path, and then do my reductionist cross-reference with other similar projects to synthesize a new process.  It&#8217;s a bit of a longer path but it&#8217;s one that can provide consistent progress.</p>
+<p>Of course, things are always subject to pivot based on what I learn as I go through this.  I have no experience with this aspect of things, so, I&#8217;m certainly open to <a href="mailto:darkhorselinux@silogroup.org" rel="noopener" target="_blank" title="My Email">ideas</a>.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-03-19</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/1f5d82d752cb8fa9f49812525a78f9fd7c8985b9">Pyrois Commits: 1f5d82d752cb8fa9f49812525a78f9fd7c8985b9</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">ready to begin chapter 9</pre></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-03-17</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/16/entering-chapter-9/">DHLP: Entering Chapter 9</a></h5>
+                <p><p>Automation of the 11.3-systemd rc1 has been successful on a Fedora build system up to Chapter 9.</p>
+
+
+
+<p>At this point what&#8217;s left is:</p>
+
+
+
+<ul>
+<li>populate some of the system config files (/etc/*)</li>
+
+
+
+<li>set up udev</li>
+
+
+
+<li>set up the timezone</li>
+
+
+
+<li>some minor systemd disablement</li>
+
+
+
+<li>set the system locale</li>
+
+
+
+<li>compile the kernel</li>
+
+
+
+<li>set up kernel module load orders</li>
+
+
+
+<li>configure grub to be on an iso and install the bootloader to that iso (this will require deviation from the LFS book)</li>
+</ul>
+
+
+
+<p>The fun part is that I&#8217;m not going to be using stock values for these.  It&#8217;ll give you curses dialogs asking for input on alot of the stuff you&#8217;d normally configure on your OS, though, I may be reserving alot of that implementation for an &#8220;installer ISO&#8221; so that the values aren&#8217;t baked into the ISO in future versions. </p>
+
+
+
+<p>After that, it&#8217;s an RPM variant.</p>
+
+
+
+<p>After that it&#8217;s a reductionist rewrite cross-referenced with other unrelated projects to create a more minimal system without sacrificing on the core components.</p>
+
+
+
+<p>All in all, looking back through the work, this process would have only taken a couple days, maybe a few hours for someone who&#8217;s done it before, but, automating it &#8212; I think that&#8217;s where this project&#8217;s value is.</p>
+
+
+
+<p>I would like to see someone fork it, containerize the process, and then use pull requests with automated unit tests to accelerate OS development.</p>
+
+
+
+<p>In the meantime once this ALFS-NG baby project is wrapped up, I&#8217;ll rebrand it as that, and then use the Dark Horse Linux label to build out the real deal.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-03-16</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/89a7e712aef79293646717a48506a808d7f95c55">Pyrois Commits: 89a7e712aef79293646717a48506a808d7f95c55</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">up through 8.77</pre></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-03-16</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/344f4664458cb4c599f000cfaeb8536941ceb4a8">Pyrois Commits: 344f4664458cb4c599f000cfaeb8536941ceb4a8</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">now has systemd -- up through 8.72</pre></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-03-14</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/0117cd3cb26bfe02077980bc626f5db89bf32fe1">Pyrois Commits: 0117cd3cb26bfe02077980bc626f5db89bf32fe1</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">now has grub - up through 8.60</pre></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-03-13</div></td>
+            </tr>
           
             <tr>
               <td class="entry-column">
@@ -168,7 +299,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/eb6f5acfd556ebe326f1507685acfdb7ae5b14e4">Pyrois Commit Log: eb6f5acfd556ebe326f1507685acfdb7ae5b14e4</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/eb6f5acfd556ebe326f1507685acfdb7ae5b14e4">Pyrois Commits: eb6f5acfd556ebe326f1507685acfdb7ae5b14e4</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">up through 8.40</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-03-12</div></td>
@@ -176,7 +307,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/d0c228be5f73eec5269130d5118f8d81df104347">Pyrois Commit Log: d0c228be5f73eec5269130d5118f8d81df104347</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/d0c228be5f73eec5269130d5118f8d81df104347">Pyrois Commits: d0c228be5f73eec5269130d5118f8d81df104347</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">up to 8.31 in testing in master plan</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-03-11</div></td>
@@ -184,7 +315,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b9cc1a06bb821439b6f02bb8c736e7b6248c9834">Pyrois Commit Log: b9cc1a06bb821439b6f02bb8c736e7b6248c9834</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b9cc1a06bb821439b6f02bb8c736e7b6248c9834">Pyrois Commits: b9cc1a06bb821439b6f02bb8c736e7b6248c9834</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">up to 8.31 in testing in master plan</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-03-11</div></td>
@@ -403,7 +534,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/1a360bed1a9888071fa3a0cf21a3d3265c5bf68a">Pyrois Commit Log: 1a360bed1a9888071fa3a0cf21a3d3265c5bf68a</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/1a360bed1a9888071fa3a0cf21a3d3265c5bf68a">Pyrois Commits: 1a360bed1a9888071fa3a0cf21a3d3265c5bf68a</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">gcc pass 3</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-03-10</div></td>
@@ -411,7 +542,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/88f65e83e50c0e270eb17db93797dc8beba183f7">Pyrois Commit Log: 88f65e83e50c0e270eb17db93797dc8beba183f7</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/88f65e83e50c0e270eb17db93797dc8beba183f7">Pyrois Commits: 88f65e83e50c0e270eb17db93797dc8beba183f7</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">8.25</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-03-08</div></td>
@@ -419,7 +550,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b9af982ce39808c9bd8f2263afa80157a6f5137a">Pyrois Commit Log: b9af982ce39808c9bd8f2263afa80157a6f5137a</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b9af982ce39808c9bd8f2263afa80157a6f5137a">Pyrois Commits: b9af982ce39808c9bd8f2263afa80157a6f5137a</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">through 8.24</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-03-06</div></td>
@@ -427,7 +558,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/360f2afae74ac3d3c797f6b05918dd8908722ff3">Pyrois Commit Log: 360f2afae74ac3d3c797f6b05918dd8908722ff3</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/360f2afae74ac3d3c797f6b05918dd8908722ff3">Pyrois Commits: 360f2afae74ac3d3c797f6b05918dd8908722ff3</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">up through binutils - pass 3</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-03-05</div></td>
@@ -435,7 +566,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b8bfec9722bb71b3d3b8db8f47af848aecaed286">Pyrois Commit Log: b8bfec9722bb71b3d3b8db8f47af848aecaed286</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b8bfec9722bb71b3d3b8db8f47af848aecaed286">Pyrois Commits: b8bfec9722bb71b3d3b8db8f47af848aecaed286</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">checkpoint - passing SURRO current state</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-03-05</div></td>
@@ -443,7 +574,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/4fbe0c8d81500e5d8dbffc6504b03af8764f67fd">Pyrois Commit Log: 4fbe0c8d81500e5d8dbffc6504b03af8764f67fd</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/4fbe0c8d81500e5d8dbffc6504b03af8764f67fd">Pyrois Commits: 4fbe0c8d81500e5d8dbffc6504b03af8764f67fd</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">some cleanup of messy backup/restore facilities</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-02-28</div></td>
@@ -451,7 +582,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/c4192e2328eec033aa9967feb98fec722de45d2e">Pyrois Commit Log: c4192e2328eec033aa9967feb98fec722de45d2e</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/c4192e2328eec033aa9967feb98fec722de45d2e">Pyrois Commits: c4192e2328eec033aa9967feb98fec722de45d2e</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">snapshot while working out backup/restore issues</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-02-27</div></td>
@@ -459,7 +590,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b513be8d4d0d7a9f7beb8b0d03abc50c4be642d5">Pyrois Commit Log: b513be8d4d0d7a9f7beb8b0d03abc50c4be642d5</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b513be8d4d0d7a9f7beb8b0d03abc50c4be642d5">Pyrois Commits: b513be8d4d0d7a9f7beb8b0d03abc50c4be642d5</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">incremental improvement in backup/restore facility</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-02-26</div></td>
@@ -467,7 +598,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/05c65e8d1d458af0d2875c47c607c383ea71ca84">Pyrois Commit Log: 05c65e8d1d458af0d2875c47c607c383ea71ca84</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/05c65e8d1d458af0d2875c47c607c383ea71ca84">Pyrois Commits: 05c65e8d1d458af0d2875c47c607c383ea71ca84</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">various typo fixes and progress up to 8.8</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-02-26</div></td>
@@ -495,7 +626,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/7868997024999e80c12fbb76ca2449bd97a339b4">Pyrois Commit Log: 7868997024999e80c12fbb76ca2449bd97a339b4</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/7868997024999e80c12fbb76ca2449bd97a339b4">Pyrois Commits: 7868997024999e80c12fbb76ca2449bd97a339b4</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">up thorugh 17.13.2, backup facility needs additional testing</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-02-25</div></td>
@@ -557,7 +688,7 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/4b302e0c896a217347b0bb31ea9e103b74bb574f">Pyrois Commit Log: 4b302e0c896a217347b0bb31ea9e103b74bb574f</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/4b302e0c896a217347b0bb31ea9e103b74bb574f">Pyrois Commits: 4b302e0c896a217347b0bb31ea9e103b74bb574f</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">make all target created and made safe - requires sudo or root</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-02-21</div></td>
@@ -565,50 +696,10 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/37550c04c71b8290ebb311ce8d2ee0938e73a0c7">Pyrois Commit Log: 37550c04c71b8290ebb311ce8d2ee0938e73a0c7</a></h5>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/37550c04c71b8290ebb311ce8d2ee0938e73a0c7">Pyrois Commits: 37550c04c71b8290ebb311ce8d2ee0938e73a0c7</a></h5>
                 <p><pre style="white-space: pre-wrap; width: 81ex;">configs addition for chroot population</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-02-21</div></td>
-            </tr>
-          
-            <tr>
-              <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/4668e617e6bec91074a4c29d5bace99d96da0e0e">Pyrois Commit Log: 4668e617e6bec91074a4c29d5bace99d96da0e0e</a></h5>
-                <p><pre style="white-space: pre-wrap; width: 81ex;">updated notes</pre></p>
-              </td>
-                <td class="date-column"><div class="date-container">2023-02-21</div></td>
-            </tr>
-          
-            <tr>
-              <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/a33a01cff54bd226460f0371b9dbeaf9af303a99">Pyrois Commit Log: a33a01cff54bd226460f0371b9dbeaf9af303a99</a></h5>
-                <p><pre style="white-space: pre-wrap; width: 81ex;">chroot management tasks added to makefile</pre></p>
-              </td>
-                <td class="date-column"><div class="date-container">2023-02-20</div></td>
-            </tr>
-          
-            <tr>
-              <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/9a95b0e6992878aa401378813200c9b55e55465a">Pyrois Commit Log: 9a95b0e6992878aa401378813200c9b55e55465a</a></h5>
-                <p><pre style="white-space: pre-wrap; width: 81ex;">functional chroot</pre></p>
-              </td>
-                <td class="date-column"><div class="date-container">2023-02-20</div></td>
-            </tr>
-          
-            <tr>
-              <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/cec4493a82619db50f1e77497ce6a25070b7b11d">Pyrois Commit Log: cec4493a82619db50f1e77497ce6a25070b7b11d</a></h5>
-                <p><pre style="white-space: pre-wrap; width: 81ex;">repair of json object in stage2.units</pre></p>
-              </td>
-                <td class="date-column"><div class="date-container">2023-02-20</div></td>
-            </tr>
-          
-            <tr>
-              <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b45e23b34aa45336e222aa609f01b338f0438ff2">Pyrois Commit Log: b45e23b34aa45336e222aa609f01b338f0438ff2</a></h5>
-                <p><pre style="white-space: pre-wrap; width: 81ex;">chroot cross-compilation / stage 2 complete / through Ch 7.3</pre></p>
-              </td>
-                <td class="date-column"><div class="date-container">2023-02-20</div></td>
             </tr>
           
             <tr>
