@@ -2,6 +2,8 @@
 
 DarkFeed is a minimalist, fully themeable PlanetPlanet clone written in Python3.  It's an RSS aggregator that takes a list of feed URLs and generates an aggregated content view in static html.
 
+DarkFeed uses persistent cache for the feeds it aggregates, so, if content is pulled after you've aggregated it, it will continue to be served in perpetuity on your site.
+
 DarkFeed wasn't designed to be written well, it was designed to be implemented quickly, so, if you have improvements, pull requests are welcome.
 
 # Instructions
