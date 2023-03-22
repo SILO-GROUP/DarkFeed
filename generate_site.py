@@ -20,6 +20,8 @@ def main():
     # generate the site from the cached feeds
     site_generator.generate_site( feeds )
 
+    print("Completed regenerating site.")
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main()

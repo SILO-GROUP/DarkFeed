@@ -107,8 +107,6 @@ class CacheIO:
         for uid in site_uids:
             site = self.read_site( uid )
             sites_obj.append(site)
-
-        print("test")
         # all sites and their entries:
         return sites_obj
 
