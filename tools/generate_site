@@ -1,5 +1,5 @@
 #!/bin/bash
 # point cronjob here
-cd /var/www/darkhorselinux.org/www
+cd $1
 python3 generate_site.py
 
