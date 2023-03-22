@@ -104,7 +104,7 @@ class CacheIO:
         site_uids = self._dir_contents( self.cache_root_dir )
         sites_obj = list()
 
-        for uid in site_uids:
+        for uid in ( x.uid for x in self.config.sites):
             site = self.read_site( uid )
             sites_obj.append(site)
         # all sites and their entries:
