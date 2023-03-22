@@ -8,4 +8,5 @@ mv -v ./DarkFeed-master/* .
 mv -v ../config.ini .
 rm -Rfv ./DarkFeed-master
 rm -fv ./master.zip
-tools/generate
+tools/update_caches
+tools/generate_site

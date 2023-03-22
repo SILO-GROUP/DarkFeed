@@ -2,10 +2,6 @@
 from src.Config import Config
 from src.SiteGenerator import SiteGenerator
 
-
-
-
-
 def main():
     config = Config( 'config.ini' )
     site_controller = SiteGenerator( config )

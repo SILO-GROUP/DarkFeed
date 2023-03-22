@@ -1,11 +1,10 @@
 from datetime import datetime
 from time import mktime
 import re
+import hashlib
 
 class Article:
-    def __init__(self, parent_title, entry, config ):
-        self.config = config
-        self.parent_blog = parent_title
+    def __init__(self, entry, parent_uid, config ):
         self.url = entry['link']
 
         if self.url.startswith("https://github.com"):
@@ -35,3 +34,41 @@ class Article:
                 self.tags.append(raw_tag['term'])
         else:
             self.tags = None
+
+        self.uid = self.content_hash()
+        self.parent_uid = parent_uid
+        self.parent = config.get_site_by_uid( self.parent_uid )
+
+    def content_hash(self):
+        sha1 = hashlib.sha1()
+        sha1.update(self.url.encode('utf-8'))
+        return sha1.hexdigest()
+
+
+    def __json_encode__(self):
+        return {
+            'url': self.url,
+            'is_commit_feed': self.is_commit_feed,
+            'title': self.title,
+            'author': self.author,
+            'summary': self.summary,
+            'content': self.content,
+            'date': self.date,
+            'tags': self.tags,
+            'uid': self.uid,
+            'parent_uid': self.parent_uid
+        }
+
+    @classmethod
+    def __json_decode__(cls, data, config ):
+        entry = {
+            'link': data['url'],
+            'title': data['title'],
+            'author': data['author'],
+            'summary': data['summary'],
+            'content': [{'value': data['content']}],
+            'published_parsed': datetime.strptime(data['date'], '%Y-%m-%d').timetuple(),
+            'tags': [{'term': tag} for tag in data['tags']] if data['tags'] else [],
+            'parent_uid': data['parent_uid']
+        }
+        return cls( entry, data['parent_uid'], config )

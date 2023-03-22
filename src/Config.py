@@ -12,12 +12,19 @@ class Config:
                 self.site_name = config.get( 'main', 'site_name' )
                 self.theme = config.get( 'main', 'theme' )
                 self.subtitle = config.get( 'main', 'subtitle' )
+                self.cache_dir = config.get( 'main', 'cache_dir' )
             else:
                 tags_processed = config.get( section_name, 'tags' )
                 self.sites.append(
                     FeedSource(
-                        url=config.get(section_name, 'url'),
+                        feed_url=config.get(section_name, 'url'),
                         title=section_name,
-                        tags=re.split( r',\s*|\s+', tags_processed )
+                        tags=re.split( r',\s*|\s+', tags_processed ),
+                        tag_filter=config.getboolean( section_name, 'tag_filter' )
                     )
                 )
+
+    def get_site_by_uid(self, uid ):
+        for site in self.sites:
+            if site.uid == uid:
+                return site

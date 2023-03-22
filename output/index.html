@@ -138,11 +138,11 @@
         <h3 class="left-header">Feeds</h3>
         <ul class="list-unstyled">
             
+            <li><a target="_blank" href="https://public.darkhorselinux.org">DHLP</a></li>
+            
             <li><a target="_blank" href="https://phanes.silogroup.org">Phanes' Canon</a></li>
             
             <li><a target="_blank" href="https://www.silogroup.org">SILO GROUP LLC</a></li>
-            
-            <li><a target="_blank" href="https://public.darkhorselinux.org">DHLP</a></li>
             
             <li><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commits/master">Pyrois Commits</a></li>
             
@@ -153,6 +153,14 @@
         <h3>Status Updates</h3>
         <table class="table table-hover" style="border-top: 1px solid black;">
           <tbody>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/7fdac0e72e51363705ab1a9419c4d72b5e35f011">Pyrois Commits: 7fdac0e72e51363705ab1a9419c4d72b5e35f011</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">demarcation point from LFS</pre></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-03-22</div></td>
+            </tr>
           
             <tr>
               <td class="entry-column">
@@ -307,8 +315,11 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/d0c228be5f73eec5269130d5118f8d81df104347">Pyrois Commits: d0c228be5f73eec5269130d5118f8d81df104347</a></h5>
-                <p><pre style="white-space: pre-wrap; width: 81ex;">up to 8.31 in testing in master plan</pre></p>
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/11/progress-report/">DHLP: Progress Report</a></h5>
+                <p><p>I&#8217;m at about Chapter 8, section 26 of the LFS build.</p>
+<p>At this point there&#8217;s a sysroot, you can enter the chroot with `make enter_chroot`, and browse around after getting through a `make all`.</p>
+<p>You&#8217;ll probably see in the git commit logs for Pyrois that I&#8217;m adding units to &#8220;master.plan&#8221; and testing there, before moving them to &#8220;stage4.plan&#8221; after they&#8217;re worked out.  </p>
+<p>That&#8217;s by design.  I use &#8220;make backup&#8221; and &#8220;make restore&#8221; all through the process as this allows me to work out kinks in the scripts before vetting them and moving them over to their &#8220;forever homes&#8221;.</p></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-03-11</div></td>
             </tr>
@@ -323,11 +334,8 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/11/progress-report/">DHLP: Progress Report</a></h5>
-                <p><p>I&#8217;m at about Chapter 8, section 26 of the LFS build.</p>
-<p>At this point there&#8217;s a sysroot, you can enter the chroot with `make enter_chroot`, and browse around after getting through a `make all`.</p>
-<p>You&#8217;ll probably see in the git commit logs for Pyrois that I&#8217;m adding units to &#8220;master.plan&#8221; and testing there, before moving them to &#8220;stage4.plan&#8221; after they&#8217;re worked out.  </p>
-<p>That&#8217;s by design.  I use &#8220;make backup&#8221; and &#8220;make restore&#8221; all through the process as this allows me to work out kinks in the scripts before vetting them and moving them over to their &#8220;forever homes&#8221;.</p></p>
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/d0c228be5f73eec5269130d5118f8d81df104347">Pyrois Commits: d0c228be5f73eec5269130d5118f8d81df104347</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">up to 8.31 in testing in master plan</pre></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-03-11</div></td>
             </tr>
@@ -696,22 +704,6 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/37550c04c71b8290ebb311ce8d2ee0938e73a0c7">Pyrois Commits: 37550c04c71b8290ebb311ce8d2ee0938e73a0c7</a></h5>
-                <p><pre style="white-space: pre-wrap; width: 81ex;">configs addition for chroot population</pre></p>
-              </td>
-                <td class="date-column"><div class="date-container">2023-02-21</div></td>
-            </tr>
-          
-            <tr>
-              <td class="entry-column">
-                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/02/18/advent-of-pyrois/">DHLP: Advent of Pyrois</a></h5>
-                <p><p>Pyrois is the automation project that is intended to generate the Dark Horse Linux boot iso.</p></p>
-              </td>
-                <td class="date-column"><div class="date-container">2023-02-18</div></td>
-            </tr>
-          
-            <tr>
-              <td class="entry-column">
                 <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/02/18/rex-2-1a/">DHLP: Rex 2.1a</a></h5>
                 <p><p>The rewrite for Rex, the tool that drives the automation behind Dark Horse Linux is complete.</p></p>
               </td>
@@ -722,6 +714,14 @@
               <td class="entry-column">
                 <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/02/18/advent-of-dark-horse-linux/">DHLP: Advent of Dark Horse Linux</a></h5>
                 <p><p>Welcome to the beginning of Dark Horse Linux, a new Linux distribution.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2023-02-18</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/02/18/advent-of-pyrois/">DHLP: Advent of Pyrois</a></h5>
+                <p><p>Pyrois is the automation project that is intended to generate the Dark Horse Linux boot iso.</p></p>
               </td>
                 <td class="date-column"><div class="date-container">2023-02-18</div></td>
             </tr>
@@ -842,30 +842,6 @@
           
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="https://www.silogroup.org/surro-linux/">SILO GROUP LLC: Dark Horse Linux</a></h5>
-                <p><p>Dark Horse Linux is a new Linux distribution owned by SILO GROUP LLC.</p>
-
-
-
-<p>Cross-compiling a Linux sysroot, and building the system from upstream sources inside your environment with verified  checksums is about the only way to ensure that software hasn&#8217;t been tampered with.  </p>
-
-
-
-<p>That&#8217;s what Dark Horse Linux does to create its sysroot in a publicly verifiable way.  Borrowing largely from the <a href="https://www.linuxfromscratch.org/lfs/downloads/" rel="noreferrer noopener" target="_blank">LFS</a> process, Dark Horse Linux is a parent project meant to empower more creators to create their own linux distributions in the course of developing one.</p>
-
-
-
-<p>While Dark Horse Linux will eventually move to become a binary package distribution and sell commercial support, it is currently a community effort to re-establish open standards, provide a provably clean OS build, and targets both the container markets as well as research environments.</p>
-
-
-
-<p>In order to automate the build process, which is complex, SILO GROUP has developed a new utility called <a href="https://source.silogroup.org/SURRO-Linux/rex" rel="noreferrer noopener" target="_blank">Rex</a>.  You can read more about Rex on its info page.</p></p>
-              </td>
-                <td class="date-column"><div class="date-container">2018-11-12</div></td>
-            </tr>
-          
-            <tr>
-              <td class="entry-column">
                 <h5><a target="_blank" href="https://www.silogroup.org/foster/">SILO GROUP LLC: Pyrois</a></h5>
                 <p><p>Pyrois is a &#8220;distro in a box&#8221; in the making.</p>
 
@@ -888,6 +864,30 @@
 
 
 <p>Pyrois is the component that will create Dark Horse Linux.</p></p>
+              </td>
+                <td class="date-column"><div class="date-container">2018-11-12</div></td>
+            </tr>
+          
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/surro-linux/">SILO GROUP LLC: Dark Horse Linux</a></h5>
+                <p><p>Dark Horse Linux is a new Linux distribution owned by SILO GROUP LLC.</p>
+
+
+
+<p>Cross-compiling a Linux sysroot, and building the system from upstream sources inside your environment with verified  checksums is about the only way to ensure that software hasn&#8217;t been tampered with.  </p>
+
+
+
+<p>That&#8217;s what Dark Horse Linux does to create its sysroot in a publicly verifiable way.  Borrowing largely from the <a href="https://www.linuxfromscratch.org/lfs/downloads/" rel="noreferrer noopener" target="_blank">LFS</a> process, Dark Horse Linux is a parent project meant to empower more creators to create their own linux distributions in the course of developing one.</p>
+
+
+
+<p>While Dark Horse Linux will eventually move to become a binary package distribution and sell commercial support, it is currently a community effort to re-establish open standards, provide a provably clean OS build, and targets both the container markets as well as research environments.</p>
+
+
+
+<p>In order to automate the build process, which is complex, SILO GROUP has developed a new utility called <a href="https://source.silogroup.org/SURRO-Linux/rex" rel="noreferrer noopener" target="_blank">Rex</a>.  You can read more about Rex on its info page.</p></p>
               </td>
                 <td class="date-column"><div class="date-container">2018-11-12</div></td>
             </tr>

@@ -150,7 +150,7 @@
           {% for entry in entries %}
             <tr>
               <td class="entry-column">
-                <h5><a target="_blank" href="{{ entry.url }}">{{ entry.parent_blog }}: {{ entry.title }}</a></h5>
+                <h5><a target="_blank" href="{{ entry.url }}">{{ entry.parent.title }}: {{ entry.title }}</a></h5>
                 <p>{{ entry.content }}</p>
               </td>
                 <td class="date-column"><div class="date-container">{{ entry.date }}</div></td>
