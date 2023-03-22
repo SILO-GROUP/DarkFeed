@@ -5,9 +5,21 @@ DarkFeed is a minimalist, fully themeable PlanetPlanet clone written in Python3.
 DarkFeed wasn't designed to be written well, it was designed to be implemented quickly, so, if you have improvements, pull requests are welcome.
 
 # Instructions
-set up a cron job that kicks off a script that does the following:
 
-cd to the directory
-execute grab_feeds.py
+First, clone the repo to your desired location.
 
-Set the cron to execute at your desired update frequency
+## Set up config.ini
+1. Set up the site details for the website you're creating, such as site_name and theme, subtitle
+2. Set the cache directory to where you want the files to be generated.  htdocs is inadvisable for security reasons.
+3. Set the RSS feeds you want to monitor.
+4. Set the tags you want if you want to filter by tags.
+
+## use the tools directory
+In `tools/` you'll see two files:
+ - generate_site
+ - update_caches
+
+They do what they look like they do.
+
+
+Set a cron to execute at your desired update frequency
