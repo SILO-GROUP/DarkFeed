@@ -1,16 +1,2638 @@
 <html>
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-<link href="rsrc/index.css" rel="stylesheet">
-<div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
-<div id='title'>
-  <span>
-    PURE CSS
-  </span>
-  <br>
-  <span>
-    PARALLAX PIXEL STARS
-  </span>
-</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="rsrc/index.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+</head>
+<body>
+
+  <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
+
+  <div id='title'>
+    <span>
+      <h1>The Epoch of Bagira</h1>
+    </span>
+  </div>
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+        <table class="table table-hover">
+          <tbody>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/7fdac0e72e51363705ab1a9419c4d72b5e35f011">Pyrois Commits: 7fdac0e72e51363705ab1a9419c4d72b5e35f011</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">demarcation point from LFS</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-22</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/0b5d868da17b17dd60be19910a50b122642a68db">Pyrois Commits: 0b5d868da17b17dd60be19910a50b122642a68db</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">through kernel compilation -- possibly ready to image with initrd for iso prep</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-20</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/19/progress-update/">DHLP: Progress Update</a></h5>
+                <p><p>I am excited to announce a milestone in the Dark Horse Linux project.</p>
+<p>The code in the repo has finished creating the initial target system, including the kernel compilation using the default Fedora Linux kernel config.  </p>
+<p>There is an exception, the fstab file, which has a chicken-egg problem to resolve but I consider this to be minor and can be resolved during the ISO file generation, which is the next piece.</p>
+<p>I should be able to use grub-mkrescue or genisoimage/xorriso or some combination of these with a thought out init ram disk to complete that part.  </p>
+<p>Once complete, I&#8217;ll start polishing the codebase for Pyrois up, branding a fork of it for ALFS-NG, and tag and release that for now.</p>
+<p>For the long term, the `ALFS-NG` spinoff is just a side project that got spawned by this effort.  I haven&#8217;t decided if this is something I want to give to the LFS folks to revive/modernize their seemingly abandoned ALFS project, or if it should remain wholly separate due to the Darcy infection.  I have a desire to &#8220;play well with others&#8221;, but, that can&#8217;t occur in a vacuum, and I need to be certain it stays shielded from Canonical based on previous behaviours.  </p>
+<p>On the other hand, it&#8217;s likely to go very stale if I keep it under my thumb as it&#8217;s not a priority for me to keep it up to date more than to facilitate it as an instructional device.  I suppose that begs the consideration that they&#8217;ve already abandoned that project once, so, it may not be a priority for them either.  They likely wouldn&#8217;t want it.</p>
+<p>I will then want to decide whether I want to introduce librpm for the next phase, or whether I want to create an installer disk, presumably with something like `anaconda`, though, I am hesitant about introducing an upstream dependency on the RH ecosystem based on the goals of the DHLP project.  </p>
+<p>I will want this system to be very familiar to RH-based distro users for many reasons, but, all cooperation with external projects must be a voluntary effort that can be easily severed for this mission to work.  This is, after all, a contagion firewall.  I&#8217;m already going the librpm route, which is maintained by RH, but, many distros use librpm.  Not many use anaconda, so, their maneuvreability is different with that piece.  Not that I think anything would happen there, but, it&#8217;s a risk surface that needs gaurded.</p>
+<p>I suppose I&#8217;ve answered my own question thinking it out &#8212; anaconda is a package-based distro installer, so, if I&#8217;m going the librpm route I need to do that first before anaconda.</p>
+<p>I suppose one approach might be to build my own basic installer that is a modification of the sysroot I&#8217;ve created that just copies the unmodified sysroot to a target system after the user selects and mounts all their target mounts.  That&#8217;s a thought.  Copy it off, when it&#8217;s done in the build, then engage in a 6th stage that turns one of the copies into an installer that puts the intact copy onto the target system.</p>
+<p>I may do that first to move forward on a known working path, and then do my reductionist cross-reference with other similar projects to synthesize a new process.  It&#8217;s a bit of a longer path but it&#8217;s one that can provide consistent progress.</p>
+<p>Of course, things are always subject to pivot based on what I learn as I go through this.  I have no experience with this aspect of things, so, I&#8217;m certainly open to <a href="mailto:darkhorselinux@silogroup.org" rel="noopener" target="_blank" title="My Email">ideas</a>.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-19</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/1f5d82d752cb8fa9f49812525a78f9fd7c8985b9">Pyrois Commits: 1f5d82d752cb8fa9f49812525a78f9fd7c8985b9</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">ready to begin chapter 9</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-17</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/16/entering-chapter-9/">DHLP: Entering Chapter 9</a></h5>
+                <p><p>Automation of the 11.3-systemd rc1 has been successful on a Fedora build system up to Chapter 9.</p>
+
+
+
+<p>At this point what&#8217;s left is:</p>
+
+
+
+<ul>
+<li>populate some of the system config files (/etc/*)</li>
+
+
+
+<li>set up udev</li>
+
+
+
+<li>set up the timezone</li>
+
+
+
+<li>some minor systemd disablement</li>
+
+
+
+<li>set the system locale</li>
+
+
+
+<li>compile the kernel</li>
+
+
+
+<li>set up kernel module load orders</li>
+
+
+
+<li>configure grub to be on an iso and install the bootloader to that iso (this will require deviation from the LFS book)</li>
+</ul>
+
+
+
+<p>The fun part is that I&#8217;m not going to be using stock values for these.  It&#8217;ll give you curses dialogs asking for input on alot of the stuff you&#8217;d normally configure on your OS, though, I may be reserving alot of that implementation for an &#8220;installer ISO&#8221; so that the values aren&#8217;t baked into the ISO in future versions. </p>
+
+
+
+<p>After that, it&#8217;s an RPM variant.</p>
+
+
+
+<p>After that it&#8217;s a reductionist rewrite cross-referenced with other unrelated projects to create a more minimal system without sacrificing on the core components.</p>
+
+
+
+<p>All in all, looking back through the work, this process would have only taken a couple days, maybe a few hours for someone who&#8217;s done it before, but, automating it &#8212; I think that&#8217;s where this project&#8217;s value is.</p>
+
+
+
+<p>I would like to see someone fork it, containerize the process, and then use pull requests with automated unit tests to accelerate OS development.</p>
+
+
+
+<p>In the meantime once this ALFS-NG baby project is wrapped up, I&#8217;ll rebrand it as that, and then use the Dark Horse Linux label to build out the real deal.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-16</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/89a7e712aef79293646717a48506a808d7f95c55">Pyrois Commits: 89a7e712aef79293646717a48506a808d7f95c55</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">up through 8.77</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-16</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/344f4664458cb4c599f000cfaeb8536941ceb4a8">Pyrois Commits: 344f4664458cb4c599f000cfaeb8536941ceb4a8</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">now has systemd -- up through 8.72</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-14</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/0117cd3cb26bfe02077980bc626f5db89bf32fe1">Pyrois Commits: 0117cd3cb26bfe02077980bc626f5db89bf32fe1</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">now has grub - up through 8.60</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-13</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/12/progress-report-2/">DHLP: Project Direction Changes</a></h5>
+                <p><p>After some review of the dual licensing of LFS, it&#8217;s occured to me I need more segmentation in my planning for how to get to a new distro that I can offer commercial support for and distribute for commercial use.</p>
+<p>That&#8217;s not the core reason for doing this, but, I&#8217;d like to be compensated eventually for all the hard work, and perhaps hire people and build a company around it.</p>
+<p>I think in order to get there, I&#8217;ll need to make some pivots on approach on this.</p>
+<p>To get around the non-commercial shit in LFS&#8217; licensing, I&#8217;ll probably, once I get to a releasable state, release this build as a project called &#8220;ALFS- NG&#8221; that inherits the crap they snuck in there and have DHLP be a non-derivative rewrite.</p>
+<p>I&#8217;m still thinking about it, but, if that&#8217;s the direction, once ALFS-NG is good to a certain point, I&#8217;ll be able to apply what I&#8217;ve learned to Dark Horse Linux.  I feel as I&#8217;m going through this process that LFS has many, many unnecessary steps to do something like this.</p>
+<p>I may even do a second build with one of the RPM variants of LFS/BLFS to get an idea of what I&#8217;m in for in terms of introducing binary package management cleanly.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-12</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/eb6f5acfd556ebe326f1507685acfdb7ae5b14e4">Pyrois Commits: eb6f5acfd556ebe326f1507685acfdb7ae5b14e4</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">up through 8.40</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-12</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/11/progress-report/">DHLP: Progress Report</a></h5>
+                <p><p>I&#8217;m at about Chapter 8, section 26 of the LFS build.</p>
+<p>At this point there&#8217;s a sysroot, you can enter the chroot with `make enter_chroot`, and browse around after getting through a `make all`.</p>
+<p>You&#8217;ll probably see in the git commit logs for Pyrois that I&#8217;m adding units to &#8220;master.plan&#8221; and testing there, before moving them to &#8220;stage4.plan&#8221; after they&#8217;re worked out.  </p>
+<p>That&#8217;s by design.  I use &#8220;make backup&#8221; and &#8220;make restore&#8221; all through the process as this allows me to work out kinks in the scripts before vetting them and moving them over to their &#8220;forever homes&#8221;.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-11</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b9cc1a06bb821439b6f02bb8c736e7b6248c9834">Pyrois Commits: b9cc1a06bb821439b6f02bb8c736e7b6248c9834</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">up to 8.31 in testing in master plan</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-11</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/d0c228be5f73eec5269130d5118f8d81df104347">Pyrois Commits: d0c228be5f73eec5269130d5118f8d81df104347</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">up to 8.31 in testing in master plan</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-11</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/03/10/so-whats-this-project-all-about/">DHLP: So what’s this project all about?</a></h5>
+                <p><p>It&#8217;s occured to me that even someone technical may see all the movement here and just not really understand what this project is, so, I thought I&#8217;d write a brief to catch folks up to speed.</p>
+
+
+
+<h2>So, what&#8217;s the Dark Horse Linux Project?</h2>
+
+
+
+<p>The Dark Horse Linux Project (DHLP) is a new Linux Distribution.</p>
+
+
+
+<p>You&#8217;ve likely heard of Linux, already.  What you may not know is that the term &#8220;Linux&#8221; actually includes many different kinds of operation systems.</p>
+
+
+
+<p>If you&#8217;re not sure what an Operating System is, you may have heard of Microsoft Windows.  You get a little compact disc and install it on the machine, and it gives you things to click on and do your work, and, for the more nerdly, to write your own software or host your own services.</p>
+
+
+
+<p>In the Linux space, the term &#8220;Linux&#8221; is really just referring to the kernel itself and in some crowds includes the gnu toolchain as well.  What you might not know is that there are many providers of unique operating sytems that fall under the category of &#8220;Linux&#8221;.  Each of those providers gives you a different variation of what Linux is and comes with different pieces that make up the operating system.  Here are some famous examples:</p>
+
+
+
+<ul>
+<li>Fedora Linux</li>
+
+
+
+<li>RedHat Linux</li>
+
+
+
+<li>Ubuntu</li>
+
+
+
+<li>Debian</li>
+
+
+
+<li>Slackware</li>
+
+
+
+<li>CentOS</li>
+
+
+
+<li>Mint</li>
+
+
+
+<li>Arch Linux</li>
+</ul>
+
+
+
+<p>You&#8217;ve likely already heard of these, and there are lots to choose from, each with unique properties.  RedHat Linux and Ubuntu, for example, have attributes that make them prime selection candidates for an enterprise computing environment (think of servers, cloud, etc).</p>
+
+
+
+<p>Indeed, the various communities surrounding Linux are myriad, and this diversity is critical to the continued existence of the Free and Open Source Systems movement.  </p>
+
+
+
+<p>However, there are some complex problems, and always have been in those communities.  Some can&#8217;t be addressed simply by the introduction of a new contender, but some issues can.</p>
+
+
+
+<h2>Diversity in the Linux Ecosystem</h2>
+
+
+
+<p>If those communities were to homogenize it would become vulnerable to interference from entities that sell proprietary systems &#8212; all of which stand to gain a great deal financially from the elimination or control of a sizable portion of Linux communities and their internal development pipelines. The best thing that can happen for those cooperative adversaries is the unification of all Linux distribution communities into 3-5 distributions, as this would allow them to steer those projects into directions that are financially beneficial for those companies, but, not so great for us.</p>
+
+
+
+<p>Check out <a href="https://news.itsfoss.com/new-distros-2023/" rel="noreferrer noopener" target="_blank">the latest upcoming Linux distributions for this year</a>.  If you go through the list, you&#8217;ll see an exemplification of one of the issues this project exists to address.  Every single one of these new Linux distributions is, in fact, not a new Linux distribution at all.  They are rebranded releases of already existing Linux distributions.</p>
+
+
+
+<p>In fact, if you look closer at the &#8220;famous&#8221; list I provided earlier, you&#8217;ll notice a few oddities that parallel this:  CentOS is a rebranded RedHat.  Ubuntu is a rebranded Debian.  Mint is a rebranded Ubuntu (twice over on that one!).  </p>
+
+
+
+<p>In the list I linked to for this year&#8217;s new contenders, you&#8217;ll see that about half of them are based on Arch Linux, while the rest are based on others on the list I typed out above.</p>
+
+
+
+<p>Almost all &#8220;truly new&#8221; or &#8220;parent leaf&#8221; distributions die out pretty soon after release.</p>
+
+
+
+<p>Of those that don&#8217;t, there are serious issues that serve as barriers to widespread adoption, such as a non-standard libc variant, or using busybox as the userland toolchain, or missing multilib support, preventing a desktop market, etc.  They have serious missing pieces that Linux communities expect to see.</p>
+
+
+
+<p>That is a large part of why this project exists.  </p>
+
+
+
+<h2>Most Established Distro Communities are Toxic</h2>
+
+
+
+<p>The other part of it is that, as someone who&#8217;s been participating in the Linux community since the mid-90s, I&#8217;ve found that the non-commercial communities have categorically toxic cultures.  I had been involved in and even led numerous campaigns to try to address that over the years, and was seeing some progress, but I found that after all that work, one kind of toxicity was simply being exchanged for another.  I wanted to create something better.  So I decided to.</p>
+
+
+
+<p>While researching this issue quite a few years ago, I came across a project called &#8220;Linux From Scratch&#8221;.  This is such an impressive project!  They tediously list out, step by step, a process to create a bespoke installation to their own specifications of a new Linux system.  It&#8217;s not quite a distribution, as there is no downloadable OS, but a set of instructions that can easily serve a large part in the genesis of a fully equipped new parent leaf Linux distribution with all of the pieces those users look for.</p>
+
+
+
+<p>When I said that the process is tedious, I mean that in every sense of the word.  It&#8217;s alot of work and takes a lot of skill to do it by hand.  So, I got to thinking:</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p>What if I unitized all the steps that create a new distribution into separate automations represented in an object notation that allowed me to automate the entire process with selectable components?</p>
+</blockquote>
+
+
+
+<p>The thinking behind this is that this would allow more people to have access to the tools they need to create fully capable Linux distributions, and that if this took on momentum it could help to facilitate the diversity of the Linux ecosystem, either directly, or by inspiring a competitor project who can do it better.</p>
+
+
+
+<p>There was the ALFS project (Automated Linux From Scratch) but it had gone stale and didn&#8217;t, in my impression, fully unitize the steps &#8212; though it <em>did</em> automate them.  Even if it had, it did not appear to be terribly receptive to customization, and the project appeared to be abandoned.  I believe it still is.</p>
+
+
+
+<p>So, I probed around for a few years, knowing I was about to start building a new Linux distribution.</p>
+
+
+
+<p>Initially I was going to call it SURRO Linux, as I was trying to figure out how to create a new &#8220;parent leaf&#8221; linux distribution anyway, and, there was initially some interest.  I created an IRC channel for the project, and a couple of the LFS crew even helped out.  Until&#8230;I joined their channel to ask some questions about making some changes to the compile options.</p>
+
+
+
+<p>It turned out, someone from the Ubuntu Linux community had figured out a way to gain rank in the LFS project and my access to LFS resources was immediately terminated by that person when I explained the scale of what I was attempting to do, despite being a year into the process already with another LFS developer.</p>
+
+
+
+<p>As a result of Matt&#8217;s deliberate efforts to starve the project of critical resources, though, it inspired me to create an entirely new thing:  A distro that helps other distros be created, as an example of how this should work &#8212; both technically and at a human level.  </p>
+
+
+
+<p>So I guess you could say, in a way, Matt played an important role in the creation of SURRO Linux by demonstrating that the problems I was concerned about on many levels were not just further along than I believed, but closing the gaps on one of the last bastion projects in the F/OSS world that gauranteed the perpetuity of the Linux operating system by facilitating diversity&#8211; by infecting the LFS project with his presence and compromising the decision authority in it in order to prevent the genesis of a product intended to compete with Canonical&#8217;s (Ubuntu).  </p>
+
+
+
+<p>I recall being profoundly disappointed at this turn of events, as, I had been learning so much from the LFS project&#8217;s other members, quite quickly, and am immensely grateful of the feedback they were providing in the early stages before that.  I will always be appreciative of that learning period.</p>
+
+
+
+<p>Galvanized in determination, over the years since, and in between other projects, I picked at SURRO Linux, the hard way, and had to develop some custom tools to implement what I could extract from the LFS documentation.</p>
+
+
+
+<p>You may have seen some mentions of these.  Rex.  Examplar.</p>
+
+
+
+<p>Examplar is the original name of the tool.  It was recently rebranded as Rex.  Rex is an automation tool that reads a libary of json objects, each representing the necessary parts of a largely idempotent automation.    It then reads another json file whose contents represent steps in a plan to carry out, which reference the automations in the library.  This method allows me to do large chains of automations with each step in a fully controlled context, including environment, whether a pty is used, what user the automation runs as, as it captures STDOUT and STDERR of the automation to log files for review to ensure the build is clean without having to stop.</p>
+
+
+
+<p>After some time, I ran into a technical barrier with Rex that prevented the continuation of the development of SURRO Linux until it was unkinked.  I worked on other projects and campaigns for a while to get my head fresh on it.</p>
+
+
+
+<p>Once that issue was finally solved, enough time had passed to where I needed to refresh the codebase used as the solution involved a full rewrite of Rex.</p>
+
+
+
+<p>So, I renamed it to Dark Horse Linux and started over.  With the new tools in place I was able to do what had previously taken 2 years to develop in just a few days, and now there seems to be some momentum behind it.  </p>
+
+
+
+<p>I&#8217;m hoping to have it generate a bootable image by July of this year finally, though, it won&#8217;t really be the release of Dark Horse Linux, so much as a snapshot of a working system for others to borrow from before I move on to building out an installer image.  That&#8217;ll just be when the real work starts to build out the installer and package management infrastructure.  Honestly, with my workload at my dayjobs, I think July is an ambitious target.  Walking through LFS is only of moderate difficulty, automating the steps and extracting enough to create a new Distribution is another matter entirely.  This is all just one person currently.</p>
+
+
+
+<p>You&#8217;ve probably seen some mention of a repo called &#8220;Pyrois&#8221;.  Pyrois is a Rex project that will compile the install images related to Dark Horse Linux and is where the majority of the work takes place.</p>
+
+
+
+<p>I&#8217;m always receptive to people participating, and if you&#8217;d like to participate, feel free to email me at &#8220;&#8220;&#8220;`<a href="mailto:dhlp@silogroup.org">dhlp@silogroup.org</a></p>
+
+
+
+<p>Along the way, many things happened since I initially announced SURRO Linux was going to be a thing.  My Dad died early on.  I ran into access issues researching what I was trying to do.  I have other projects.  I have a whole other career besides this and the project is self-funded currently.  I was involved into two activist campaigns in the open source community (RMS, Freenode).  My personal blog has more details about those, though, I just wanted to make it clear that this is a slowly moving project for now &#8212; though I do have high hopes for it.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-10</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/1a360bed1a9888071fa3a0cf21a3d3265c5bf68a">Pyrois Commits: 1a360bed1a9888071fa3a0cf21a3d3265c5bf68a</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">gcc pass 3</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-10</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/88f65e83e50c0e270eb17db93797dc8beba183f7">Pyrois Commits: 88f65e83e50c0e270eb17db93797dc8beba183f7</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">8.25</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-08</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b9af982ce39808c9bd8f2263afa80157a6f5137a">Pyrois Commits: b9af982ce39808c9bd8f2263afa80157a6f5137a</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">through 8.24</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-06</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/360f2afae74ac3d3c797f6b05918dd8908722ff3">Pyrois Commits: 360f2afae74ac3d3c797f6b05918dd8908722ff3</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">up through binutils - pass 3</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-05</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b8bfec9722bb71b3d3b8db8f47af848aecaed286">Pyrois Commits: b8bfec9722bb71b3d3b8db8f47af848aecaed286</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">checkpoint - passing SURRO current state</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-03-05</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/4fbe0c8d81500e5d8dbffc6504b03af8764f67fd">Pyrois Commits: 4fbe0c8d81500e5d8dbffc6504b03af8764f67fd</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">some cleanup of messy backup/restore facilities</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-28</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/c4192e2328eec033aa9967feb98fec722de45d2e">Pyrois Commits: c4192e2328eec033aa9967feb98fec722de45d2e</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">snapshot while working out backup/restore issues</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-27</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/b513be8d4d0d7a9f7beb8b0d03abc50c4be642d5">Pyrois Commits: b513be8d4d0d7a9f7beb8b0d03abc50c4be642d5</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">incremental improvement in backup/restore facility</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-26</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/05c65e8d1d458af0d2875c47c607c383ea71ca84">Pyrois Commits: 05c65e8d1d458af0d2875c47c607c383ea71ca84</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">various typo fixes and progress up to 8.8</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-26</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/dark-horse-linux-stage-4/">Phanes' Canon: Dark Horse Linux: Stage 4</a></h5>
+                <p><p>At this point, DHLP is compiling up to LFS CH. 8.</p>
+
+
+
+<p>This is the point where it finally starts to get &#8220;real&#8221;, as we&#8217;ve finished the compilation of all the temporary tools and are starting to build the &#8220;real&#8221; permanent system.</p>
+
+
+
+<p>This is also an exciting part because I got to introduce the first of those classic ncurses dialog prompts.</p>
+
+
+
+<p>Stay tuned.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-25</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/7868997024999e80c12fbb76ca2449bd97a339b4">Pyrois Commits: 7868997024999e80c12fbb76ca2449bd97a339b4</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">up thorugh 17.13.2, backup facility needs additional testing</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-25</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/plans-for-dark-horse-linux/">Phanes' Canon: Plans for Dark Horse Linux</a></h5>
+                <p><p>So, as it&#8217;s nearing a bootable ISO, some stages of development seem to be forming in terms of expectations.</p>
+
+
+
+<h2>A Whole Image</h2>
+
+
+
+<p>First, I&#8217;ll end up with something very close to an LFS build that needs alot of work to get installed onto a different system.</p>
+
+
+
+<h2>Gentooesque Genesis, Slackwaresque Form</h2>
+
+
+
+<p>Then, I&#8217;ll end up with some kind of installer that seems like it will work very similarly to slackware&#8217;s and FreeBSD&#8217;s installer, but compiled in a very gentoo kind of way beforehand.  I see this piece taking quite a bit of time to get through if I pursue that as far would be expected.  The important pieces will be drive formatting/partitioning dialogs and tools, bootloader installation.  Copying to the mounts appropriately etc.</p>
+
+
+
+<h2>A Familiar Set of Tools</h2>
+
+
+
+<p>Some ways after that, unless it doesn&#8217;t work the way I expect, I&#8217;ll probably pivot to an rpm-based system that, a certain point after librpm is compiled, binary packages are downloaded that replace the packages already compiled and installed.  Systemd.  Firewalld.  Then the decision needs made about whether I&#8217;ll use DNF or an inhouse built package manager.   One drawback I see about this is, some users will probably use rpms from SUSE and RH and Rocky and Fedora and run into build compatibility problems.  On the other hand, some of the time it&#8217;ll actually work with a little tweaking of binaries.  On the other hand, using a familiar ecosystem for the core pieces of the system will bring with them the stability those pieces are known for, they are tried and true, and will be already familiar by many, many users.  So there&#8217;s a tradeoff to consider.  It also prevents me from having to reinvent package management.  Life&#8217;s just too short and I&#8217;m one person.</p>
+
+
+
+<h2>On Package Management</h2>
+
+
+
+<div class="wp-block-cover aligncenter"><span class="wp-block-cover__background has-background-dim"></span><img alt="" class="wp-block-cover__image-background wp-image-1881" height="1024" src="https://phanes.silogroup.org/wp-content/uploads/2023/02/DALL·E-2023-02-22-02.39.45-red-horseman-of-revelations-charcoal-armor-1024x1024.png" width="1024" /><div class="wp-block-cover__inner-container">
+<p class="has-text-align-center has-large-font-size">It&#8217;s dangerous to go alone.  </p>
+
+
+
+<p class="has-text-align-center has-large-font-size">Take this.</p>
+</div></div>
+
+
+
+<p>Leaving it without package management is just not an option in the currrent security theatre.  Modern systems need not just build systems for distributable packages but patching systems built in with pipelines established for those patches to reduce overhead.  Patches that are free, open source, and available in other package-based distributions.  In some cases, with associated CVEs.  This will require lots of infrastructure to do sustainably even if I weren&#8217;t just one person.</p>
+
+
+
+<p>I think what I ought to do is find some way to faciliate that infrastructure, designed in such a way where it waits for contributors to do the things.  So, if someone thinks its too slow, a pull request from a stranger (or a familiar maintainer, even) gets submitted so that I don&#8217;t have to do the work.  It gets reviewed and merged.  The more people involved the better, but, it /could/ work with one person, just very slowly.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-22</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/surro-reborn-dark-horse-linux/">Phanes' Canon: SURRO Reborn: Dark Horse Linux</a></h5>
+                <p><p>I&#8217;ve done something I think is interesting.</p>
+
+
+
+<p>After I finally found time to do a rewrite of <a href="https://github.com/SILO-GROUP/rex" rel="noreferrer noopener" target="_blank">Rex</a> to add pty support and fix some bugs, I did a new build of SURRO Linux that, frankly, is much better than it could have ever been in the old setup.  </p>
+
+
+
+<p>This has been an especially long and hard progress since I initially set out to do it, both technically and politically, so, I wanted a way to give the project a clean slate and start fresh since it looks like it&#8217;s actually developing some momentum finally.</p>
+
+
+
+<p>SURRO Linux is being rebranded as <a href="https://www.darkhorselinux.org/" rel="noreferrer noopener" target="_blank">The Dark Horse Linux Project</a>.  The Foster project has been rebranded as <a href="https://source.silogroup.org/SILO-GROUP/pyrois.git" rel="noreferrer noopener" target="_blank">Pyrois</a>. I will be slowly dismantling SURRO-branded themes and sites over the next little bit as I transition things over.</p>
+
+
+
+<p>I&#8217;ve registered the website <a href="https://www.darkhorselinux.org/" rel="noreferrer noopener" target="_blank">www.darkhorselinux.org</a> to serve as the project landing page.</p>
+
+
+
+<p>While I&#8217;d like to lay some framework for project governance, it&#8217;s really just me working on it, so, there&#8217;s really no point in that, so, I think I&#8217;ll adopt an approach similar to my impression of Patrick Volkerding&#8217;s approach with Slackware:  If people want to contribute, please do, and suggestions are always welcome.</p>
+
+
+
+<p>In fact, I envision much of the starting point of this once it releases to resemble elements of Slackware quite a bit.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-22</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://github.com/SILO-GROUP/Pyrois/commit/4b302e0c896a217347b0bb31ea9e103b74bb574f">Pyrois Commits: 4b302e0c896a217347b0bb31ea9e103b74bb574f</a></h5>
+                <p><pre style="white-space: pre-wrap; width: 81ex;">make all target created and made safe - requires sudo or root</pre></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-21</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/02/18/rex-2-1a/">DHLP: Rex 2.1a</a></h5>
+                <p><p>The rewrite for Rex, the tool that drives the automation behind Dark Horse Linux is complete.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-18</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/02/18/advent-of-dark-horse-linux/">DHLP: Advent of Dark Horse Linux</a></h5>
+                <p><p>Welcome to the beginning of Dark Horse Linux, a new Linux distribution.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-18</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://public.darkhorselinux.org/2023/02/18/advent-of-pyrois/">DHLP: Advent of Pyrois</a></h5>
+                <p><p>Pyrois is the automation project that is intended to generate the Dark Horse Linux boot iso.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-02-18</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/musings-on-a-code-of-conduct/">Phanes' Canon: Musings on a Code of Conduct</a></h5>
+                <p><p>I don&#8217;t even like the concept of a Code of Conduct in any technical project.</p>
+
+
+
+<p>But, people are jerks.  I acknowledge that you need one these days to provide a groundwork of acceptable behaviour because not everyone can just be a decent adult on their own, but may have good technical contributions to provide.</p>
+
+
+
+<p>That said, every implementation of a Code of Conduct that I have ever seen has been so permeated with overreach that it should be set on fire and abandoned before routing out everyone who created that overreach and removing any control they have over that community.</p>
+
+
+
+<p>I personally view most major F/OSS projects&#8217; CoC to be created for the sole purpose of preparing a community and its culture for hijacking by corporate sponsors.  </p>
+
+
+
+<p>It ends up being a device they can use to bump out the people that won&#8217;t meet their sponsor&#8217;s goals while creating gaps to fill by the people they have selected to steer the project towards those corporate interests.</p>
+
+
+
+<p>This practice is, in my opinion, so pervasive that in aggregate, I see it could eventually create an insincere and purely aesthetic dystopia where people will eventually have to resort to whispering in soundproof rooms to express themselves to avoid being targeted unless they abandon their entire personalities&#8211; their careers, their families, project positions at jeopardy&#8211; all depending on the scale of money behind the project and who the sponsors are.  People will comply with the narrative or they will &#8220;become bad people&#8221;.</p>
+
+
+
+<p>I would rather have nothing in its place than contribute to that.  It is unethical, toxic and harmful to anyone who participates in it.</p>
+
+
+
+<p>I&#8217;ve also seen a strange reoccurence of identity politics being worked into the CoC.  I&#8217;m actually a little confused why the LGBTQ+ community is not largely comprised of people offended by the blatant attempt of these corporate-backed projects to introduce identity politics and dog whistles to open source communties as blatant disruption devices to serve those corporate interests, and the CoC is a great place for that to happen.  It is a blatant exploitation of a vulnerable community taking place out of financial interests. </p>
+
+
+
+<p>Perhaps my thinking on this may change in the future, but if I were to ever build a community of contributors for, say, SURRO Linux (or what it will actually be called on release), that I might have a CoC that mostly just aimed to prevent political hijacking and offtopic yammer, or interpersonal shit getting mixed with project discussion.</p>
+
+
+
+<p>I mean, be gay, trans, bi, straight, whatever you want, but push code and create development roadmaps instead of using this as a platform to validate yourself.  That&#8217;s not what it&#8217;s there for and it&#8217;s oppressive to other demographics.  </p>
+
+
+
+<p>In lieu of identity politics and facilitating project hijacking, a CoC that I would want to use would be designed in such a way as to develop, encourage, and reward emotional resilience in members of its community while providing a framework that inclines discussions to be related the project.</p>
+
+
+
+<p>That can&#8217;t happen in a safe space or an ideological echo chamber.  Decay can, and does in all cases.</p>
+
+
+
+<p>Safe spaces are toxic and harmful.  They are well intended but ultimately detrimental to host and participant as, for the sake of comfort, they stifle the expression of conflicting ideas that drive conceptual evolution in cultural development, which, unless you have a community that has reached an ideological apex&#8211; an Atlantean society of the most perfect expression of viewpoints humanity can ever have with no more room for improvement, then conflicts of ideas have to be permissable for growth of that community (and the broader society it exists in) to take place.</p>
+
+
+
+<p> Competing concepts drive cultural evolution, and you can&#8217;t have competing concepts if you forbid or suppress conflict.  This is the nature of people.  This is the nature of ideas.  This is the nature of growth.  Communities that suppress conflict and consequently free expression cannot grow.  Communities that value emotional resilience and a productive manner of conflict can and do&#8211; exclusively.</p>
+
+
+
+<p>And then there&#8217;s the out-of-band behaviour.  Too many times I&#8217;ve seen people engaged in conflict who are so emotionally fragile or toxic that they feel they need to go to other platforms to crowdsource a lynching to target people  who have a different perception of reality than they do &#8212; they make up lies about them, and try to use crowds of collaborators to &#8220;shame&#8221; their ideological counterpart which inevitably devolves into extraordinarily toxic harassment by many people, even stalking and offline violence directed at those people who disagree with them (or are triggered by a lie about their target that they believe), or they go after their families, or their careers and reputations.  Anyone who particpates in something like that shouldn&#8217;t be on any project and are a threat to anyone they work with.  The world needs protected from people who do things like that.  I don&#8217;t just mean the people who rally the crowd either, I mean the people who choose to be in the crowd doing the harassment as well.  They are timeless filth.</p>
+
+
+
+<p>So, I propose the &#8220;Nobody Cares&#8221; golden principle:  Nobody cares about your poltiical beliefs beyond that you should be allowed to have them.  Nobody cares about your spiritual beliefs beyond that you should be allowed to have them.  Nobody cares about your sexuality or gender identity beyond that you should be allowed to have them.  The same for race, country of origin.  </p>
+
+
+
+<p>People would make mistakes occasionally and accidentally care.  They&#8217;re human.  They all have beliefs of their own.  If someone gets a pronoun wrong, or has a belief system that affects which pronouns they use for either themselves or others, then we need to rely on the emotional resilience of everyone participating.  Nobody is forced to alter their speech or beliefs for anyone else.  That also means pejoratives and slurs should not be used.  People who do should be sanctioned.  Personal attacks violate the rule.  And trying to force people to comply with your belief system should count as a personal attack that isn&#8217;t centered on the &#8220;nobody cares&#8221; philosophy:  &#8220;Is the statement about the project or is the statement about someone on the project?&#8221;.  </p>
+
+
+
+<p>The caring should be about the project being discussed, not the discussers.  If someone goes on a rampage to try to force everyone&#8217;s beliefs  they can go away and practice their emotional fragility in any of the already existing echo chambers  more than willing to cater to them at the expense of meaningful progress.  I&#8217;ve seen enough.  Nobody cares about the discussers.  They should care about the project and contributions to the project, not whether someone who submitted a pull request donated to the Trump campaign or something stupid they did or said (though I certainly would not be excited to hear about that).  </p>
+
+
+
+<p>The only exception to not caring is when someone with a bunch of followers on twitter gets mad because they weren&#8217;t given enough political kowtowing to their identity politics, or are mad about something unrelated that they proceed to shame and lynch, defame, harass, or otherwise harm other contributors on the project.  This also goes for those that take to other platforms for the purpose of stirring up others to do those things.  People that engage in this should be decisively and rapidly ejected.</p>
+
+
+
+<p>I also think relying purely on the CoC is a bad call.  It&#8217;s not a framework to push people out, it&#8217;s a framework to help people focus on what they gathered to do.  So, instead of treating it like a legal doctrine, I think right now I would treat it more like a guideline and use my own discretion when handling interpersonal issues or conduct reports to hopefully prevent it from being misused in the way I see other CoC&#8217;s be misused, or sabotaged by trolls.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2023-01-12</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/artificial-food/">Phanes' Canon: Artificial Food</a></h5>
+                <p><h2>Our Food Sucks, and it&#8217;s caused by Liars </h2>
+
+
+
+<p>So as it turns out, when you buy food at the grocery store, what you are purchasing is not your grandfather&#8217;s food.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p>A Kushi Institute analysis of nutrient data from 1975 to 1997 found that average calcium levels in 12 fresh vegetables dropped 27 percent; iron levels 37 percent; vitamin A levels 21 percent, and vitamin C levels 30 percent. A similar study of British nutrient data from 1930 to 1980, published in the <em>British Food Journal</em>,found that in 20 vegetables the average calcium content had declined 19 percent; iron 22 percent; and potassium 14 percent. Yet another study concluded that one would have to eat eight oranges today to derive the same amount of Vitamin A as our grandparents would have gotten from one.</p>
+<cite>https://www.scientificamerican.com/article/soil-depletion-and-nutrition-loss/</cite></blockquote>
+
+
+
+<p>Causes contributing to this generally center around:</p>
+
+
+
+<ul>
+<li>soil depletion</li>
+
+
+
+<li>global-scale overproduction</li>
+
+
+
+<li>corporate control over the genes of the plants used for crops</li>
+</ul>
+
+
+
+<p>Yeah, so, as it turns out, when we introduced *GMOs to the world, we did it primarily through a company previously known as <a href="https://www.bayer.com/media/en-us/bayer-closes-monsanto-acquisition/" rel="noreferrer noopener" target="_blank">Mansanto</a>, until it was bought by a larger company called <a href="https://en.wikipedia.org/wiki/Bayer#World_War_II_and_the_Holocaust" rel="noreferrer noopener" target="_blank">Beyer</a>.  Mansanto&#8217;s profit strategy included:</p>
+
+
+
+<ul>
+<li>Genetic engineering and genome editing &#8212; using modified viruses designed to splice a gene from what is often not a related plant or animal into an organism.  (*This is what people are really talking about when they complain about &#8220;GMOs&#8221; &#8212; what many bootlickers and unethical propagandists do is claim that this is on the same level of safety and precedent as cross-breeding two plant crops, or selecting seeds for the next year&#8217;s crop by using selection criteria that provides larger yields as we&#8217;ve been doing for thousands of years longer than the advent of the field of genetics.  It is not the same as these farming practices, they know it is not, and they say this anyway because they are shitty people who want to sound smart more than they want to be accurate, and this serves as a constant detractor from very legitimate concerns people have over this practice by drowning them out with knowing lies in the public dialog &#8211; they somehow do this while virtue signaling).</li>
+
+
+
+<li>Patenting the resulting modified organism and becoming the only providers of the seeds.</li>
+
+
+
+<li>Suing farmers when their modified organism is found in their crops.</li>
+
+
+
+<li>Dropping seeds around farming properties who don&#8217;t buy from them to facilitate that litigation.</li>
+</ul>
+
+
+
+<p>It was remarkably successful.  This introduction became the dominant source of most products you buy in the supermarket today.  This allows a couple of companies to control the genetic profile of almost all food in the global food supply chain to the point that, as of the time of this writing, it&#8217;s almost impossible to avoid eating organisms modified in this manner.  Even if you make your own bread, the flour you buy at the store to make it contains these products.  You&#8217;d have to find wild wheat or corn, genetically analyze it to ensure it isn&#8217;t a windblown GMO, grow a crop of it, and then mill it to get one loaf.</p>
+
+
+
+<p><strong>There have, to date, been no cross-generational impact studies performed for regular consumption of GMOs prior to them becoming the dominant presence in the global food supply chain</strong>, propagandized as safe by the same people that told you and your parents that consuming fat is a leading contributor to obesity, that margarine was good for you, that aspartame was a safe alternative to sugar, that eggs and potatoes are bad for you&#8211; <a href="https://www.imdb.com/title/tt5212792/" rel="noreferrer noopener" target="_blank">the same people that brought the fictitious &#8220;food pyramid&#8221; to your schools</a>.</p>
+
+
+
+<p>In some cases, the GMOs that made Mansanto famous create crops that produce their own pesticide internally.  Some variants are also very resistant to pesticides that many farmers already spray on their crops (It&#8217;s a pesticide called &#8220;RoundUp&#8221;, also sold by Mansanto) to prevent yield loss from bugs eating into the crops.  Because these crops are more resistant to insects and pesiticides they tend to take over an area and choke out the farm-managed versions of those crops that they were designed to replace (they are what some people call &#8220;an invasive species&#8221;).  They also are modified to not produce seeds, and where unable or when that genetic mechanism fails, litigation ensues if the farmer collects seeds to replant the next year from their own crop &#8212; they need to purchase those seeds from the company that designed, owns, and sells those organisms&#8217; patented genes.</p>
+
+
+
+<p>Their strategy was one of necessity: The farmers often didn&#8217;t want genetically engineered crops, and most intelligent people didn&#8217;t either.  Not at that scale.  But, between the widespread litigation of farmers, and the paid marketing, it&#8217;s become mainstream, and then people who do research on youtube filled in the gaps with mainstream audiences.  It&#8217;s amazing what money can do to low information leftists&#8217; realities.</p>
+
+
+
+<p>As to soil depletion, since we&#8217;ve overcommercialised farming to keep up with growing populations, we&#8217;ve stopped rotating crops as well which replenishes vital nutrients in the soil, so, the growing plants are bigger from being fake, and drawing less nutrients out of the ground because of last year&#8217;s crop.</p>
+
+
+
+<p>The problem, at the end of the day, is that there are just too many people on the Earth.  There&#8217;s no good solution to that, but among those that rank among the best, none of them involve paying those squirrels who are just chasing nuts with no regard for the impact of their work on the world to keep degrading the food that&#8217;s already there &#8212; for everyone that is currently alive and will live after us.</p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p></p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2022-12-24</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/idm-a-rewrite-job-stuff/">Phanes' Canon: IDM/A Rewrite & Job Stuff</a></h5>
+                <p><p>I&#8217;ve got a keyboard on the frits, so I&#8217;ll give this post about one more try before I put my fist through this keyboard and go on vacation until a new one arrives.</p>
+
+
+
+<p>I&#8217;m about a quarter of the way through a rewrite of the IDM/A prototype.</p>
+
+
+
+<p>The reasons I elected to rewrite most of the codebase instead of adapt it and release it are many, but the main issues were:</p>
+
+
+
+<ol>
+<li>The access control was being handled in the API layer, instead of the controller library that controls all the actions being performed, mostly to accomodate flask&#8217;s ridiculously embedded and inflexible marshmallow and sqlalchemy extensions.  While not an issue for a whole product, it does make the API an unnecessary risk surface.   To be clear, this is not an issue with SQLAlchemy and Marshmallow libraries, but Flask&#8217;s extensions of them.</li>
+
+
+
+<li>Having access control being handled in the API layer also means access control needs reimplemented in any interface being created to interoperate with the system, which not only sucks for responsibility isolation from a general design perspective, but as security problems would emerge, their impact scope would vary depending on which interface was in use, which breaks continuity and degrades the security posture of the entire system.  Being an identity, access, and session management system I would consider that tendency to be purpose-defeating.</li>
+
+
+
+<li>This allows third party interfaces to be developed with security controls that are gauranteed to be in continuity with the provided ones and disincentivizes the development of frontends designed to exploit the underlying system.</li>
+
+
+
+<li>I wanted the API to merely be relaying input parameters and output responses to/from a secure underlying controller layer so that the modular design could be leveraged later for C-rewrites of various layers (including potentially the API).  This creates the path for that.</li>
+
+
+
+<li>I wanted to completely remove any dependency of any underlying component on the API layer for that same reason.</li>
+
+
+
+<li>I want to write a CLI toolchain that accompanies it that performs all tasks.  This is also useful for writing functional tests, and should make system administration a little easier.  I did not want those tools to contain any of the security layer, and I do want it to be oriented to CLI toolchains first.</li>
+
+
+
+<li> I wanted to create a path for PAM integration and didn&#8217;t see a web API centric approach being suitable for that as it was.  Ideally administrators should be able to configure PAM to point at this system and then use it for administrating users on a great many machines.</li>
+
+
+
+<li>I wanted to create a path for an LDAP emulation interface for web systems.  This would require that component responsibility rework.  </li>
+</ol>
+
+
+
+<p>Unfortunately, as always, this sets my time tables back.</p>
+
+
+
+<h2>Job Stuff</h2>
+
+
+
+<p>Got another raise.  Unfortunately, this one involves an expansion of my responsibilities this round, so, I&#8217;ll be busier and will have to do alot of skill refresh.</p>
+
+
+
+<p>On both fronts, this is a time for building.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2022-11-07</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/back-to-the-basics-again/">Phanes' Canon: Back to the Basics.  Again.</a></h5>
+                <p><p>As winter approaches, I see a chance to sharpen up on some core skills.</p>
+
+
+
+<p>This is something I do regularly, I am a firm believer in keeping the basics down as that is still where so much of the work to be done is.  We tend to drop the basics after we learn or work on the more advanced things thinking we have &#8220;graduated&#8221; to higher planes of thought.</p>
+
+
+
+<p>That&#8217;s a delusion of the ego.  Foundational concepts and skills in information systems make or break you, whether you&#8217;re an intern starting out or a 20 year career veteran in the field.  Doesn&#8217;t matter.  You have to either continuously refresh, join a socially empowered demographic, or take a &#8220;<a href="https://twitter.com/ehashdn" rel="noreferrer noopener" target="_blank">contributor influencer persona</a>&#8221; that rests more on twitter likes and marketing masked as culture rather than actual contributions.  Over time, people who don&#8217;t go back to the foundation concepts of the work they are doing, no matter how senior they get in their careers, become out of touch and fail, and usually in great arrogance.</p>
+
+
+
+<p>For me, for now, I&#8217;m re-reading Kernighan &amp; Ritchie&#8217;s &#8220;The C Programming Language&#8221;, second edition for ANSI C.  Fellow nerds just call it &#8220;K&amp;R&#8221;.  It&#8217;s one of those core learning books that should sit on every Linux nerd&#8217;s bookshelf right next to &#8220;The Unix Programming Environment&#8221; by Kernighan &amp; Pike, or &#8220;Unix Network Programming&#8221; by W. Richard Stevens.  I have a copy of &#8220;The Practice of Programming&#8221; on my basics bookshelf, but I have to admit I haven&#8217;t found time to read it, yet.</p>
+
+
+
+<p>For people who don&#8217;t write code, and like to design at a higher level, shame on you, but, &#8220;The Design of Design&#8221; by Brooke, or for your splash into good design (you&#8217;ll have to learn some code) &#8220;Design Patterns: Elements of Reusable Object-Oriented Software&#8221; by Gamma, Helm, Johnson, Vlissides&#8211; both of which I found incredibly boring but useful.  </p>
+
+
+
+<p>In any case, K&amp;R is driven by necessity.  I&#8217;m exploring the idea of porting Rex to C to increase its compatibility footprint and reduce the size of the codebase.  There are alot of problems to solve to do that, so, I&#8217;m just getting the juices flowing.  It&#8217;s not going to hurt me to go back to C.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2022-09-22</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/long-live-the-king-spring-cleaning-and-routine/">Phanes' Canon: Long Live the King, Spring Cleaning and Routine</a></h5>
+                <p><p>The Queen is dead.  Long live the King.  King Charles III succeeds Queen Elizabeth II as I type this after the unfortunate news of her majesty&#8217;s passing.  I wonder what kind of king he will be.  His choice of his name, Charles, is a loaded one with quite an implication, and he may be less conflict adverse than his mother.</p>
+
+
+
+<p>I&#8217;m still in vacation mode.  I think it&#8217;s been a couple of years now, but I&#8217;m at least acknowledging that I am not working on anything really besides my own peace outside of my dayjobs.</p>
+
+
+
+<p>All of my projects are going stale, so, I&#8217;ll need to get with it soon, as much as I&#8217;m enjoying the downtime and balance that comes with being so unfocused or absent outside of some remote leadership courses at Harvard that I&#8217;m taking for fun.</p>
+
+
+
+<p>I am still feeling quite directionless.  I have found strength for the sake of strength, mind for the sake of mind, and money for the sake of money.  It certainly could be worse, and is nothing to regret, but, I am finding myself often coming to deliberations about who I really want to be, and how I want to be that person.  I&#8217;ve run out of personal aspirations.  I am ready and eager to build, and rebuild  &#8212; yet do not know in some ways what it is that I wish to build at the moment.  I&#8217;m not talking about tech.  I&#8217;m talking about soul.</p>
+
+
+
+<p>I am also becoming more aware of opportunity costs in this decision:  I am approaching my 40&#8217;s, and what I spend my time doing will decide other things I can do later.</p>
+
+
+
+<p>Then there&#8217;s the consideration of legacy.  At some point in a person&#8217;s life, usually later than earlier, the potential of what you could be gives way to the history of what you have been.</p>
+
+
+
+<p>Looking back at how it all started, with my younger shipwrecked self on an unforgiving shore after being tossed and drowned by the cold waves and winds of life so thoroughly, I have come so far in rebuilding already &#8212; with very little help available, even when I very much needed it.  It is unlikely that I can ever be in that place again.  I have become no Count of Monte Cristo as of yet, but, we don&#8217;t really do those here, and, in our times, the roles we play in life often shift around too quickly for our stories to be worth telling.</p>
+
+
+
+<p>Since COVID-19 hit, I have been working from home for my jobs.  This has had a progressively damaging impact on my daily routine for many reasons and in many ways.  So, I have started exercising again and am already showing some results, and I have committed to recreating my daily routine to something more effective.  I am losing too much productivity to poor time management and shitty sleeping habits.</p>
+
+
+
+<p>I have also committed to a more consistent cleaning routine.  As a systems and software person who does spend a great deal of time in front of a screen, it can become easy to neglect your household, and, the state of your house has a huge impact on how you live.  I am messy and naturally disorganized, so I particularly have to keep it in attention.  Even if it&#8217;s 20 minutes a day, and you can&#8217;t program yourself to clean as you go (I know some people who have done this, I have never been able to), then just dedicate 20 minutes a day to shut off all those other threads of thought and clean something in your house.  It makes a huge difference.  If you are like me, and you are just not good at cleaning, it is absolutely essential to good living in my opinion.  Sometimes I forget to clean something or get distracted and then realize I really, really need to.  Messes make worse messes over time if you don&#8217;t clean them.  I know alot of tech people who don&#8217;t factor that in, and I wouldn&#8217;t eat at their houses.</p>
+
+
+
+<p>I suppose this is what life without a moral battle is like.  What&#8217;s next?</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2022-09-12</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/14-years/">Phanes' Canon: 14 Years without Closure</a></h5>
+                <p><p>August 8th is one of my yearly personal vacations.</p>
+
+
+
+<p>4 years ago to the day I was cremating my father in New Hampshire.  My brother had called me in Columbus, OH and given me the news, and as he was young, I just dropped what I was doing and hopped in the Challenger and sped the whole way through without sleeping.  </p>
+
+
+
+<p>While there I traveled to Portland, Maine about 3 hours out to clear my head and walked right into a scene from Alice and Wonderland, at a little bar in the oldport, called Ri-Ra&#8217;s.  I won&#8217;t talk about that scene, yet, because it wouldn&#8217;t make sense to.</p>
+
+
+
+<p>14 years ago to the day I was scouring Portland, Maine on what was originally my wedding day, trying to find out about the status of the baby we had conceived.</p>
+
+
+
+<p>The baby&#8217;s name, if it had been a boy, was to be Malachi Alexander, though, there was some argument over that with my fiance.  If it had been a girl she would have been named Penelope Rose &#8212; and I think I was winning that argument.  Both are beautiful and regal names still, I think.</p>
+
+
+
+<p>I had been hoping for a boy, and some of the letters my fiance and I at the time had spent the previous months writing to our future kid were addressed to a boy.</p>
+
+
+
+<p>Whether Malachi, or Penelope, or something else, they&#8217;d be around 13 today and incredibly loved.</p>
+
+
+
+<p>So what happened 14 years ago&#8230;.</p>
+
+
+
+<p>Well, we had been having some trouble recently as the wedding day drew closer and things came to a head in our tiny little apartment with a sun roof in Falmouth, Maine.  We were renting from a gal named Tina, who hired a company to mow the lawn.  The guy they sometimes sent out was a guy named Garth who I remember tried to come into the house a couple times without being invited while I was there, and I remember when I put a stop to it, it caused a huge stink.  I just wasn&#8217;t comfortable with some strange man coming into the house where we were nesting before our wedding.</p>
+
+
+
+<p>My at the time fiance&#8217;s name was Courtney.  I remember being in the dorms at the University of Southern Maine under a co-op program with Southern Maine Community College, when we met and had initially fallen in love. Back then I was a little more in shape, and quite confident, and I had a strong interest in information systems technology.  I was just becoming attuned to the fact that the world runs on the flow of information, and had an almost autistic fascination with information pipelines.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img alt="" class="wp-image-1797" height="306" src="https://phanes.silogroup.org/wp-content/uploads/2022/08/31791273_10160397259840626_1496793955172352000_n.jpg" width="191" /><figcaption>Me at 23.</figcaption></figure></div>
+
+
+<p>I was a student known for a degree of mischief, and she was a nanny for rich couples, notably comedian Bob Marley, and her father was a recently retired Lt. Colonel in the United States Air Force, who negotiated a promotion to Colonel as part of the terms of his retirement for a nice little bump in pay. He was in reconnaissance, which I had always found fascinating at that point in my life.  My father was a PhD in Psychology, minor in philosophy, from Colorado State University, and his career revolved around teaching as a professor, until, in recent years, serving executive functions as the VP at various colleges while teaching psychology to keep it up.  Her mother was a nurse practitioner and mine was an artist.</p>
+
+
+
+<p>The night we met, I had invited her out for coffee and we decided we were both content with a Dunkin Donuts drive-through.  We took her car.  Along the way she pointed to a Fazoli&#8217;s she used to work at.  She ordered a medium coffee, with 3 cream, 2 splenda.  We chatted the whole night through in my dorm room and then it was time for her to leave.  I walked her to her car, and that was that, until, maybe an hour later we texted each other and after a short exchange we decided we were not done yet for the night, and she came back out.</p>
+
+
+
+<p>At first it was a beautiful life and this went on for some time.</p>
+
+
+
+<p>Some time later, due to financial issues I was running out of options to pay for my schooling, so, I transferred to a much cheaper college in that same network, Eastern Maine Community College.  At the time I was still working &#8220;kid jobs&#8221; and had no idea what a career job even looked like, so, there was a brief stint at McDonald&#8217;s, then a couple of other food service jobs that weren&#8217;t really paying.  So it was &#8220;student loans or go home&#8221;.  So I packed up and moved to Bangor, Maine, and continued my education there.</p>
+
+
+
+<p>Courtney was surprisingly okay with it and we found a way to make it work for some time. </p>
+
+
+
+<p>Then later on, at some point we were discussing her father, who was joking that &#8220;I should just join the Air Force and get married if we miss each other so much&#8221;.  It made sense.  So, I proposed a week later using my grandmother&#8217;s wedding ring, on a black, cheap walmart rug on my dorm room on her next visit up.</p>
+
+
+
+<p>She said yes, we both came to tears, and then we bumped our heads together trying to kiss to seal the deal.</p>
+
+
+
+<p>Then, as time went on, the USAF came in.  The string attached that eventually surfaced was that I was indeed to join the United States Air Force, come hell or high water, which, was not a hard reach for me as I was still shrugging off some of the identity conditioning from being a JROTC (USAF) student in High School, and had no idea what to do with my life at that point.  My room mate, Josh, liked the idea, and we talked him into enlisting too!  Everybody&#8217;s joining the Air Force, guys!  My student loans were running out with my ability to secure more dwindling, so, it was a great option.</p>
+
+
+
+<p>I wanted to do a little lovenesting first, so, the plan was for Courtney and I to move to Falmouth, Maine (where her parents lived), first for a bit and this would give me time to get in good shape for basic while studying for the ASVAB.  I was leaving school to do this, and hey, the recruiter said I could finish school on the dime of the USAF later.  Good plan.  </p>
+
+
+
+<p>I spent that summer shoveling snow off the top of buildings in Northern Maine and saving every dime I had to cover the move.  I bought a cheap, rusted-out white Buick to get me by that I eventually drove to Falmouth at the end of that winter.  Courtney waited patiently for me in Falmouth.</p>
+
+
+
+<p>Then one day, I pulled up in my rusty white Buick to Falmouth, and we stayed at her parents for two days, separate rooms of course, and then went shopping for our nesting ground.  We settled on Tina&#8217;s place, which I mentioned earlier.  They even mowed the lawn for us.</p>
+
+
+
+<p>At first it was a beautiful life.  The kind of beauty anyone would swallow a lie or two for.</p>
+
+
+
+<p>Skipping a whole lot of scary bullshit that I was too young to understand, this ends with Garth turning out to actually being an affair she was having at the time, me being bombarded by an extensive smear campaign that went on for years &#8212; to cover up that as well as the fact that she was embarrassed about killing our unborn baby in an illegal late-term abortion (as her very conservative parents had many problems with her first abortion before we met when she was 15 and her mother would have disowned her).  I can only describe her actions during those days as a very calculated form of psychological warfare and unbridled malice.  I eventually tracked the baby piece down to having taken place at 18 Ocean Street, in South Portland, Maine, a place that is now refurbished as a restaurant but I think at the time were dentist offices.  </p>
+
+
+
+<p>Along the way she was diagnosed by a therapist she had been seeing with Narcissistic Personality Disorder, and I was advised by that therapist to protect myself from her and to get away from some kind of untold destruction, which I did not listen to.  </p>
+
+
+
+<p>Everything around me had turned out to be a carefully spun web of lies, and the giant spider that was now wearing my fiance&#8217;s skin was trying to eat me.  Her favorite colors and nickname changed while I was moving around the country repeatedly to get away from her for years after a brief period of very adamantly and desperately trying to understand what was happening, and in particular, &#8220;where is our baby&#8221;?</p>
+
+
+
+<p>Then the lies came in full blast.  It came from everywhere.  I couldn&#8217;t get away from it.  </p>
+
+
+
+<p>After some time of being away in a different part of the country (I moved to Northern Maine (Presque Isle) for a bit, and then to Bristol, Tennessee eventually to get away from the things she was saying), some time in 2012 she engaged in what&#8217;s called &#8220;<a href="https://www.bustle.com/wellness/hoovering-examples-narcissists" rel="noreferrer noopener" target="_blank">hoovering</a>&#8221; to try to suck me back into her sphere of influence with a flimsy apology for lying about me so extensively, and we had a correspondence which basically ended with her telling me in a very childish way that she had changed her mind about not keeping the baby after taking the chemicals to abort our child, dispelled it into a toilet, and then kept it in a children&#8217;s sip cup from her car shaped like a frog, because it was the only container around and she was unable to flush it.  </p>
+
+
+
+<p>At the time she was living with her sister Melissa and her niece, Bella, who was still a toddler.  </p>
+
+
+
+<p>Courtney placed the sip cup in the refrigerator.  She then went on to explain that Bella had at one point grabbed the sip cup from the fridge and started to drink from it, unaware of what was inside before it was taken from her.</p>
+
+
+
+<p>She then labeled a glass jar for a Halloween party decoration at her sister&#8217;s house as &#8220;spawn of satan&#8221;, transferred the contents of the sip cup to that jar, and only her and her sister knew that it was real, in kind of an old world alchemy lab aesthetic for the party.   She also described it as being funny to both her and her sister, and that at one point her sister was pressuring her to perform a dissection on the body using makeshift medical utensils as Courtney was at the time pursuing a medical degree (she had gone back to school, I did not have the money to at that point).</p>
+
+
+
+<p>This was my last real correspondence with her as she cut off all contact again shortly after I became enraged by the story and started asking questions to piece the details together, but at some point I hired private investigators to research the story as I was completely destroyed by these events for years and needed an outside person to piece parts of it together, and, per my last check, Courtney had an active warrant for her arrest for fraudulent activities in the state of Florida, with case number 5715MM010181A.</p>
+
+
+
+<p>During my investigation attempts I met several others who had the same story to tell about her (sans baby of course).  The first of them that I found was a man named Jared who she had smeared all over the internet with false claims of abuse, which her sister also participated in.  The lies that she was telling about him were obviously false and years old but were jeopardizing Jared&#8217;s custody battle over his children.  I hired various services to provide resources to Jared to have the defamatory content removed and we remain distant friends.  I am in possession of a longer list of similar people targeted all following a similar pattern; some of whom I have been able to help, some of whom are not yet aware of the nature of their situation.<span style="font-size: revert; color: initial;"></span></p>
+
+
+
+<p>14 years ago today would have been our wedding date.  I do not regret having not married the Spider of Yarmouth, but I take today to provide a quiet respite to myself out of consideration for Malachi, or, Penelope &#8212; I&#8217;ll never know which.</p>
+
+
+
+<p>If you&#8217;re wondering if I&#8217;m still angry at everyone involved, well sure I am.  I seethed for years.  I have PTSD from it and almost lost the battle recovering from it at one point.  During the initial campaign I ended up in the ER a few times due to stress-related injuries on my spine.  </p>
+
+
+
+<p>As the years went on I&#8217;d have flashbacks, sometimes.  I still have memory gaps.  I&#8217;d get drunk and start auditing my account of events.  Sometimes I&#8217;d lash out.  But mostly, I just seethed, cooking in my own anger.  </p>
+
+
+
+<p>This much older version of me has mostly recovered from these events, but they did ingrain in me a deep need to see justice in the world, and protect others in similar situations.  The law could not help me, but it is not the only justice there is in the world &#8212; merely a place where it is prone to be.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2022-08-08</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/but-we-won-every-battle/">Phanes' Canon: How I learned to stop winning the battle and losing the war.</a></h5>
+                <p><p>Busy, busy, busy!</p>
+
+
+
+<p>I haven&#8217;t posted in a while, but not for lack of effort to make the time.</p>
+
+
+
+<p>I&#8217;m expecting to have an IDM/A prototype completed by the end of the year at this pace.  I eventually got fed up from not having free time and just cut into my sleep to knock some features out.  I actually don&#8217;t recommend anyone do that and try to avoid it myself because the quality of the work tends to pop out as sub-par when you next get to look at it with fresh eyes, but, I just need some trailblazing done at this point.</p>
+
+
+
+<p>One of my current struggles is with a product called RHCS (RedHat Certificate System), which I also don&#8217;t recommend anyone try.</p>
+
+
+
+<p>I&#8217;m considering re-theming this site and moving stuff around when I can give it proper attention.  I don&#8217;t feel like it&#8217;s as visible as it could be (I mostly just complain on here anyway), and I think the layout may be a little outdated.  </p>
+
+
+
+<p>I may also be trimming out some of the projects I intend to build from the portfolio list to make room for new developments forming, depending on what the long game looks like.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2022-07-14</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/fips-disa-stig-hardening-on-centos9/">Phanes' Canon: FIPS Mode on Centos9</a></h5>
+                <p><p>So, you&#8217;ve installed CentOS 9 on a server, but you&#8217;re not a <code>1337 information security architect</code> and don&#8217;t really know where to get started.</p>
+
+
+
+<p>That&#8217;s fine.  You still need to do some basic hardening of your machine, or <code>Vladimir Putin</code> will start mining bitcoin on your new server in between using it as a trash nest to launch attacks on other peoples&#8217; servers with.  Even then, there&#8217;s no guarantee, but, you can make it harder to do that to you (and your reputation &#8212; yes, people out there judge you based on your servers&#8217; security posture).</p>
+
+
+
+<p>The first thing you should be aware of is that there are whole organizations whose purpose it is to write security standards that you can learn and adhere to.  One of particular note is the <a href="https://www.nist.gov/" rel="noreferrer noopener" target="_blank">National Institute of Standards and Technology</a>.</p>
+
+
+
+<p>But, if you cared about stuff like that, you wouldn&#8217;t be reading this.</p>
+
+
+
+<p>So there are two standards collections we&#8217;re going to barely talk about here, one is called <a href="https://www.nist.gov/standardsgov/compliance-faqs-federal-information-processing-standards-fips#:~:text=are%20FIPS%20developed%3F-,What%20are%20Federal%20Information%20Processing%20Standards%20(FIPS)%3F,by%20the%20Secretary%20of%20Commerce." rel="noreferrer noopener" target="_blank">FIPS</a> and the other is called the <a href="https://public.cyber.mil/stigs/downloads/" rel="noreferrer noopener" target="_blank">DISA STIG</a>.  If you take a few steps revolving these two standards you can get a much more secure system.</p>
+
+
+
+<p>There are many more things on top of this guide that you can do to further harden your systems depending on the type of attack you may be concerned about, or the topology of the solution you are building, but those will be out of scope for the purpose of this writing.  For this post, we&#8217;ll just be covering FIPS mode.  My next post will cover an attempt to apply the DISA STIG to a CENTOS 9 Stream system.</p>
+
+
+
+<h2>Let&#8217;s Get Started</h2>
+
+
+
+<p>Before you touch anything on your fresh install, update to the latest set of packages available through yum.</p>
+
+
+
+<pre class="wp-block-code"><code>yum -y update</code></pre>
+
+
+
+<h2>Enabling FIPS Mode</h2>
+
+
+
+<p>First, we&#8217;ll set up FIPS mode.</p>
+
+
+
+<p>Install the <code>dracut-cips</code> or <code>dracut-fips-aesni</code> packages depending on your cpu instruction set. </p>
+
+
+
+<pre class="wp-block-code"><code>yum -y install dracut-fips dracut-fips-aesni</code></pre>
+
+
+
+<p>Run dracut:</p>
+
+
+
+<pre class="wp-block-code"><code>dracut -v -f</code></pre>
+
+
+
+<p>Find out what boot partition you&#8217;re using:</p>
+
+
+
+<pre class="wp-block-code"><code>df /boot | tail -n 1 | awk '{ print $1; }'</code></pre>
+
+
+
+<p>Get the UUID for that partition using the above&#8217;s output:</p>
+
+
+
+<pre class="wp-block-code"><code>blkid $above_output</code></pre>
+
+
+
+<p>Or, if you&#8217;re lazy:</p>
+
+
+
+<pre class="wp-block-code"><code>blkid $(df /boot | \
+  tail -n 1 | \
+  awk '{ print $1; }') | \
+  sed -E 's/^.*UUID="(.*)"\sB.*$/\1/g'</code></pre>
+
+
+
+<p>Once you&#8217;ve got your UUID for /boot, open up your <code>/etc/default/grub</code> file:</p>
+
+
+
+<pre class="wp-block-code"><code>vim /etc/default/grub</code></pre>
+
+
+
+<p>Append the line that starts with <code>GRUB_CMDLINE_LINUX</code> with <code>fips=1</code></p>
+
+
+
+<p>If your /boot partition is a separate mount than your root filesystem, then also append:</p>
+
+
+
+<p><code>boot=UUID=&lt;&lt; YOUR_UUID &gt;&gt;</code></p>
+
+
+
+<p>Save and exit, and then you&#8217;ll want to regenerate grub.cfg with:</p>
+
+
+
+<p><code>grub2-mkconfig -o /etc/grub2.cfg</code></p>
+
+
+
+<p>Now in the case of Centos 9, at least in my case on a Linode Centos 9 image, I got an error like this:</p>
+
+
+
+<pre class="wp-block-code"><code>&#91;root@localhost ~]# grub2-mkconfig -o /etc/grub2.cfg 
+Generating grub configuration file ...
+/etc/grub.d/00_tuned: line 26: /etc/tuned/bootcmdline: No such file or directory</code></pre>
+
+
+
+<p>Though ridiculous and unprofessional for a release, this is the new reality for CentOS, so, just go with it and <code>yum install tuned</code> and move on with your life before running <code>grub2-mkconfig -o /etc/grub2.cfg</code> again so that you don&#8217;t have to dig around inside of grub to make it do what it was designed to do.</p>
+
+
+
+<p>Provided you read closely and followed the steps outlined here, you can now reboot and you should see that your machine is running in FIPS mode.</p>
+
+
+
+<p>Run reboot:</p>
+
+
+
+<pre class="wp-block-code"><code>reboot</code></pre>
+
+
+
+<p>Now let&#8217;s verify our newly booted system is actually running compliantly.  Truth be told, if something failed, your system probably won&#8217;t even boot.</p>
+
+
+
+<pre class="wp-block-code"><code>cat /proc/sys/crypto/fips_enabled </code></pre>
+
+
+
+<p>The result of the above call should return <code>1</code>.</p>
+
+
+
+<p>Congratulations, your system is running with FIPS mode enabled.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2022-04-25</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/1744-2/">Phanes' Canon: Breathing Again</a></h5>
+                <p><p>Whew, seems like it&#8217;s been a while.</p>
+
+
+
+<p>I did not die.</p>
+
+
+
+<p>In fact, I recovered.  Well, from the lung thing.  My right arm is still a little off from that elbow fracture a couple years ago.</p>
+
+
+
+<p>Getting old sucks, especially if you were young for a long time <img alt="🙂" class="wp-smiley" src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" style="height: 1em;" /></p>
+
+
+
+<p>So, what happened since my last post&#8230;.?  Oh, I lost 40-50 pounds in 2 months while I was sick.  It was not deliberate.  I opted not to keep the weight off after recovery since nobody can account for the dramatic weight loss.</p>
+
+
+
+<p>Quite a bit of bruising on my abdomen still.  Not sure what&#8217;s up yet.  Doc says it is COPD and wants to talk about smoking cessation.</p>
+
+
+
+<p>I missed the deadline for finding a new place so I&#8217;m still in Cincinnati for another year.  March of 2023.  It&#8217;s occurred to me since then that I am not sure if I want to move back to Columbus.  I deeply enjoy my social network up there but the housing scene there is horrendous unless you own, and buying a house is a huge, time-consuming thing.  At least for me.  I&#8217;m picky.</p>
+
+
+
+<p>COVID isolation became a new way of life.  I&#8217;m slowly gearing out of that mode.</p>
+
+
+
+<p>I&#8217;m still in vacation mode in terms of projects.  I&#8217;m taking a break until I find my inspiration again.  </p>
+
+
+
+<p>It may be that I switch to a mode where I only do things in spurts here or there as I feel like it, so I can be a little more balanced with time than I have in years past.</p>
+
+
+
+<p> I&#8217;ve been cutting down on work as well, like not working super late every night making everything perfect.  This has actually made me more productive, so, I may be onto something.</p>
+
+
+
+<p>No big plans at the moment.  I&#8217;m enjoying that.</p>
+
+
+
+<figure class="wp-block-embed aligncenter is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2022-04-16</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/sometimes-just-surviving-is-okay/">Phanes' Canon: Sometimes Just Surviving is Okay</a></h5>
+                <p><p>A little over a month ago I got really sick.  I mean really sick.</p>
+
+
+
+<p>At first I thought it was just a headcold so I popped some Vit-C, took a couple days off and just rode it out.</p>
+
+
+
+<p>But then I continued to get sicker.  And sicker.  And sicker.</p>
+
+
+
+<p>And the days went on as I got sicker.  Then it became weeks.  And it became sicker. </p>
+
+
+
+<p>I wasn&#8217;t getting better and I was starting to get worried about my jobs.</p>
+
+
+
+<p>So whatever it was was viral I thought, but something was setting me off and making it worse.  Something with the air.  I tried staying in different rooms.  Staying out of the main office helped but I was still getting sicker, just not as fast.</p>
+
+
+
+<p>I bought a really expensive air purifier to blast on full right next to my head.  It helped, but I was still getting sicker.  I checked the HVAC filter on a hunch, and sure enough, jet black and slimy, full of mold of the eldritch horror variety.</p>
+
+
+
+<p>I ripped it out and replaced it, and then thought that would help.</p>
+
+
+
+<p>I continued to get sicker.  So I turned off the HVAC.  That helped.  But then the heat was an issue because it was the dead of winter.  I considered buying space heaters but saw the path I was on:  If I continued to invest in this without intervention I&#8217;d exhaust all my other options.  </p>
+
+
+
+<p>So, I evacuated.  Grabbed the dog, and hobbled feverishly to the kennel place and dropped him off for a week and checked into a hotel where I coughed until I puked all day for another week and then stayed at a friend&#8217;s house when I still wasn&#8217;t getting any better.  By that point I&#8217;d gotten to a doctor who&#8217;d given steroids and antibiotics, which helped a great deal and I recovered.</p>
+
+
+
+<p>I have never been sicker.</p>
+
+
+
+<p>After a while a I got better, and went back to the place, blasted the HVAC system to clear it out with the new filter for a couple days and things normalized.  Went and picked up the dog, today, and the house is back to normal.</p>
+
+
+
+<p>So, it wasn&#8217;t COVID-19.  I was tested several times by the doctor.  It was viral, though.  I&#8217;ve noticed this is becoming a thing.  I&#8217;m seeing alot of people getting sick with viruses that aren&#8217;t COVID-19 since the pandemic started, likely due to our immune systems not being as rugged due to all the isolation.</p>
+
+
+
+<p>The new normal sucks and it almost killed me.</p>
+
+
+
+<p>At this point I&#8217;ve got the virus beat but I&#8217;m still pretty lethargic, coughing a bit while my lungs clear out, but it&#8217;s nothing too serious.</p>
+
+
+
+<p>I guess it&#8217;s time to just chill for a few weeks.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2022-02-16</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/the-stranger/">Phanes' Canon: The Stranger</a></h5>
+                <p><p>Within a hundred trillion years from now, star formation in the universe will end and every remaining star in existence will go cold.</p>
+
+
+
+<p>After that, there will be 10^106 years of the universe consisting entirely of black holes and nothingness:  Void and destruction.</p>
+
+
+
+<p>Proportionally that&#8217;s like the universe starting with a single second of stars and then a billion billion billion billion billion billion billion years of just black holes and void.</p>
+
+
+
+<p>The time from the formation of the Earth, to the Earth&#8217;s destruction as our sun enters its red giant phase of its existence about 7.5 billion years later would just be a flicker during that second.  An instance.  If you blinked you&#8217;d miss it; if you didn&#8217;t blink you might still not see it because it was so brief.  That one second period of light in the cosmos could fit our beginning and our end in it many thousands of times.</p>
+
+
+
+<p>If you were to view the universe as a designed system, would you attribute to its purpose the side effect of its brief explosion at the beginning of its initiation?</p>
+
+
+
+<p>This would be like attributing to the function of your vehicle the light created from the spark in its starter during ignition.</p>
+
+
+
+<p>The proper characterization of the the universe is, with an amazingly brief exception in time, a dark expanse filled with nothing but black holes in it.</p>
+
+
+
+<p>&#8220;Nothing&#8221;, the space between these black holes, is hard for beings like us to even conceptualize because we live surrounded by &#8220;something&#8221; and are never exposed to &#8220;true nothingness&#8221;.  </p>
+
+
+
+<p>We look at an empty box and think &#8220;nothing&#8221;, but it has air, dust, energy, and things of the micro we&#8217;re still studying.</p>
+
+
+
+<p>We look into space and see the dark expanse and think &#8220;nothing&#8221; because it lacks most of those things, but even the fabric of reality is there, even if only at the quantum perspective.  Empty space is a vacuum but it&#8217;s not &#8220;nothing&#8221;.  That comes later as these reality-bending horrors rip the space between themselves apart for consumption. </p>
+
+
+
+<p>We can&#8217;t even visualize what most of our universe <em>is</em> for most of its existence.  It&#8217;s not just a vacuum or the absence of material at this state&#8211; it&#8217;s &#8220;nothingness&#8221;.</p>
+
+
+
+<p>We&#8217;re in a machine we can&#8217;t understand.  We don&#8217;t have the context.  Our entire existence is in that brief side effect of the ignition.  So, let&#8217;s not ever talk about &#8220;purpose&#8221; outside of the subjective meaning that we ourselves attribute to the things in our fleeting lives.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure>
+
+
+
+<h2>Our economy is failing.</h2>
+
+
+
+<p>It hasn&#8217;t impacted me much yet, but I&#8217;m seeing the signs everywhere.  We&#8217;re about to see tectonic shifts in the workforces of almost every major industry in almost every major country.</p>
+
+
+
+<p>I&#8217;m predicting huge waves of unemployment and financial collapse that will especially hit middle class families.</p>
+
+
+
+<p>The crypto markets have failed.</p>
+
+
+
+<p>The technology sector has been stalled for 2 years and is surviving almost entirely off momentum at this point.  </p>
+
+
+
+<p>Companies will start going under everywhere.  Big ones you didn&#8217;t see coming.  We may even see some issues with our food supply chains.</p>
+
+
+
+<p>And then we&#8217;ll see a cultural response to shutting everything down this long.  The PR benefit to these companies only lasted about the first 6 months.</p>
+
+
+
+<h2>I&#8217;m moving.  Again.</h2>
+
+
+
+<p>I&#8217;ll be trying to relocate to Columbus to get ready for the storm I see coming.  I&#8217;m better networked there, it is a technology hub infused with wealth, without the mismanagement that characterizes silicon valley and makes it unlivable, and the climate is tolerable enough to me.  Hopefully the move will be wrapped up by March.</p>
+
+
+
+<p>The general strategy is to maximize opportunities for contracts, getting fit physically and working as many contracts at the same time as possible to maximize income so that if there&#8217;s a collapse I&#8217;ll have resources to get a secure situation created.</p>
+
+
+
+<p>I sound like a prepper.</p>
+
+
+
+<h2>Project SURRO</h2>
+
+
+
+<p>I&#8217;ve had a breakthrough.  I can&#8217;t talk about it yet.</p>
+
+
+
+<p></p>
+
+
+
+<p></p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2022-01-09</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/the-sweet-still-air-before-a-storm/">Phanes' Canon: The Sweet Still Air Before a Storm</a></h5>
+                <p><p>I love the smell of the air before a big storm, when everything gets still and quiet, and you can almost smell the electricity in the air.</p>
+
+
+
+<p>I think alot of people do.  </p>
+
+
+
+<p>That probably doesn&#8217;t mean we&#8217;re creatures of chaos.  I don&#8217;t think it&#8217;s so enjoyable because we anticipate the storm; in fact, I think we&#8217;d all be just fine if it stayed like that year round.  But it never does.  And then we&#8217;re fighting the storm and longing for the suspended breath of nature once again.</p>
+
+
+
+<p>What makes us creatures of chaos is that if we were not fighting the storm we&#8217;d be fighting each other, and, we do between the storms.  The nature outside is our enemy, and when it&#8217;s not, the nature inside is, and when that&#8217;s not, the nature of each other is.</p>
+
+
+
+<p>All creatures hide from the storms except us.  We wage war with those storms and build up resilience to them, and organize against them just as we do against each other.  This is a human trait.  This is <em>the</em> human trait.</p>
+
+
+
+<p>It&#8217;s been a little quiet lately.  I hope it&#8217;s just a lull and not a quiet before a storm.  It usually isn&#8217;t.</p>
+
+
+
+<p>I&#8217;ve been preoccupied with work and family things.  As boring as that is, I&#8217;m relieved.</p>
+
+
+
+<p>The cross-compilation process I&#8217;ve been using for Foster-D, while working, won&#8217;t be feasible for generating a distribution that targets multiple platforms.  Only x86_64.  I&#8217;ll need to revisit it at some point.</p>
+
+
+
+<p>I don&#8217;t feel like making decisions.  I might enjoy a brief period of analysing the projects I&#8217;ve been working on after some private life reorganization to get ready for the next cycle of effort.  </p>
+
+
+
+<p>I don&#8217;t like how loose in planning I&#8217;ve been lately nor do I like how soft I&#8217;ve let my routines get while dealing with an extended bout of insomnia.</p>
+
+
+
+<p>On that note, I suppose there is a storm coming.</p>
+
+
+
+<figure class="wp-block-embed aligncenter is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-09-11</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/surro-linux-almost-there/">Phanes' Canon: SURRO Linux: Almost there!</a></h5>
+                <p><p>I am absolutely <strong>giddy</strong> to announce that the SURRO Linux effort has broken through a major problem with the cross-compiler generation.  At this point it&#8217;s almost fully automated and it /looks/ like we might have something to download soon <img alt="🙂" class="wp-smiley" src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" style="height: 1em;" /></p>
+
+
+
+<p>I want to say more, but so much of this is uncharted territory and I want to make sure I underpromise and overdeliver.</p>
+
+
+
+<p>Doing this mostly on my own so far has been <strong>bullshit</strong> levels of work lol.</p>
+
+
+
+<p>The current build is working with glibc/gcc from raw sources with no crosstool-ng dependency.</p>
+
+
+
+<p></p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-08-13</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/the-gods-can-bleed/">Phanes' Canon: The Gods Can Bleed</a></h5>
+                <p><p>As of June 21st, <a href="https://habr.com/en/post/549276/" rel="noreferrer noopener" target="_blank">Molly de Blanc</a> is <a href="https://twitter.com/mmillions/status/1407001328379965449" rel="noreferrer noopener" target="_blank">reporting as being unemployed</a>, presumed to include the Gnome Foundation, which means we are officially at 33% of goal for the community response to the Stallman smear campaigns.  Woot!  </p>
+
+
+
+<p>I think the oddest thing about the whole series of events is the Gnome Foundation&#8217;s total silence on the matter.  The community deserved the announcement.</p>
+
+
+
+<p>This is actually monumental progress, because what it&#8217;s done is it&#8217;s shown the people watching all of these smear campaigns, many fearful of being canceled if they say anything off the path of the narratives, that  these FAANG-sponsored corporate &#8220;contributor&#8221; trojan horse actors that get embedded into these projects, particularly Gnome Foundation, OSI, Debian, are peddling &#8211; that these people <strong><em>can</em></strong> be stopped and that there <strong><em>can</em></strong> be consequences for their methods if people work together and are adamant enough about it.</p>
+
+
+
+<p>The open source gods can bleed, and everyone saw it happen.</p>
+
+
+
+<p> It&#8217;s also shown the agents of these campaigns that they can lose.  They can not only lose, they can be held accountable after they lose.</p>
+
+
+
+<p>There&#8217;s alot more to do though.</p>
+
+
+
+<p><a href="https://www.debian.org/vote/2015/platforms/neilm" rel="noreferrer noopener" target="_blank">Neil McGovern</a>, who in all likelihood used Molly as a patsy for this campaign while he was orchestrating it with <a href="https://hashman.ca/about/" rel="noreferrer noopener" target="_blank">Elana Hashman</a>, is still employed by the Gnome Foundation.  Elana Hashman is at RedHat and Debian too for that matter.</p>
+
+
+
+<p>Those are the primary actors, but let&#8217;s talk about the secondary actors for a moment, too, because this is the impact these people had on the community during that campaign:</p>
+
+
+
+<p>Aaron Basset, whose most notable attribute is that he represents New Relic in his role as the &#8220;Developer Relations Principal&#8221; (other companies are calling this &#8220;Developer Advocate&#8221;, or &#8220;Community Ambassador&#8221; or similar) it&#8217;s a role that interfaces with the developer communities that use their software), has <a href="https://twitter.com/aaronbassett/status/1376601712379764737" rel="noreferrer noopener" target="_blank">published software designed to target the signers of the Stallman counter-letter</a>.   Why does this asshole still have a job?  <a href="https://twitter.com/lord_bagira/status/1411915113699889155" rel="noreferrer noopener" target="_blank">New Relic was made aware of it.</a>  So, I just want to recap: </p>
+
+
+
+<ol><li>He&#8217;s paid to represent New Relic to the various F/OSS communities.</li><li>The petition he is supporting got less than half as many votes as the counter petition, effectively demonstrating those communities&#8217; voices and showing that he was not in alignment with the majority of the open source community.</li><li>His response is to publish software designed to target people who signed the petition he disagreed with, effectively fostering a climate of intolerance, exclusion, and alienation.  He did this in the context of his job duties at New Relic.</li><li>New Relic is aware and apparently quietly hoping no one will say anything or that people will forget about it.</li></ol>
+
+
+
+<p>He didn&#8217;t just release software, he rounded up his pay-for-audience used to make New Relic&#8217;s opinions appear majority to host a podcast to build it live with that audience to give the false impression that this was some kind of community response.  </p>
+
+
+
+<pre class="wp-block-verse">For context for those who aren't following, if you'll recall, there were two petitions floating around in March.
+
+- <a href="https://rms-open-letter.github.io/" rel="noreferrer noopener" target="_blank">One directed at Stallman</a> in the campaign led by Molly de Blanc mentioned above
+- <a href="https://rms-support-letter.github.io/" rel="noreferrer noopener" target="_blank">One directed at the methods/smears used in that campaign</a>
+
+ The first petition was basically a set of provable lies designed to attack the Free Software Foundation and their board of directors, who collectively own and maintain the GPL.  It wasn't terribly well hidden in its purpose.
+
+The second one was a counter-petition that protested the methods used and disputed the "assertions of facts" in the first one, and signed in support of Stallman's advancement of the FSF and for the continued current representation in the FSF board of directors. 
+
+The smear campaign's petition got  3,004 signatures (minus the ones from people who tried to retract their signature after re-reading the letter and realizing they didn't want to sign it, who were refused right of retraction).   Most of the signers were coerced through corporate contact points. 
+
+The support petition got 6,785 signatures, in an overwhelming show of support for the FSF, its board of directors and particularly Richard Stallman by the open source community these organizations claim to be friendly towards.</pre>
+
+
+
+<p>So, I&#8217;ll just reiterate what I&#8217;ve heard from others talking to the other f/oss developers (actual ones, not pretend ones on twitter &#8212; <a href="https://archive.ph/GeuJm" rel="noreferrer noopener" target="_blank">the real ones don&#8217;t have 30k followers because they dont have time for that</a>); People want this little asshole fired. I do too.  I want to see Aaron Bassett fired over this, with cause.   I want the entire world to know why so that other people who are inclined to target innocents for token signaling are forced to consider the potential consequences of their malicious behaviour.  We are taught, from at least the age of 5, that targeting innocents is unacceptable.</p>
+
+
+
+<p>At the end of the day though, he&#8217;s a low-information secondary actor.  <a href="https://news.ycombinator.com/item?id=26575145" rel="noreferrer noopener" target="_blank">The primary actors are the core team who were behind the smears</a>. Fire them all.  They think they&#8217;re invincible.  They view community dissent as coming from &#8220;the little people&#8221;.  And they lie to achieve their objectives.  They don&#8217;t just lie, they carefully plan out entire campaigns of lying, and they do it to destroy people while hiding behind corporate barriers on corporate pedestals, and we&#8217;ve had enough!  </p>
+
+
+
+<p>The gods can bleed, and now they know we know.</p>
+
+
+
+<p>I know some of them are reading this.  If that&#8217;s you, and you&#8217;re looking for a way to shut me up, I&#8217;ve just got one thing to say:  </p>
+
+
+
+<blockquote class="wp-block-quote"><p><em>Veni et Vide</em>.</p><cite>Chris Punches</cite></blockquote>
+
+
+
+<p>Have a good night folks.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-07-04</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/bye-freenode/">Phanes' Canon: Bye, Freenode</a></h5>
+                <p><h2>I&#8217;m not Staff There, Ya Dummies</h2>
+
+
+
+<p>As of June 21st, I amicably tendered my resignation and severed my contract as VP of Business Development at Freenode Limited. There was a brief exchange and everybody&#8217;s on good terms.</p>
+
+
+
+<h2>Why I left</h2>
+
+
+
+<p>I had many reasons, but, many of them are better left discussed internally.</p>
+
+
+
+<p>Of those that I can speak about, chiefly among them is a matter of identity.  A couple of months ago, Freenode was the world&#8217;s FOSS IRC hub.  Today its identity is heading towards a more general purpose network.  While the new identity is one rooted in freedom of expression, if you&#8217;ll recall when I first joined the effort it was to empower the targets of serial defamation and to eventually disempower and remove the people and structures in FOSS communities that participate in it, enable it, cover it up, and propagate it, often in serial fashion.  That included some of the ex-staff at Freenode prior to things blowing up earlier in the year, as well as some of the current staff at OFTC.</p>
+
+
+
+<p> This is regrettable to me, as, in response to things completely beyond my control, I have observed that the majority of the FOSS community has relocated to either OFTC or Libera; effectively unifying and emboldening the network of abusers I sought to remove, who are continuing even today to engage in vicious targeting of the staff at Freenode (as well as other people who they choose to target) in a cyclical arrangement, and with a convenient cover narrative about what happened.  Instead of the real reason, which is that their repeated behaviour over years caught up to them and dislocated the majority of the open source world as a result, they now can cite events that they themselves antagonized and orchestrated in some cases, which just adds further insult to injury.</p>
+
+
+
+<p>Another reason is that of direction.  I had a different vision on where to take Freenode that was incompatible with the direction it is going and has gone, which did include catering to the FOSS community, so, it would not be appropriate for me to stay.</p>
+
+
+
+<h2>The Most Notable Part of This was the Smear Campaigns</h2>
+
+
+
+<p>I can&#8217;t lie, I hope that freenode does succeed, though I am no longer part of its daily affairs, and I do hope that Libera and OFTC fail &#8212; their identities as organizations have become corrupt, and their methods have been enabled and legitimized by this.</p>
+
+
+
+<p>The only members of the staff that were not targeted by smear campaigns while I was there belonged to socially empowered demographics.  The majority of those targeted were hetero-normative Caucasian males.  These campaigns followed the same formula as the other campaigns I occasionally talk about here.</p>
+
+
+
+<p>I was also targeted to some degree, but there really isn&#8217;t alot of dirt on me; all they can really pull out is false light and innuendo to make legitimate things appear to be improper by manipulating details and context surrounding events in my life that they actually know nothing about, thus opening themselves to being rendered non-credible in their future campaigns as things unfold and opening themselves up to liability.</p>
+
+
+
+<h2>The Moral Law</h2>
+
+
+
+<p>The truth that burns for some of these miserable bastards is, I live an awesome life, full of love, and compassion, varying degrees of wisdom and empathy, and friendships, and hope, and even beauty.  I&#8217;m not super wealthy, I mean I have to work for a living, but I pull a solid couple hundred G&#8217;s along the way, and am on my way to not needing to work anymore if I maintain.  Even then I&#8217;ll still do open source stuff because it&#8217;s what I enjoy.  </p>
+
+
+
+<p>I&#8217;m no longer a 23 year old living in an efficiency apartment without the resources to stick up for himself making 8.25/hr at a call center while fighting the slackware team.</p>
+
+
+
+<p>My values and my character are not only well tested now but well known in my circles to the point that I no longer have to prove them.  I remember being in my early 20s and not being established yet, living in a new place without alot of new friends yet, and having to defend myself against a campaign like that, and having a hard time at it, because I just hadn&#8217;t been on the Earth long enough for people to know they were lies yet.  </p>
+
+
+
+<p>There were two formative smear campaigns for me back then, back to back:  The first was an ex-fiance in college who developed severe mental problems after our engagement fell apart, and proceeded to engage in the most devastating campaign of dishonest destruction I&#8217;ve still ever seen anything close to; the second was with the Slackware crew shortly after, where details from the <a href="http://punches-pawloski-fiasco.blogspot.com/" rel="noreferrer noopener" target="_blank">first campaign</a> leaked out into the <a href="https://www.linuxquestions.org/questions/slackware-14/um-what-who-is-slackhappy-and-slackhappy-860433/" rel="noreferrer noopener" target="_blank">second campaign</a> after I challenged their support venue by trying to create my own and resulted in about 7 years of defamation, <a href="https://twitter.com/lord_bagira/status/1399938915931394053" rel="noreferrer noopener" target="_blank">harassment</a>, and even offline stalking <a href="https://phanes.silogroup.org/wp-content/uploads/2021/05/Screenshot_2021-05-28_13-05-18.png" rel="noreferrer noopener" target="_blank">coordinated by people that you probably trust</a> if you&#8217;re in the Open Source community.  At the time, the Freenode staff <a href="https://pastebin.com/U2wGZJS2" rel="noreferrer noopener" target="_blank">were aware of what was going on</a> and <a href="https://web.archive.org/web/20210528170639/https://pastebin.com/8BLKnFU5" rel="noreferrer noopener" target="_blank">were turning a blind eye to it</a>, and allowed it to be used as fodder to justify future ostracisation.</p>
+
+
+
+<p>Along the way my career took off and I&#8217;ve lived in a strange split universe; one in which my walking world is awesome and relatively normal where I live as a competent and successful corporate systems architect and consultant for Fortune list companies, am pretty much surrounded by joy and success, and another bizarro universe of a demon named &#8220;me&#8221; on IRC that never seems to have any substance when investigated to primary sources and is a reality that only seems to exist in a single social network.  The interesting part is at one point after I had decided to launch IRCThulu, the ex-staff at Freenode sent a courier, a member of their staff, to negotiate  with me, who ended up becoming a friend of mine because the bullshit surrounding that bizarro IRC universe was so apparent and in such discord with reality that it doesn&#8217;t really hold any weight to it.</p>
+
+
+
+<p>Well, now I&#8217;m 36, and these same folks are breaking their literary fists on my abs, and I have the financial pull to hire attorneys when that&#8217;s not enough, which ends with me being financially compensated and expenses covered along the way.  If I can&#8217;t have peace, I can at least have a nice house.  </p>
+
+
+
+<p>Hasn&#8217;t had to happen yet, and hopefully won&#8217;t have to start, though, I am starting to wonder about that with this one.  Even without legal teeth behind it, the truth is, every enemy I&#8217;ve ever noticed that I had has eventually destroyed themselves with their own character, even if it took a few years of waiting for it.  Why do you suppose that is?</p>
+
+
+
+<h2>What&#8217;s Next</h2>
+
+
+
+<p>What&#8217;s next is July 4th, and an awesome BBQ being planned.  At some point between then and now, me and my puppy are going out to a closed fence park where he can run himself stupid chasing a dirty tennis ball.  Then I am considering retheming the site.  Then looking at hopefully devoting more time to SURRO Linux development.  Couple of events to go to along the way.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-06-24</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/strength-establishment-and-pizza/">Phanes' Canon: Strength and Establishment</a></h5>
+                <p><p>What a rollercoaster of a couple of weeks it&#8217;s been.  It was already a wild year.  In a wild decade.  For a wild life.</p>
+
+
+<div class="wp-block-image is-style-default">
+<figure class="aligncenter"><img alt="Best quote from Street Fighter by sajcfan on DeviantArt" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Forig10.deviantart.net%2F5e2a%2Ff%2F2011%2F254%2F4%2Fc%2Fbest_quote_from_street_fighter_by_sajcfan-d1vhxnq.jpg&amp;f=1&amp;nofb=1" /><figcaption>I&#8217;m just kidding.  It was a Monday.</figcaption></figure></div>
+
+
+<p>  </p>
+
+
+
+<h2>SURRO Linux Effort</h2>
+
+
+
+<p>For SURRO, we started a new ambassador program to increase our presence on various media.  Also hardened down on our ability to verify identities of project leadership due to a recent rash of impersonations of me on the new Libera network.</p>
+
+
+
+<p>It also looks like new work will start soon on the troubleshooting of Foster.  It&#8217;s about damned time a new cycle started.  I can&#8217;t tell you how many times I&#8217;ve wondered through this project if I can pull it off.</p>
+
+
+
+<h2>Freenode Transition</h2>
+
+
+
+<p>Freenode has been interesting and inspiring.  I am so proud of these people I am working with.  </p>
+
+
+
+<p>So for those of you who are not aware, I am new staff at Freenode currently.  As discussed in previous entries, there was a change in leadership over the last month that lifted a great burden for me.  Lots of reasons why.</p>
+
+
+
+<p>I see some people compromising and making the argument that both sides have been mean or toxic towards each other, but, I am only seeing positive vibes on our end against the grain of some of the ex-staff and their social circles who either abused people on this network for decades or enabled it and sometimes covered it up.  I get the occasional dislocated abusive ex-project leader romping in trying to work a gotcha argument, but nothing I&#8217;m not used to dealing with. They&#8217;ve been sending in people and bots to spam and spread misinformation about the integrity of the network, targeting the staff with more smear campaigns (behaviours that literally are what got them in the position they&#8217;re in).  It had become a toxic culture for everyone except the people the abuse was benefiting.  The most insidious thing though that I observed was circles of ex-staff telling sponsors and project leaders outright lies to strategically overhwelm them with false information that undermined their confidence and generating rallies to call for a transition to their new network &#8212; in alot of cases those channels literally set their channel up where no one could speak and started booting people out after telling them to go the other network, essentially forcing users who did not want to transition into doing so.  In alot of cases they used those ever-more famous &#8220;whisper networks&#8221; to facilitate the miasma they were generating.  And all the while they believe they&#8217;re the good guys in this.  I am having difficulty reconciling what they believe themselves to be with what I am observing and have been observing for many years now.</p>
+
+
+
+<h2>Malignant Narcissists are the Problem, not &#8220;Social Justice Warriors&#8221;</h2>
+
+
+
+<p>The problems in F/OSS culture are hugely misunderstood.  While all  societies are burdened with such things, the issues we have are not nearly as heavily related to racial bigotry, transphobic bias, or even gender disparity &#8212; although these problems do exist even in these communities &#8212; they are being worked on and are socially empowered to be worked on.  A very serious, overlooked and unaddressed problem in F/OSS that accounts for most strife in these communities is a problem with narcissists once they reach a position of authority or influence.</p>
+
+
+
+<p>NPD is a disorder that has a set of hallmark behaviours common to it that I strongly suggest anyone reading this educate themselves on if they wish to understand why so many problems have occurred over the last 10 years or so in those communities.  One of those behaviours involves smear campaigns and the expert use of gaslighting, a technique called DARVO, and the sinister but effective inspiration or utilization of what are referred to as &#8220;flying monkeys&#8221;, which are secondary and tertiary actors to a narcissist&#8217;s smear campaign and sometimes do (and sometimes don&#8217;t) know whether the smears are true or not.  </p>
+
+
+
+<p>Behind most of those campaigns are 2-3 primary actors with NPD, APD, or a similar combination of actors with what are called &#8220;dark triad&#8221; traits, and the secondary actors who do most of the harassment or defamation will usually have a personality disorder that is related, often covert and is sometimes also NPD, and then there are tertiary actors (these are also flying monkeys) who mainly act as the peanut gallery holding the signs or throwing the tomatoes on various mediums &#8212; this class of campaign actor tends to be the loudest, and serves mainly as a vessel to carry the misinformation.  Tertiary actors often have no clue that this is the function they are serving, or that it was a function designated to them by the NPD actors driving the campaign.</p>
+
+
+
+<p>The general mode of operation of a narcissist is reputational attacks and subversion of social orders; this is the coworker that lies about you in the office that you never give enough ammo to until one of you leaves, or the disgruntled ex-employee that posts mean reviews on yelp about your business, or the embittered ex-fiance who lies about you to try to destroy your happiness&#8211; or the F/OSS community leader who seems to continuously get away with destroying people who have more potential than they do to remove threats to their career progress or position as a technical authority &#8212; or sometimes just to protect the same for people in their circles. </p>
+
+
+
+<p>The smears involved will usually have pieces of real events woven in with the lies consisting largely of false light, taking advantage of the high cost of attention required to validate their assertion. So, people go to validate, see that some elements line up, and accept the lies. This makes the secondary and tertiary actors (the flying monkeys) emboldened by a false sense of justice.</p>
+
+
+
+<p>This is not an exaggeration: A narcissist will put an enormous, staggering, and unbelievable amount of work into the deceptions that they use.   In some cases, they will not use a lie if they can&#8217;t get any ammo but will use innuendo so that others will misinterpret and relay that implied misinformation to avoid liability.   They also groom their secondary actors to find people who will either read between the lines and do it deliberately (ritual defamation) or will be gullible and malicious enough to be a willing, but dumb relay.</p>
+
+
+
+<p>The narcissist is an interesting creature and you often don&#8217;t see them for what they are until it&#8217;s far too late.  Most of their accusations are confessions, they are attracted to positions of power or influence for sometimes long periods of time, and , above all, they lash out when their position of power is reversed with their targets.  Everything I&#8217;ve seen so far is textbook playbook and pretty easy to draw out and handle.</p>
+
+
+
+<p>One element of these types of tactics that makes them devastating to their targets is that their campaigns can feed off of each other without any coordination:  When an NPD&#8217;s smear campaign dies down, years can go by but their smears are still in the public&#8217;s memory so a new narcissist comes along and rehashes the other&#8217;s old smears to try to falsely establish a destructive narrative.  Sometimes just for fun, and because they can.  Someone already did some of the work for them, so, it&#8217;s ammo.  People who are targeted by a narcissist are extremely likely to be targeted again by other narcissists often with variations of the same smears to establish a narrative, attack reputation, and undermine their target&#8217;s credibility to prevent the truth from coming out (which would result in consequences for the narcissist).</p>
+
+
+
+<p>The solution to alot of the problems in the F/OSS community, in particular regard for the parts of it that are backed by large corporations, which attract these at a higher rate because the positions carry the tone of funded authority and immunity, is to simply stop participating in these smear campaigns or bullying operations.  </p>
+
+
+
+<p>In terms of accountability today, malignant narcissists tend to springboard from one environment to another to avoid accountability; for example, one I&#8217;ve engaged with recently was high up at RedHat until his behaviour was starting to become exposed and create problems for him, so, he hopped over to Microsoft after things fell apart and he was becoming exposed, and that person is now a Principal Program Manager and  Microsoft has no clue what he is or has done, giving him a completely fresh slate to quietly start again in the background and likely a bump in pay.  Society often rewards NPD abusers because almost none of the effective strategies against  their behaviours are legal or socially accepted;  There aren&#8217;t even really socially acceptable ways to even make people aware of their behaviour, or the damage that they cause, because it has been a masked issue for so long.  They don&#8217;t get exposed and when they do it is often at great personal cost to quite a few people before it has any real impact at all, which likely just forces the narcissist to swap out environments with no further consequence for the trail of damage they left behind.</p>
+
+
+
+<p>The narcissist knows that serial campaigns detract from their credibility eventually so they tend to gravitate towards themes of social justice where their behaviour will not just be tolerated but rewarded and empowered by a culture that wants social justice for all but perhaps is not of a similar mind on what that looks like.  As such, demographics that are not empowered by social justice movements make softer targets than others.</p>
+
+
+
+<p>You don&#8217;t need to be out to ruin somebody&#8217;s life because of a poor comment they made 20 years ago; what you can do to help the community is to identify serial defamers, lynch mob participants, and exclusionist bullies in positions of authority and replacing them with people who want to foster a large community where anyone can participate &#8212; people who do not abuse the public trust.</p>
+
+
+
+<p>A word of caution though &#8212; nothing enrages the narcissist more than being exposed as one.  They are not able to process the dissonance between their self-perception and the reality being given light about them.  When a group of abusers is suddenly in a reversed position of authority with their target, it is almost gauranteed that they will lash out desperately with increasing animus until they are exhausted, destroy themselves, or destroy you.  The way you beat the narcissist is with self-reflection on how you contribute to their campaigns, exposing it, distancing from it, and in good faith.  People who are not prone to their manipulation are likely targets, as are people who have been previously smeared, but almost nothing guarantees being targeted quite like them becoming aware that you know what they are.  You will immediately be seen as a critical threat to them.</p>
+
+
+
+<p>I hope that you are able to see through the visceral lies that brought you here enough to be able to read and understand what I have communicated to you here, today. I am less concerned over whether you believe what somebody told you that brought you here than I am that you understand this phenomena so that you can stop others from having to experience it.  Who knows, maybe some of those &#8220;others&#8221; that you help by stopping the normalization of these behaviours might be someone you care about one day.  </p>
+
+
+
+<h2>Abuse @ SILO</h2>
+
+
+
+<p>Some of the folks angry with the change, seemingly from the circles of the ex-staff, have been targeting the new staff online with vicious and predatory smear campaigns, which inspired me to use SILO GROUP&#8217;s infrastructure to launch an abuse reporting mechanism for the F/OSS community for those affected by cyber-lynching, group harassment, general exclusionary practices or other forms of bullying that has happened far too frequently by people who have made it to very high ranking roles in large F/OSS and/or corporate entities, who have targeted too many people who otherwise would have made great contributions to free and open source systems and software.  I never want to see this kind of abuse again and I want to help people expose the malicious actors who engage in it.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure>
+
+
+
+<p></p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-06-01</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/frank-gingras-is-a-former-stalker-of-mine/">Phanes' Canon: Frank Gingras is a Former Stalker of Mine</a></h5>
+                <p><p>Hi. I just was made aware that Frank Gingras (thumbs) has been repeating an old hobby of defaming me. I am able to prove that he is lying and has actually projected his own actions towards me onto myself; I will be posting a public statement addressing it. Frank has done this too many times and it needs to be public knowledge.</p>
+
+
+
+<p>For clarification on the log I read, to avoid confusion, I am both bagira and phanes.</p>
+
+
+
+<p>The featured image should explain what was going on there.  I&#8217;ve also put it below[3] along with a list of my former stalkers[4] that they compiled themselves.  I&#8217;m happy to answer questions and update this page with new information as questions are asked about the history there, which is long.</p>
+
+
+
+<p>The context is that after some <a href="https://phanes.silogroup.org/14-years/" rel="noreferrer noopener" target="_blank">devastating life circumstances,</a> some career rivals in the open source space, gravitating around the core slackware development group &#8212; notably their IRC group, decided to respond to a dispute I had with that group originating from me trying to create a non-official support medium that rivaled theirs and provided a more open culture, which subjected me to years of abuse to try to bully me into shutting down. During their collective campaign, they incorporated both real and fabricated events from my personal and family life, cherry picked from what was made public at the time.  </p>
+
+
+
+<p>The full list of people involved in the stalking of me, my loved ones, both online and offline is in the ban list of #surro-linux. Frank was only one of them but was involved in most of the offline stalking in a campaign of sustained abuse, which went on for about 7 years between 2009 and 2016.  Leadership at the Apache project was made aware of his behaviour by me at a convention.  I am reserving my right to add the names of the others at my time of choosing.</p>
+
+
+
+<p>They wrote defaming letters to employers and potential employers. They defamed me to peers with lies much like the ones I am responding to. At the time I did not have the resources to litigate. There was no retaliation that involved any breach of integrity on my part.  They were in the social network of the ex-Staff[1], and I tried many times to get it addressed[2] by Freenode&#8217;s ex-staff.</p>
+
+
+
+<p>My intent was to move on from it but I have been made aware that &lt;thumbs&gt; is defaming me in various mediums again currently over the controversy involved with the Freenode change of staff, as I am currently on the new staff after the old staff left.  I am considering my options on how to best address his behaviour.  </p>
+
+
+
+<p>Thank you.</p>
+
+
+
+<ol><li><a href="https://web.archive.org/web/20210528084305/https://pastebin.com/8BLKnFU5" rel="noreferrer noopener" target="_blank">https://web.archive.org/web/20210528084305/https://pastebin.com/8BLKnFU5</a></li><li><a href="https://web.archive.org/web/20210528085208/https://pastebin.com/tWRcqr76" rel="noreferrer noopener" target="_blank">https://web.archive.org/web/20210528085208/https://pastebin.com/tWRcqr76</a> </li><li>Taken 2021-05-27</li></ol>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img alt="" class="wp-image-1568" height="222" src="https://phanes.silogroup.org/wp-content/uploads/2021/05/VvpOSR9-1024x157.png" width="1449" /></figure>
+
+
+
+<p>4. Taken 2021-05-28</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><a href="https://phanes.silogroup.org/wp-content/uploads/2021/05/Screenshot_2021-05-28_13-05-18.png"><img alt="" class="wp-image-1576" height="403" src="https://phanes.silogroup.org/wp-content/uploads/2021/05/Screenshot_2021-05-28_13-05-18-1024x285.png" width="1449" /></a></figure>
+
+
+
+<p>Update:</p>
+
+
+
+<p>Upon being made aware of this blog post, Frank Gingras joined the channel where stalking of me by this group was coordinated, used chanserv to get operator status, and booted me from the channel to prevent collection of more artifacts proving his involvement:</p>
+
+
+
+<p>5. Taken 2021-05-28</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img alt="" class="wp-image-1583" height="825" src="https://phanes.silogroup.org/wp-content/uploads/2021/05/Screenshot_2021-05-28_13-11-54.png" width="1450" /></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-05-28</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/luigi-needs-a-w-a-l-k-work-freenode-libera-upcoming-projects/">Phanes' Canon: Luigi needs a W-A-L-K, Work, Freenode/Libera, Upcoming Projects</a></h5>
+                <p><h2>The Dog and I</h2>
+
+
+
+<p>Who can say no to a face like that?  What the image does not show, is a little black tail waving on the ground at about 300 bpm (that&#8217;s 300 borks per minute for those of you without dogs).</p>
+
+
+
+<h2>Been Too Busy</h2>
+
+
+
+<p>So, me and my sweet, big dumb dog are enjoying the weekend.  I had half of Thursday off and all of Friday after a very exhausting platform rebuild for a client, preceded by a week of oncall rotation that same week while trying to memorize about 2000 words for a public speaking engagement to be delivered Thursday.</p>
+
+
+
+<p>Somehow it all worked out with no casualties.  By about Tuesday evening I was so tired that I was becoming physically ill and was dangerously close to burning out.  I had forgotten how much work engineering-level can be and this role has been a good reminder of that.</p>
+
+
+
+<h2>I kinda miss architecture</h2>
+
+
+
+<p>I do miss architecture, though.  Fixing processes saves more work than quick repairs and having to explain the basics of requirements gathering and communication around them to justify them are harder than actually doing them.</p>
+
+
+
+<p>The tradeoff is that the problems are almost always uncharted territory with much larger consequences.</p>
+
+
+
+<h2>Freenode/Libera</h2>
+
+
+
+<div class="wp-block-cover"><span class="wp-block-cover__background has-background-dim"></span><img alt="" class="wp-block-cover__image-background wp-image-1546" height="922" src="https://phanes.silogroup.org/wp-content/uploads/2021/05/mf.jpg" width="960" /><div class="wp-block-cover__inner-container">
+<p class="has-large-font-size">A few choice words would be appropriate&#8230;</p>
+</div></div>
+
+
+
+<p>Love it.  As predicted way ahead of time, less than 48 hours into Libera&#8217;s existence, a manic network operator using the nickname &#8220;Jose&#8221; careened into the main channel #libera and shut down all communication with channel modes before proceeding to bark orders at the users, issuing klines left and right, effectively demonstrating that the most toxic parts of the open source community are no longer on Freenode: They resigned and moved to Libera.</p>
+
+
+
+<p> They don&#8217;t have the social skills to foster a culture like Freenode used to have, and pretended to have the last 10-12 years, that was all inherited legacy from Lilo and this was all a natural and appropriate course of events that directly result from their inability to lead or coexist.  Freenode will be fine for the most part.  Still alot of garbage to sort out, but it&#8217;s on the right track.  Let these kids build their toxic operator paradise, and please, please let it be an exclusive club.  This pads the rest of the community by no longer having to interact with them and the poison that created them at OFTC, or the poison that they pour into any community that depends on them.  I love me some justice.</p>
+
+
+
+<p>Sure, some big communities are moving over.  Well, kinda, they&#8217;re mostly colocating to see which network sticks around, and most of them have discord arms building up to move over to.  The ones that are being all big and dramatic and flashy about it are the people we&#8217;ve all wanted to see leave for 10 years.  This is amazing, it&#8217;s somehow concentrating all the exclusionist dirtbags to one or two places. </p>
+
+
+
+<p>I did have a few choice words.</p>
+
+
+
+<p>I had words for Jessica Porter (&lt;Jess&gt; on IRC):  </p>
+
+
+
+<p><a href="http://web.archive.org/web/20210522083243/https://gist.github.com/jesopo/45a3e9cdbe517dc55e6058eb43b00ed9" rel="noreferrer noopener" target="_blank">http://web.archive.org/web/20210522083243/https://gist.github.com/jesopo/45a3e9cdbe517dc55e6058eb43b00ed9</a></p>
+
+
+
+<p>Had a real fun time with that one because, as has become expected of her and her constituents, she tried to erase the evidence as you can now see on the original page.  Good thing the archive.org link to it was circulated and not her carefully whitewashed version.</p>
+
+
+
+<p>I had words for Christian (&lt;Fuchs&gt; on IRC):</p>
+
+
+
+<p><a href="https://web.archive.org/web/20210523012420/https://gist.github.com/Fuchs/7d5866faadf71620583ceee10222ef95" rel="noreferrer noopener" target="_blank">https://web.archive.org/web/20210523012420/https://gist.github.com/Fuchs/7d5866faadf71620583ceee10222ef95</a></p>
+
+
+
+<p>He did the same thing and tried to sweep it under the rug.  Utterly pointless since this is all on archive.org now and has already been circulated.</p>
+
+
+
+<p>Oh and I had words for EdK:  </p>
+
+
+
+<p><a href="https://web.archive.org/web/20210523013230/https://gist.github.com/edk0/478fb4351bc3ba458288d6878032669d" rel="noreferrer noopener" target="_blank">https://gist.github.com/edk0/478fb4351bc3ba458288d6878032669d</a></p>
+
+
+
+<p>The only person I didn&#8217;t have words for was grumble, who was a direct participant in the abuse I witnessed and experienced by Freenode staff at one point.  I don&#8217;t have much to say to that one.  I just want him gone with the others.  There&#8217;s really not much else to say.  He knows why he deserves it.</p>
+
+
+
+<p>These people participated in ritual defamation for years and they need to face consequences.</p>
+
+
+
+<p>There are still about a dozen channel operators who should also be removed and not to mention Tom Wesley and Doug Freed.  I can&#8217;t do much about that at the moment.  I guess we all need things to look forward to.</p>
+
+
+
+<p>Oh, by the way, some rando alerted me to the presence of this thread: </p>
+
+
+
+<p><a href="https://web.archive.org/web/20210523020944/https://news.ycombinator.com/item?id=27235576" rel="noreferrer noopener" target="_blank">https://news.ycombinator.com/item?id=27235576</a></p>
+
+
+
+<p>I was really happy to see that someone is picking up on what&#8217;s been going on with me, and decided to throw in.</p>
+
+
+
+<h2>Upcoming Projects</h2>
+
+
+
+<p>In terms of current projects, I need to re-assess at a later time on priorities, because I think things are moving in the right direction with the IRCThulu project&#8217;s goals and I don&#8217;t want to interfere or create unnecessary adversarial models.    The environment changed, and I need to understand it first.  That will take a little time.</p>
+
+
+
+<p>One idea that crossed my mind was building the backend, frontend and the runners, and hosting the backend and frontend, but providing packages to install the runners to provide feeds as a community service.  I actually like this idea alot.  That way I can shut off the feed for networks that don&#8217;t want it and have a positive relationship with my efforts, while the community can still get visibility on the things they need to be visible.  It also removes anything resembling liability for me for reasons mentioned in previous posts while still presenting as a potential sanction device for OFTC and Libera in case it becomes necessary.</p>
+
+
+
+<p>As for SURRO and the Foster effort, I need to spend some time on it.  Maybe the weekend after next. Conceptually I think I&#8217;m pretty close to a breakthrough since Rex was polished up to a releasable state.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-05-23</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/vae-victis/">Phanes' Canon: Vae Victis!</a></h5>
+                <p><p>Alas, there are far fewer reasons to develop IRCThulu as of today due to a series of wonderful developments:  A collection of the most toxic abusers and abuser enablers in the F/OSS community have resigned their positions on Freenode, thus reducing the reach of their misuse of authority and curbing the implementation of their toxic gatekeeper mentalities across the open source world.  The problem with OFTC and Freenode is that they let toxic shits get to positions of authority in their organizations, and then those people proceeded to do what toxic shits do for decades when they were given an ounce of control over other people.</p>
+
+
+
+<p>I&#8217;ll never forget when these people were literally ignoring a stalker using crowd lynching techniques to harass and threaten my family and I on their network, spread lies about me, impersonate me, and then rally up others to do the same.  Instead, they victim-blamed, and even participated in some instances until this project surfaced seeking a scorched earth scenario.  </p>
+
+
+
+<p>Well this is that scenario.</p>
+
+
+
+<p>I&#8217;m glad they&#8217;re gone.  I hope they never are given positions of authority in any community again, and if you&#8217;re reading this, I sincerely hope you take measures to prevent them from seeking such positions.</p>
+
+
+
+<p>Their names are:</p>
+
+
+
+<ul><li>Fuchs, who was aware of the situation and chose to punish and ostracize the stalking victims of his friends over the right thing.  His name is Christian.  More identifying details will follow.</li><li>Jess, who is a toxic enabler of abuse on the network.</li><li>EdK who has been famous for his misuse of authority in the community for decades.</li></ul>
+
+
+
+<p>It&#8217;s all just so wonderful to see them leave with nowhere to go to of any substance.</p>
+
+
+
+<p>Here are some blogs, and I can assure you the timing was incidental (wink, wink):</p>
+
+
+
+<ul><li>emilsp:&nbsp;<a href="https://gist.github.com/pinkisemils/39d4ded8b1639b6f39dcab15618649f5">https://gist.github.com/pinkisemils/39d4ded8b1639b6f39dcab15618649f5</a></li><li>Fuchs:&nbsp;<a href="https://gist.github.com/Fuchs/7d5866faadf71620583ceee10222ef95">https://gist.github.com/Fuchs/7d5866faadf71620583ceee10222ef95</a>&nbsp;/&nbsp;<a href="https://fuchsnet.ch/freenode-resign-letter.txt">https://fuchsnet.ch/freenode-resign-letter.txt</a></li><li>jess:&nbsp;<a href="https://gist.github.com/jesopo/45a3e9cdbe517dc55e6058eb43b00ed9">https://gist.github.com/jesopo/45a3e9cdbe517dc55e6058eb43b00ed9</a></li><li>kline:&nbsp;<a href="https://kline.sh/">https://kline.sh/</a></li><li>Md:&nbsp;<a href="https://blog.bofh.it/debian/id_461">https://blog.bofh.it/debian/id_461</a></li><li>mniip:&nbsp;<a href="https://mniip.com/freenode.txt">https://mniip.com/freenode.txt</a></li><li>niko:&nbsp;<a href="https://coevoet.fr/freenode.html">https://coevoet.fr/freenode.html</a></li><li>Swant:&nbsp;<a href="https://swantzter.se/freenode-resignation">https://swantzter.se/freenode-resignation</a></li></ul>
+
+
+
+<p>Anyway, there are still problems at Freenode.  See, Tom Wesley, a covert narcissist at the OFTC has been plotting and undermining both of these organizations to further his interests with this growing takeover being orchestrated from the bowels of the Debian Community for years, and has his claws sunk into Freenode and OFTC to these peoples&#8217; detriment (even though they inadvertently helped him do it).  Shortly before all of this was the Stallman smear campaign, which I can&#8217;t comment too much on but was active in helping shut down, and was whisked off of both networks to keep me from creating consequences for the currently unethical behaviour being coordinated against Stallman from those same people in the Debian community and to definitely keep me from telling my own personal story about these people while they were begging to retain control of the very network they used to abuse people for decades.</p>
+
+
+
+<p>I just want to say it again:  The open source community was improved by these people leaving.  Don&#8217;t let them come back.</p>
+
+
+
+<p>So, I&#8217;m not sure where things go from here.  If Tom Wesley is thrown out, which is actually pretty likely within a couple of years once the new crew comes in, there simply will be no reason for IRCThulu:  The Freenode network would have provided justice.</p>
+
+
+
+<p>Time to sit back and watch how this unfolds, and make decisions as things go.</p>
+
+
+
+<p></p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-05-20</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/the-ircthulu-platform-tenta-rehash/">Phanes' Canon: IRCThulu Platform: Tenta Rehash</a></h5>
+                <p><p>So, I cracked open the 4 year old codebase for the pieces of IRCThulu that I can make public:</p>
+
+
+
+<p><a href="https://source.silogroup.org/ircthulu">https://source.silogroup.org/ircthulu</a></p>
+
+
+
+<p>Yeah, this is all proof of concept at best.  Plus, these runtimes aren&#8217;t particularly portable for the guerrilla style campaign model I want this system to be capable of executing.  It needs to scale.</p>
+
+
+
+<p>So, I brushed up on my IRC and made a little proof of concept bot to get those neurons firing again:</p>
+
+
+
+<p><a href="https://github.com/cmpunches/Tentabot">https://github.com/cmpunches/Tentabot</a></p>
+
+
+
+<p>It turns out, implementing down to the socket level without introducing dependencies was crazy easy compared to how it would have been 4 years ago.  I&#8217;ve grown a little as a developer and an architect since then.  I did some sloppy work here with field processing in the IRC_Event class that needs rewritten before anyone should use it &#8212; it&#8217;s just a POC for an event-driven IRC bot.  I didn&#8217;t want to introduce regex dependencies or spend too much time on tokenizing the responses.  Quick and dirty, took about a day.</p>
+
+
+
+<p>I can&#8217;t believe it&#8217;s been 4 years.</p>
+
+
+
+<p>The Tentabot was fun to build and I got to test it out a little with a well known hosting provider, and even gather some field data in the process for requirements gathering for the IRCThulu.  Can&#8217;t quite publicize the endgame strategy just yet, but, it&#8217;ll bring some closure to alot of people who deserve that closure.  The bot needs to look like a real user when it connects.  It should also be very small and portable. </p>
+
+
+
+<p>I think the next step from here is re-implementing in C++.  Then I want to bring in a command subsystem as well as the ability to connect to new hosts, then loop in hooks for everything and release that.  That way if the IRCThulu campaign ends for whatever reason I&#8217;ve still got something to show for it as a released product.  I have so little time these days that I&#8217;ve gotta create layers of win with stuff like this.</p>
+
+
+
+<p>I prefer a modular approach to platform design.  Every component should be a standalone product that does one thing for a specific purpose and works together to create a larger platform.  It not only fits in well with the Unix philosophy, but it also creates an incremental delivery for larger distributed systems, and the resultant platform is far more flexible than a bespoke system where everything is made to uniquely only talk to its sibling components.</p>
+
+
+
+<p>Freenode is headed towards their endgame with this, but, I&#8217;m still in the opening credits.  They have a couple of excellent developers.  No real executive acumen for adversarial models, though, despite the ardent effort to create them; a clear sign of a leadership defect.  </p>
+
+
+
+<p>So, time to trim some fat, and losing weight takes time.  When you are losing weight you don&#8217;t lose 5 pounds here and 10 pounds there after a night of rigorous exercise, or even a couple weeks of it &#8212; you develop a strategy and a routine around energy expenditure and dietary intake.  You grind away at it for weeks, months, some people take years, and then you wake up one morning to find yourself more fit, and to stay that way you decide to continue your program.  After a while you enjoy it.  </p>
+
+
+
+<p>Conflict is much the same way.  Not all conflict is an argument that&#8217;s over when someone says something mean or witty.  That&#8217;s a defect in our current culture, and not a reflection of any historical merit.  Sometimes conflicts last for generations.  People who seek out conflict are unwise, sure, but people who avoid necessary conflict at the expense of their values are the former&#8217;s prey.  Sometimes it is unavoidable.  That&#8217;s also something smoothed over in human history: We like to pretend every conflict in the past is a product of barbaric times instead of a hallmark feature of our species, and, perhaps categorically&#8211; <em><strong>of sentience</strong></em>.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure>
+
+
+
+<p></p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-05-11</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://phanes.silogroup.org/a-thousand-years-of-ircthulu/">Phanes' Canon: A Thousand Years of IRCThulu</a></h5>
+                <p><p>I&#8217;ve decided to relaunch the IRCThulu effort after a sudden encounter from an old harasser named Tom Wesley.</p>
+
+
+
+<p>I had a deal worked out with the major IRC networks that I wouldn&#8217;t develop it, as long as my work was left unhindered, but, the person I worked it out with has left staff and the two networks I go on don&#8217;t seem to believe it is an issue anymore, so, this is my cue to build away given the adversarial stance one of the networks has suddenly taken by a couple of renegade staffers.  Up until this point, I&#8217;ve kept my terms of those agreements.  It&#8217;s really too bad.  Ironically, this was set off after years of everyone holding up their end of our agreement until a big shitfest of exclusionary douchebags in the debian space started a smear campaign against RMS and some other folks, which I helped shut down,  so, they&#8217;re cleaning house of folks who don&#8217;t fit into their narratives, and just happened to pick out the one staffer holding the policy avalanche away that is IRCThulu with an agreement with me, and then proceeded to bait me for weeks hoping I&#8217;d respond with something mean they can use as ammunition to justify their restriction of my access to my work spaces.  Seen it.  Beaten it.  Had it for breakfast, guys.  I&#8217;ve spent years structuring all of this to be resilient to this very tactic.</p>
+
+
+
+<p>What hubris.</p>
+
+
+
+<p>I&#8217;m taking a different approach this round.  Already built a POC for this, but I need scale.  Instead of furiously coding everything all at once, I&#8217;m designing it one small piece at a time, making each piece good at what it does before moving onto the others.  A slow burning, low energy, but highly inspired, approach.</p>
+
+
+
+<p>I think first is the IRC client.  I need a bot.  Not just any bot.  I need a bot deliberately designed to be hard to detect, easy to control, and extremely portable &#8212; while still being modern in design to make its feature set quite flexible to be able to do what I&#8217;m envisioning it should do and to enable the broader strategy at play.</p>
+
+
+
+<p>Since this project is 1984 incarnate with a splash of nerdrage and cthulu reality-warping madness, I&#8217;ll want it to be verbose enough such that identity research features are possible with the data it relays, but not so verbose that data management is a burden.</p>
+
+
+
+<figure class="wp-block-pullquote"><blockquote><p>*sigh*</p></blockquote></figure>
+
+
+
+<p>Conflict is never pleasant&#8230;but if you have to fight in one, find a way to enjoy it, if you can.  Inside each and every one of us are gods and demons, angels and ghosts, heroes and monsters &#8212; reachable as those archetypes which generate legends and history.  They are tools of the human spirit.  Find the right tool for the job, and if you&#8217;re adept with it you&#8217;ll end up making a new one from time to time. </p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-05-08</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/scallywag/">SILO GROUP LLC: Desktop: Scallywag</a></h5>
+                <p><p>Scallywag is a linux desktop client for The Pirate Bay reverse proxies. It automatically retrieves a list of known reverse proxies for the famous PirateBay website and allows the user to search for, and select magnet links, and begins the download using the system&#8217;s XDG-configured default magnet link downloader. Written in Python and uses the GTK UI.</p>
+
+
+
+<p>Source code is public, GPL licensed, and hosted <a href="https://github.com/SILO-GROUP/Scallywag" rel="noreferrer noopener" target="_blank">here</a>.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-01-13</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/sal-m/">SILO GROUP LLC: SAL/M</a></h5>
+                <p><h2>A System that Designs Systems</h2>
+
+
+
+<p>SAL/M is a solution that manages the Software and Systems Architecture Lifecycle.</p>
+
+
+
+<p>It will facilitate high level aspects of solution design using only artifacts created/represented inside of its portfolio.</p>
+
+
+
+<h2>Project Objectives</h2>
+
+
+
+<ul><li>Facilitate an intact distributed systems design process.</li><li>Generate artifacts of that process.</li><li>Represent all available components in a software ecosystem to those ends.</li><li>Represent relationships between those components.</li><li>Generate a compiled artifact on demand of the current state of a solution design.</li></ul>
+
+
+
+<h2>Dependencies</h2>
+
+
+
+<p>SAL/M will use SME/D for stakeholder engagement and IDM/A for its security layer.  </p>
+
+
+
+<h2>Further Reading</h2>
+
+
+
+<p>Not yet available for prototype showcasing.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-01-13</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/sme-d/">SILO GROUP LLC: SME/D</a></h5>
+                <p><p>SME/D is a Delphi-based think tank system and analytical engine designed to allow highly functional subject matter experts to explore and debate diverse angles of many issues. Not yet available for prototype showcasing.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-01-13</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/smq-s/">SILO GROUP LLC: SMQ/S</a></h5>
+                <p><p>SMQ/S is a very simple message queue service designed to be quite fast and barebones. </p>
+
+
+
+<p>As this project is part of the Logthulu project, and is a component, see the Logthulu project for updates:</p>
+
+
+
+<p><a href="https://logthulu.silogroup.org" rel="noreferrer noopener" target="_blank">https://logthulu.silogroup.org</a></p>
+
+
+
+<p></p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2021-01-13</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/foster/">SILO GROUP LLC: Pyrois</a></h5>
+                <p><p>Pyrois is a &#8220;distro in a box&#8221; in the making.</p>
+
+
+
+<h2>9000 Foot View: How Pyrois Works </h2>
+
+
+
+<p>Makefile-driven, Pyrois downloads and compiles our tool, <a href="https://codeberg.org/SILO-GROUP/Rex" rel="noreferrer noopener" target="_blank">Rex</a>, onto it, and then uses a Rex project to compile a chroot using a cross-compiler.  From within that chroot, Rex then compiles all items in the chroot with everything you need for a Linux system.  Pyrois will eventually fork to spawn another project, called Foster, which will preserve that process while it evolves to generate an installer image for a binary package system as part of the genesis of a new Linux Distribution.</p>
+
+
+
+<p>As Rex is json-driven, this allows &#8220;checkbox&#8221; style user interfaces to the build steps, allowing almost limitless customization of the Linux distribution that is created by Pyrois.  This will allow you to create very, very small Linux images for specialized use cases.</p>
+
+
+
+<p>Pyrois is largely curses dialog-driven and is eager to onboard contributors.</p>
+
+
+
+<p>Pyrois is the component that will create Dark Horse Linux.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2018-11-12</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/surro-linux/">SILO GROUP LLC: Dark Horse Linux</a></h5>
+                <p><p>Dark Horse Linux is a new Linux distribution owned by SILO GROUP LLC.</p>
+
+
+
+<p>Cross-compiling a Linux sysroot, and building the system from upstream sources inside your environment with verified  checksums is about the only way to ensure that software hasn&#8217;t been tampered with.  </p>
+
+
+
+<p>That&#8217;s what Dark Horse Linux does to create its sysroot in a publicly verifiable way.  Borrowing largely from the <a href="https://www.linuxfromscratch.org/lfs/downloads/" rel="noreferrer noopener" target="_blank">LFS</a> process, Dark Horse Linux is a parent project meant to empower more creators to create their own linux distributions in the course of developing one.</p>
+
+
+
+<p>While Dark Horse Linux will eventually move to become a binary package distribution and sell commercial support, it is currently a community effort to re-establish open standards, provide a provably clean OS build, and targets both the container markets as well as research environments.</p>
+
+
+
+<p>In order to automate the build process, which is complex, SILO GROUP has developed a new utility called <a href="https://source.silogroup.org/SURRO-Linux/rex" rel="noreferrer noopener" target="_blank">Rex</a>.  You can read more about Rex on its info page.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2018-11-12</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/idm-a/">SILO GROUP LLC: IDM/A</a></h5>
+                <p><p>IDM/A is an identity management, session management, and rights management system in development by SILO GROUP.</p>
+
+
+
+<p>This system is currently closed source and not available to the public prior to stable release.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2018-08-18</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/machapi/">SILO GROUP LLC: Library: Machapi</a></h5>
+                <p><p>Machapi is a somewhat comical API&nbsp; engine to interface with various social networking sites, written in Python.</p>
+
+
+
+<p>You can read&nbsp;the documentation <a href="https://github.com/cmpunches/Machapi/blob/master/README.md">here</a>.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2018-01-30</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/antikythera/">SILO GROUP LLC: Theme: Antikythera</a></h5>
+                <p><p>Antikythera is a WordPress theme designed with simplicity and stability in mind.&nbsp; It is based heavily on both <a href="https://artifact.me/">Artifact</a>&nbsp;for <a href="https://hexo.io/">Hexo</a> as well as <a href="http://www.andersnoren.se/teman/hitchcock-wordpress-theme/">Hitchcock</a> for WordPress.</p>
+
+
+
+<p>You can download it from its dedicated github repository <a href="https://github.com/cmpunches/Antikythera">here</a>.</p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2018-01-30</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="https://www.silogroup.org/logthulu/">SILO GROUP LLC: Logthulu</a></h5>
+                <p><p>Logthulu is a large-scale log aggregation system.</p>
+
+
+
+<p>The project site is at <a href="https://logthulu.silogroup.org" rel="noreferrer noopener" target="_blank">https://logthulu.silogroup.org</a></p>
+
+
+
+<p></p></p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">2017-12-25</div>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div id="bottom-title">
+    <span>
+      <h2>Brought to you by <a href="https://www.silogroup.org">SILO GROUP</a>&#169;, 2023</h2>
+    </span>
+  </div>
+
+</body>
+
 </html>

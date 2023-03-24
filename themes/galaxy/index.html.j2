@@ -1,16 +1,50 @@
 <html>
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-<link href="rsrc/index.css" rel="stylesheet">
-<div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
-<div id='title'>
-  <span>
-    PURE CSS
-  </span>
-  <br>
-  <span>
-    PARALLAX PIXEL STARS
-  </span>
-</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="rsrc/index.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+</head>
+<body>
+
+  <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
+
+  <div id='title'>
+    <span>
+      <h1>{{ config.site_name }}</h1>
+    </span>
+  </div>
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+        <table class="table table-hover">
+          <tbody>
+            {% for entry in entries %}
+            <tr>
+              <td class="entry-column">
+                <h5><a target="_blank" href="{{ entry.url }}">{{ entry.parent.title }}: {{ entry.title }}</a></h5>
+                <p>{{ entry.content }}</p>
+              </td>
+              <td class="date-column">
+                <div class="date-container">{{ entry.date }}</div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div id="bottom-title">
+    <span>
+      <h2>{{ config.subtitle }}</h2>
+    </span>
+  </div>
+
+</body>
+
 </html>

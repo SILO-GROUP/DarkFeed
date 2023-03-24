@@ -5,6 +5,7 @@ import hashlib
 
 class Article:
     def __init__(self, entry, parent_uid, config ):
+        self._raw_entry = entry
         self.url = entry['link']
 
         if self.url.startswith("https://github.com"):

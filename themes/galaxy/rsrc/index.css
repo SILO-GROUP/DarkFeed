@@ -1,7 +1,13 @@
 html {
   height: 100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%) !important;
+  //overflow: hidden;
+}
+
+body {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%) !important;
+    font-family: 'Rajdhani';font-size: 22px;
+
 }
 
 #stars {
@@ -67,10 +73,36 @@ html {
   letter-spacing: 10px;
   padding-left: 10px;
 }
+
+#title, h1 {
+  top: 50%;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: "lato", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  letter-spacing: 10px;
+  padding-left: 10px;
+}
+
+#title, h2 {
+  top: 50%;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: "lato", sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+  letter-spacing: 3px;
+  padding-left: 10px;
+}
+
 #title span {
   background: -webkit-linear-gradient(white, #38495a);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 @keyframes animStar {
@@ -80,4 +112,164 @@ html {
   to {
     transform: translateY(2000px);
   }
+}
+
+.date-column {
+    white-space: nowrap;
+    padding: 50px;
+    width: fit-content;
+    width: 10%;
+    border-spacing: 10px;
+}
+
+.col-sm-3 {
+    border: 1px solid black;
+    width: 15%;
+    white-space: nowrap;
+    border-radius: 50px 0px 0px 50px;
+    padding-top: 25px;
+    max-width: 200px;
+    min-width: 200px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .col-sm-3 {
+        border-radius: 0px 0px 0px 0px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+.list-unstyled {
+    padding-left: 20px;
+}
+
+.header-row {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+.entry-column {
+    border: 1px solid black;
+    padding: 10px;
+    max-width: 80ch;
+    padding-right: 20px;
+    border-spacing: 2px;
+    border-top: 1px solid black;
+    background-image: none;
+    background-repeat: no-repeat;
+    color: white
+}
+
+.wp-block-verse {
+    max-width: 80ch;
+}
+
+[class^="wp-block-cover"], [class^="wp-image-"], .wp-block-cover, .wp-block-cover__image-background {
+    height: auto !important;
+    width: 75% !important;
+    display: inline !important;
+    align-content: center;
+    text-align: center;
+}
+
+span .wp-block-cover {
+    align-content: center;
+}
+
+.has-text-align-center {
+    align-content: center;
+}
+
+.col-sm-6 {
+    //border: 1px solid black;
+}
+
+.col-sm-9 {
+    border: 1px solid black;
+    padding-top: 5px;
+    align-content: center;
+    max-width: 100% !important;
+    display: flex;
+}
+
+.table {
+    width: auto;
+    border-collapse: separate !important;
+}
+
+.table td, .table th {
+    //border: 1px solid black;
+}
+
+.table td, .table th {
+    border: 1px solid black !important;
+}
+
+
+.row {
+    //z-index: 2;
+    width: 100%;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    display: block;
+}
+
+.date-column {
+    //z-index: 1;
+}
+
+.aligncenter {
+    align-content: center;
+}
+
+.date-container {
+    white-space: nowrap;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 5px;
+    border-spacing: 10px;
+    color: white;
+}
+
+.left-header, h3 {
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+pre {
+    color: white;
+}
+
+.container {
+    width: 100%;
+    align-content: center;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background: radial-gradient(ellipse at bottom, #1b2735 100%, #000 100%) !important
+}
+
+#bottom-title {
+  top: 50%;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: "lato", sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  letter-spacing: 10px;
+  padding-left: 10px;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+.entry-column h2 {
+    align-content: left;
+    text-align: left !important;
+    padding-left: 0px !important;
+    font-size: 24px !important;
+
 }
