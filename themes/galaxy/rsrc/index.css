@@ -123,7 +123,7 @@ body {
 }
 
 .col-sm-3 {
-    border: 1px solid black;
+    border: 1px solid white;
     width: 15%;
     white-space: nowrap;
     border-radius: 50px 0px 0px 50px;
@@ -151,12 +151,12 @@ body {
     margin-bottom: 2px;
 }
 .entry-column {
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 10px;
     max-width: 80ch;
     padding-right: 20px;
     border-spacing: 2px;
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     background-image: none;
     background-repeat: no-repeat;
     color: white
@@ -168,10 +168,10 @@ body {
 
 [class^="wp-block-cover"], [class^="wp-image-"], .wp-block-cover, .wp-block-cover__image-background {
     height: auto !important;
-    width: 75% !important;
-    display: inline !important;
+    max-width: 75% !important;
     align-content: center;
     text-align: center;
+    display: flow-root;
 }
 
 span .wp-block-cover {
@@ -180,6 +180,7 @@ span .wp-block-cover {
 
 .has-text-align-center {
     align-content: center;
+    display: block;
 }
 
 .col-sm-6 {
@@ -187,7 +188,7 @@ span .wp-block-cover {
 }
 
 .col-sm-9 {
-    border: 1px solid black;
+    border: 1px solid white;
     padding-top: 5px;
     align-content: center;
     max-width: 100% !important;
@@ -204,7 +205,7 @@ span .wp-block-cover {
 }
 
 .table td, .table th {
-    border: 1px solid black !important;
+    border: 1px solid white !important;
 }
 
 
@@ -226,7 +227,7 @@ span .wp-block-cover {
 
 .date-container {
     white-space: nowrap;
-    border: 1px solid black;
+    border: 1px solid white;
     width: fit-content;
     padding: 5px;
     border-spacing: 10px;
@@ -272,4 +273,55 @@ pre {
     padding-left: 0px !important;
     font-size: 24px !important;
 
+}
+
+.date-column td {
+    border: none !important;
+    border-top: none !important;
+}
+.date-column {
+    border: none !important;
+    border-top: none !important;
+}
+td .date-column {
+    border: none !important;
+    border-top: none !important;
+}
+table .date-column {
+    border: none !important;
+    border-top: none !important;
+}
+
+table tr {
+    padding-bottom: 25px;
+    display: block;
+}
+
+.table {
+    width: 100% !important;
+}
+
+
+.aligncenter {
+  justify-content: center;
+  align-items: center;
+}
+
+.wp-block-cover__background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wp-block-cover__image-background {
+  object-fit: cover;
+  width: 100%;
+  max-width: 1024px;
+  height: auto;
+}
+
+.wp-block-cover__inner-container {
+  position: relative;
+  z-index: 1;
 }
