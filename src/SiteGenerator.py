@@ -1,6 +1,7 @@
 import os
 from jinja2 import Environment, FileSystemLoader
 from src.SiteFeed import SiteFeed
+import shutil
 
 def get_nth_parent_directory_path(n):
     current_file_path = os.path.realpath(__file__)
@@ -17,6 +18,13 @@ class SiteGenerator:
         self.theme_dir = os.path.join( self.templates_dir, self.config.theme )
         self.env = Environment( loader = FileSystemLoader( self.theme_dir ))
         self.output_dir = os.path.join( self.project_root, 'output' )
+
+    def overwrite_theme_rsrc(self):
+        to_path = os.path.join( self.output_dir, 'rsrc' )
+        from_path = os.path.join( self.theme_dir, 'rsrc' )
+        if os.path.exists(to_path):
+            shutil.rmtree(to_path)
+        shutil.copytree(from_path, to_path)
 
     def generate_site(self, feeds):
         index_template = self.env.get_template( 'index.html.j2' )
@@ -39,3 +47,5 @@ class SiteGenerator:
                     entries = sorted_entries
                 )
             )
+
+        self.overwrite_theme_rsrc()

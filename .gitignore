@@ -2,3 +2,4 @@
 *pycache*
 output/cache*
 output/*.html
+output/*rsrc
