@@ -30,7 +30,7 @@
                 <p>{{ entry.content }}</p>
               </td>
               <td class="date-column">
-                <div class="date-container">{{ entry.date }}</div>
+                <div class="date-container"><a href="#{{ entry.uid }}" id="{{ entry.uid }}">{{ entry.date }}</a></div>
               </td>
             </tr>
             {% endfor %}
