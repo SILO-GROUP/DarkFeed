@@ -9,13 +9,13 @@ class SiteFeed:
         self.config = config
 
         # fetch and parse feed
-        feed_result = feedparser.parse( feed_source.feed_url )
+        feed_result = feedparser.parse(feed_source.url)
         try:
             self.subtitle = feed_result['feed']['subtitle']
         except KeyError:
             self.subtitle = ""
         self.site_url = feed_result['feed']['link']
-        self.feed_url = feed_result['feed']['links'][0]['href']
+        self.url = feed_result['feed']['links'][0]['href']
         self.filter_by_tags = feed_source.tag_filter
         if self.filter_by_tags:
             self.listen_tags = feed_source.tags
@@ -36,7 +36,7 @@ class SiteFeed:
     def sift_entries(self):
         entries = list()
         for entry in self._entries_raw:
-            article = Article( entry, self.uid, self.config )
+            article = Article( entry, self.uid, self.config, parent=self )
             if article.is_commit_feed:
                 entries.append( article )
             else:

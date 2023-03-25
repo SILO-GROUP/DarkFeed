@@ -4,7 +4,7 @@ import re
 import hashlib
 
 class Article:
-    def __init__(self, entry, parent_uid, config ):
+    def __init__(self, entry, parent_uid, config, parent=None ):
         self._raw_entry = entry
         self.url = entry['link']
 
@@ -40,6 +40,12 @@ class Article:
         self.parent_uid = parent_uid
         self.parent = config.get_site_by_uid( self.parent_uid )
 
+        self._raw_parent = parent
+        if parent is not None:
+            self.parent_url = self._raw_parent.site_url
+        else:
+            self.parent_url = entry['parent_url']
+
     def content_hash(self):
         sha1 = hashlib.sha1()
         sha1.update(self.url.encode('utf-8'))
@@ -57,7 +63,8 @@ class Article:
             'date': self.date,
             'tags': self.tags,
             'uid': self.uid,
-            'parent_uid': self.parent_uid
+            'parent_uid': self.parent_uid,
+            'parent_url': self.parent_url
         }
 
     @classmethod
@@ -70,6 +77,7 @@ class Article:
             'content': [{'value': data['content']}],
             'published_parsed': datetime.strptime(data['date'], '%Y-%m-%d').timetuple(),
             'tags': [{'term': tag} for tag in data['tags']] if data['tags'] else [],
-            'parent_uid': data['parent_uid']
+            'parent_uid': data['parent_uid'],
+            'parent_url': data['parent_url']
         }
         return cls( entry, data['parent_uid'], config )

@@ -36,7 +36,7 @@ class CacheIO:
     def write_site(self, site_feed ):
         site_entries = site_feed.entries
         site_cache_dir = Path ( os.path.join( self.cache_root_dir, site_feed.uid ) )
-        print("Caching site '{0}' ('{1}', '{2}').".format(site_feed.uid, site_feed.title, site_feed.feed_url))
+        print("Caching site '{0}' ('{1}', '{2}').".format(site_feed.uid, site_feed.title, site_feed.url))
         # create full directory path for cache directory root if it doesn't exist
         # create a subdir that matches the site's UID (unique by url)
         site_cache_dir.mkdir( parents=True, exist_ok=True )
